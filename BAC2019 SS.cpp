@@ -81,4 +81,53 @@ int main()
     return 0;
 }
 
+ /// ##############################################
+
+SIII Ex 3 var nerecursiva
+
+
+
+/**
+ 1, 2, 4, 5, 7, 8, 10, 11, 13, 14, 16
+ a  b  c  d
+    a  b  c  d
+                        d  a    b   c
+                        a  b    c        
+
+ fi=f(i-1)+f(i-2)-f(i-3)
+
+ d = c + b - a;
+ c = b + a - d;
+
+d=b+a-c;
+ a = b;
+ b = c;  
+ c = d;
+*/
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int a,b,c,d,i,n;
+    cin>>n>>a>>b>>c;
+    for(int i=4;i<=n;i++){
+     d = c + b - a;
+     a = b;
+     b = c;
+     c = d;
+    }
+    cout<<c<<" "<<b<<" "<<a<<" ";
+    for(int i=4;i<=n;i++){
+        d=b+a-c;
+        cout<<d<<" ";
+        c = b;
+        b=a;
+        a=d;
+    }
+    return 0;
+}
 
