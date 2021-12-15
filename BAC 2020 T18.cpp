@@ -25,3 +25,51 @@ int main() {
     if(ok == false) cout << "nu exista";
     return 0;
 }
+
+///SIII ex3
+#include <iostream>
+#include <cstring>
+#include <fstream>
+
+using namespace std;
+ifstream fin("bac.txt");
+
+int main() {
+    int st,dr,lmax=-1,lung=0;
+    int x;
+    int k=0;
+    while(fin >> x){
+        if(x%10==0){
+        lung++;
+        }
+        else{
+            if(lung>lmax){
+                lmax=lung;
+                k=1;
+            }
+           else if(lung == lmax){
+            k++;
+           }
+            lung=0;
+        }
+    }
+    if(lung>lmax){
+        if(lung>lmax){
+                lmax=lung;
+                k=1;
+            }
+           else if(lung == lmax){
+            k++;
+           }
+    }
+    cout<<lmax<<" "<<k;
+}
+//Astept variantele voastre!!!!
+//V1. Patricia
+
+///
+/*
+Algoritmul verifica divizibilitatea fiecarui element cu 10.
+
+*/
+
