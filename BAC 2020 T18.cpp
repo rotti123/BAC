@@ -11,7 +11,7 @@ int main() {
     for(int i = 0; i < n; i++) {
         cin >> s[i];
     }
-    strcpy(model, s[k]);
+    strcpy(model, s[k - 1]);
     for(int i = 0; i < n; i++) {
         if(i == k) continue;
         p = strstr(s[i], model);
