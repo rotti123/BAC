@@ -13,7 +13,7 @@ int main() {
     }
     strcpy(model, s[k - 1]);
     for(int i = 0; i < n; i++) {
-        if(i == k) continue;
+        if(i == k - 1) continue;
         p = strstr(s[i], model);
         if(p != NULL) {
             if(strcmp(model, p) == 0) {
