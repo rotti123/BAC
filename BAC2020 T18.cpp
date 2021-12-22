@@ -125,7 +125,16 @@ int main() {
 }
 //Astept variantele voastre!!!!
 //V1. Patricia
-
+/*
+Algoritmul este eficient dpdv al timpului de execuție, deoarece are o complexitate liniară O(n)
+Algoritmul citeste numerele din fisier, verificand daca sunt divizibile cu 10.
+Daca conditia este adevarata incrementam variabila lung, acesta fiind la inceput si lungimea maxima. 
+Daca conditia este falsa vom trata 2 cazuri: 
+I. Daca variabila lung este mai mare decat lmax, atunci ii vom atribui lui lmax valoarea lui lung. Ii vom atribui variabilei k=1, 
+deoarece aceasta este prima lungime maxima gasita.
+II. Daca variabila lung este egala cu lmax, variabila k va crește, deoarece am gasit un nou sir cu o lungime maxima. 
+Vom reseta variabila lung, deoarece vom cauta un alt sir cu o lungime mai mare.
+*/
 ///
 /*
 Algoritmul verifica divizibilitatea fiecarui element cu 10.
