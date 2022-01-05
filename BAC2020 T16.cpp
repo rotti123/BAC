@@ -1,3 +1,29 @@
+///SIII ex1
+#include <iostream>
+
+using namespace std;
+int nrdivprim(int n){
+    int d=2,p,cnt=0;
+    while(n!=1)
+    {
+        p=0;
+        while(n % d==0){
+            p++;
+                n=n/d;
+        }
+        if(p%2==1)
+        cnt++;
+        d++;
+    }
+    return cnt;
+}
+int main() {
+int n;
+cin>>n;
+cout<<nrdivprim(n);
+    return 0;
+}
+
 ///SIII ex2
 #include <iostream>
 
