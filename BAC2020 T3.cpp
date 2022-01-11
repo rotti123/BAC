@@ -53,3 +53,6 @@ int main() {
 }
 
 ///SIII ex3
+
+
+https://pastebin.com/DqzmX88h
