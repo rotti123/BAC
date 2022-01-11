@@ -41,3 +41,39 @@ int main() {
    
     return 0;
 }
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+
+int main() {
+    //ifstream cin("bac.in");
+    int x,m1=0,m2=0,m3=0;
+    while(cin>>x){
+        if(x%100==20){
+            if(x>m3){
+                m1=m2;
+                m2=m3;
+                m3=x;
+            }
+            else if(x>m2){
+                m1=m2;
+                m2=x;
+            }
+            else if(x>m1){
+                m1=x;
+            }
+        }
+    }
+    cout<<m1<<" "<<m2<<" "<<m3;
+    return 0;
+}
+/*
+Programul este eficient dpdv al timpului de executie deoarece are o complexitate O(n),
+unde n reprezinta nr elementelor din sir
+Programul este eficient dpdv al memoriei, deoarece folosim doar 4 variabile intregi simple
+Consideram m1,m2,m3 cele 3 valori cerute,iar x un nr oarecare
+Tratam cele 3 situatii posibile in aceasta ordine: x>m3, x>m2, x>m1 
+In functie de caz vom face schimbarile necesare
+*/
