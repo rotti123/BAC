@@ -59,3 +59,30 @@ int main(){
     cout<<x/(d1*d2);
     
 }
+//varianta 2
+#include <iostream>
+
+using namespace std;
+int cmmmc(int x, int y, int z)
+{
+    int d=2, sol=1;
+    while(x!=1 || y!=1 || z!=1)
+    {
+        while(x%d==0 || y%d==0 || z%d==0)
+        {
+            sol=sol*d;
+            if(x%d==0) x/=d;
+            if(y%d==0) y/=d;
+            if(z%d==0) z/=d;
+        }
+        d++;
+    }
+    return sol;
+}
+
+
+int main()
+{
+    cout<<cmmmc(20,30,40);
+    return 0;
+}
