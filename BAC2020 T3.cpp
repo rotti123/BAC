@@ -53,6 +53,27 @@ int main() {
 }
 
 ///SIII ex3
+#include <iostream>
+#include <fstream>
+using namespace std;
 
+int main() {
+    ifstream cin("bac.in");
+    int x,nr=0,p1=0,p2=0;
+    while(cin>>x){
+        nr++;
+        if(x<0){
+            if(p1==0){
+                p1=nr;
+            }
+            p2=nr;
+        }
+    }
+    if(nr-p1+1>p2){
+        cout<<nr-p1+1;
+    }
+    else cout<<p2;
+    return 0;
+}
 
 https://pastebin.com/DqzmX88h
