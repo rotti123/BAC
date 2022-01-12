@@ -123,3 +123,44 @@ int main() {
     }
     cout<<sol;
 }
+
+
+///SIII ex3
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int p1, p2, a, b, c, d, m, nou = 0;
+    cin >> p1 >> p2;
+    for(a = 1; a <= 9; a++) {
+        if(p1 % a == 0) {
+            b = p1 / a;
+            if(b < 10) {
+                for(m = 0; m <= 9; m++) {
+                    for(c = 1; c <= 9; c++) {
+                        if(p2 % c == 0) {
+                            d = p2 / c;
+                            if(d < 10)
+                                cout << a << b << m << m << m << c << d << ' ';
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**
+ * Algoritmul este eficient dpdv al timpului de executie deoacere are o complexitate O(1),
+ * deoarece nr de operatii folosite in cadrul algoritmului nu depaseste 1000.
+ * Alg este eficient dpdv al mem deoarece s-au folosit doar opt variabile intregi simple.
+ * 
+ * Programul stabileste toti divizorii lui p1 sub forma unei perechi (a,b) astfel
+ * - parcurgem toate valorile posibile pentru a din [1,9]
+ * - daca p1 % a==0 atunci putem calcula b=p1/a
+ * - in cazul in care a,b<10 trecem la pasul urmator
+ * Aplicam acelasi algoritm pentru a genera divizorii lui p2 sub forma (c,d)
+ * In cazul unei solutii o afisam.
+
+ */
