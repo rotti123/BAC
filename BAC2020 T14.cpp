@@ -148,3 +148,107 @@ int main() {
  * la final se afiseaza 3 dintre cele mai mici numere din vectorul a
 */
 
+- Simedre Patricia - 
+	
+SI
+1) (a) !(x< -2002 || x>2020) -> (x>=-2002 && x<=2020)
+
+2) f(2020,20) -> x=2020, y=20 -> f(101,2000)
+                 x=101, y=2000 -> r f(0,-1899)
+                 x=0, y=-1899 -> r -1899 (c)
+
+3)
+1.casca
+2.costum de înot
+3.cleme
+4.dopuri de urechi
+5.plută
+6.mască de snorkeling
+7.ochelari
+8.snorkel
+
+12345
+128
+1346
+168
+2358 (b)
+
+4) (c) (3,5,5,6,0,5) - frunzele sunt 1,2,4
+
+SII
+1.
+a)
+n=1527894
+m=0
+c=4 (nu este cifra impara)
+m=4
+c=9 -> 1
+m=41 c=8 m=418
+... 
+m=4188262
+
+b) 9,90,900
+
+d)
+citește n (număr natural)
+m<-0
+┌cat timp n>0 executa
+│ c<-n%10; n<-[n/10]
+│┌dacă c=9 atunci c<-1
+││altfel
+││┌dacă c%2=1 atunci
+│││c<-c+1
+││└■
+│└■
+│ m<-m*10+c
+└■
+scrie m
+
+2)
+struct rasa{
+int cod, nrExemplare, varsta[10];
+} v[20];
+
+SIII
+1)
+#include <iostream>
+
+using namespace std;
+
+void divizoripereche(int n){
+    int a,b,nr=0;
+    for(b=n; b>0; b--){
+        for(a=1; a<b; a++){
+            if(a*b==n){
+                if(a%2==1 && b%2==0 || a%2==0 && b%2==1){
+                    cout<<"["<<a<<" "<<b<<"]"<<" ";
+                    nr++;
+                }
+            }
+        }
+    }
+    if(nr==0)
+    cout<<"nu exista";
+}
+
+int main() {
+    divizoripereche(12);
+    return 0;
+}
+
+2)
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int main() {
+    char s[101],cif[]="0123456789";
+    cin.getline(s,101);
+    for(int i=1; i<strlen(s)-1;i++){
+        if(strchr("-",s[i])&& strchr(cif,s[i+1])){
+            strcpy(s+i,s+i+1);
+        }
+    }
+    cout<<s;
+    return 0;
+}
