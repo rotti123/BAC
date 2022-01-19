@@ -110,6 +110,29 @@ int perechi (int n){
             cout << "Nu exista";
         }
     }
+Var 2
+#include <iostream>
+using namespace std;
+void perechi(int n)
+{
+    int a,b,ok=0;
+    for(a=1;a*a<n;a++)
+    {
+        if(n%a==0 && a%2!=n/a%2){
+        cout<<a<<" "<<n/a<<endl;
+        ok=1;
+        }
+    }
+    if (ok==0)
+    cout<<"Nu exista";
+}
+int main() {
+int n;
+cin>>n;
+perechi(n);
+
+    return 0;
+}
 	
 2.
 #include <iostream>
