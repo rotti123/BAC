@@ -279,3 +279,42 @@ int main() {
     cout<<s;
     return 0;
 }
+
+3)
+#include <iostream>
+using namespace std;
+const int nmax=1000000000;
+int main() {
+    int x, m1=nmax,m2=nmax,m3=nmax;
+    while(cin>>x){         ///O(cn)=O(n), unde c este o constanta
+            if(x%100==20){
+                    if(x<=m1){
+                            m3=m2;
+                            m2=m1;
+                            m1=x;
+                    }
+                    else if(x<=m2){
+                            m3=m2;
+                            m2=x;
+                    }
+                    else if(x<=m3)
+                            m3=x;
+            }
+    }
+    cout<<m1<<" "<<m2<<" "<<m3;
+    return 0;
+}
+
+/* Alg este eficient dpdv al timpuli de exec deoarece are o complexitate O(n),
+unde n este nr de elem din fisier.
+Alg este eficient dpdv al mem deoarece am folosit doar patru var intregi simple.
+Algoritmul va gasi cele mai mici trei numere m1,m2,m3 care respecta conditia.
+Pentru fiecare nr citit avand ultime doua cifre "20" verificam urmatoarele cazuri
+in aceasta ordine:
+1) x<=m1
+2) x<=m2
+3) x<=m3
+In fiecare caz vom face modificarile necesare pentru a atribui valorile corecte lui
+m1,m2 si m3
+*/	
+	
