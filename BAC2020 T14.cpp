@@ -282,9 +282,11 @@ int main() {
 
 3)
 #include <iostream>
+#include <fstream>
 using namespace std;
 const int nmax=1000000000;
 int main() {
+ifstream cin("bac.in");
     int x, m1=nmax,m2=nmax,m3=nmax;
     while(cin>>x){         ///O(cn)=O(n), unde c este o constanta
             if(x%100==20){
