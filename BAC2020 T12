@@ -1,0 +1,73 @@
+SI
+1.d
+2.a
+3.b
+4.
+5.c
+
+SII:
+1.
+a)952
+b)2000, 2002
+c)
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int n,nr,c,m;
+    cin>>n;
+    nr=0;
+    c=9;
+    while(c>=0){
+        m=n;
+        while(m!=0 && m%10!=c){
+            m=m/10;
+        }
+        if(m!=0){
+            nr=nr*10+m%10;
+        }
+        c--;
+    }
+    cout<<nr;
+    return 0;
+}
+
+d)
+
+citeste n ( numar natural nenul )
+nr<-0
+c<-9
+
+pentru i<-c,0,-1 executa
+   m<-n
+   
+   cat timp m≠0 si m%10≠c executa
+       m<-[m/10]
+   sfarsit cat timp
+   
+   daca m≠0 atunci
+       nr<-nr*10+m%10
+   sfarsit daca
+
+sfarsit pentru
+
+scrie nr
+
+2.
+3.  12456 13456 23456
+
+SIII:
+1.
+
+int pDoi(int n){
+    int put2=1;
+    while(put2*2<=n){
+        put2=put2*2;
+    }
+    return put2;
+}
+
+
+
