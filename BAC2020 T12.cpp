@@ -215,3 +215,39 @@ int main() {
     }
     return 0;
 }
+
+SIII ex3 var 2
+	#include <iostream>
+
+using namespace std;
+
+int main() ///antetul functiei main
+{      
+    int x; 
+    cin>>x;
+    while(x>10){
+        cout<<x<<" ";
+        if(x%2==0)
+        x=x/2;
+        else
+        x--;
+    }
+    while(x>=1){
+        cout<<x<<" ";
+        x--;
+    }
+    /*
+    for(int i=x; i>=1; i--){
+        cout<<i<<" ";
+    }
+    */
+}
+
+
+/*
+2*log2(n)=log2(n^2)
+Rezulta ca a re complexitatea O(log2(n^2))
+*/
+
+
+
