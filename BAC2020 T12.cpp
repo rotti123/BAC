@@ -34,6 +34,37 @@ int main() {
     return 0;
 }
 
+SIII ex 2
+	
+	#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main() ///antetul functiei main
+{      
+        char s[101]={}, voc[]="aeiou", *p, aux[101]={};
+        int poz,pozmax=-1;
+        cin.getline(s,101);
+        for(int i=0;i<=4;i++){
+                p=strrchr(s,voc[i]);//gaseste ultima pozitie a caracterului cautat.
+                if(p!=NULL){
+                        poz=p-s;
+                        pozmax=max(poz,pozmax);
+                }
+        }
+        if(pozmax!=-1){
+            strcpy(s+pozmax,s+pozmax+1);//elimina caracterul de pe pozitia pozmax;
+            cout<<s;
+        }
+        else{
+        cout<<"nu exista";
+        }
+}
+
+
+
+
 d)
 
 citeste n ( numar natural nenul )
