@@ -25,3 +25,36 @@ int main() ///antetul functiei main
   //pana aici
 }
 
+///SIII ex1
+#include <iostream>
+
+using namespace std;
+
+    void patrate (int x, int y){
+        int p = 1, s = 0;
+        while (p * p < x){
+            p++;
+        }
+        while (p * p <= y){
+            cout << p * p;
+            s = s + p * p;
+            p++;
+            if (p * p <= y){
+                cout << "+" ;
+            }
+        }
+        if (s == 0){
+            cout << "Nu exista";
+            return;
+        }
+        cout << "=";
+        cout << s;
+    }
+
+int main() ///antetul functiei main
+{      
+  int x, y;
+  cin >> x >> y;
+  patrate (x, y);
+}
+
