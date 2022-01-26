@@ -44,3 +44,33 @@ void prodprim(int n,int &p){
         d++;
     }
 }
+///SIII ex 2
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int main() {
+    char s[101],*p;
+    int nrv=0, nrc=0,ok=0;
+    cin.getline(s,101);
+    p=strtok(s," ");
+    while(p!=NULL){
+        for(int i=0;i<strlen(p);i++){
+            if(strchr("aeiou",p[i])!=NULL){
+                nrv++;
+            }
+            else nrc++;
+        }
+        if(nrv<nrc){
+            cout<<p<<endl;
+            ok=1;
+        }
+        p=strtok(NULL," ");
+        nrv=0;
+        nrc=0;
+    }
+    if(ok==0){
+        cout<<"nu exista";
+    }
+    return 0;
+}
