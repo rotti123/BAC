@@ -128,3 +128,23 @@ int main() {
     }
     return 0;
 }
+
+III 3. Var 2
+	#include <iostream>
+using namespace std;
+
+int main() 
+{
+  int x;
+  cin >> x;
+  while(x>=1){
+        cout<<x<<" ";
+        x=x/2;
+  }
+  
+}
+/*
+Complexitatea algoritmului este O(log2(n))
+Afisam toate puterile lui 2 in ordine descrescatoare incepand 
+de la valoarea x citita.
+*/
