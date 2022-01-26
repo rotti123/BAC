@@ -30,3 +30,17 @@ j=4	r=11	x=-5	y=11
  SII ex 2
           x1=6, x2=10
           
+///SIII ex 1
+void prodprim(int n,int &p){
+    int d=2;
+    p=1;
+    while(n>1){
+        if(n%d==0){
+            p=p*d;
+        }
+        while(n%d==0){
+            n=n/d;
+        }
+        d++;
+    }
+}
