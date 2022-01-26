@@ -56,6 +56,12 @@ sfarsit pentru
 scrie nr
 
 2.
+struct flori{
+	int cod,nrVarietati;
+	int nrExemplare[10];
+
+}f[20];
+
 3.  12456 13456 23456
 
 SIII:
