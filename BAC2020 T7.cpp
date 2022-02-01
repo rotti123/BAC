@@ -79,3 +79,23 @@ int main() {
     }
     return 0;
 }
+3.
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ifstream cin("bac.txt");
+    int x,s=0,smin=10000;
+    while(cin>>x){
+        if(s>0){
+            s=x;
+        }
+        else s=s+x;
+        if(s<smin){
+            smin=s;
+        }
+    }
+    cout<<smin;
+    return 0;
+}
