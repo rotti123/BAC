@@ -122,6 +122,39 @@ int main() ///antetul functiei main
   patrate (x, y);
 }
 
+SIII ex2
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+
+int main() {
+    char s[101] = {}, aux[101]= {}, cuv[101]={}, *p;
+    int lung;
+    cin.getline (s, 100);
+    p = strtok (s, " ");
+    while (p != NULL){
+        strcpy (cuv, p);
+        lung = strlen (cuv);
+        if ('a' <= cuv[0] && cuv[0] <= 'z'){
+            cuv[0] -= 32;
+        }
+        for (int i = 1; i<lung; i++){
+           if ('A' <= cuv[i] && cuv[i] <= 'Z'){
+            cuv[i] += 32;
+            }
+        }
+        strcat (aux, cuv);
+        p = strtok (NULL, " ");
+        if (p != NULL){
+            strcat (aux, " ");
+        }
+    }
+    
+   strcpy (s, aux);
+   cout << s;
+}
 ex 3:
 #include <iostream>
 
