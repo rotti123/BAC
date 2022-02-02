@@ -26,3 +26,43 @@ int main() {
     cout<<c;
     return 0;
 }
+
+SIII ex2
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main() {
+    char cuv[11]={},s[101]={},b[101]={},a[101]={},c[101]={},*p;
+    int ok=0;
+    cin.getline(cuv,10);
+    cin.getline(s,100);
+    p=strtok(s," "); ///primul cuvant (a)
+    strcpy(a,p);
+    p=strtok(NULL," "); //al doilea cuvant (b)
+    if(p==NULL){
+        cout<<"NU EXISTA";
+        return 0;
+    }
+    strcpy(b,p);
+    p=strtok(NULL," ");
+    
+    while(p!=NULL){
+        strcpy(c,p);
+        if(strcmp(b,cuv)==0){
+            ok=1;/// am gasit un cuvant
+            cout<<a<<" "<<c<<endl;
+        }
+        strcpy(a,b);
+        strcpy(b,c);
+        p=strtok(NULL," ");
+    }
+    
+    if(ok==0){
+        cout<<"NU EXISTA";
+    }
+    
+    return 0;
+}
