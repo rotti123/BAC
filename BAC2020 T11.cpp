@@ -154,4 +154,88 @@ int main() {
    -la final schimbam valoarea lui n cu valoarea urmatoare.
    /*
 
+- Simedre Patricia - test 11 - 2020
+SI
+1. d. !(x>2019) && !(y<2019 || y>2020) -> x<=2019 && y>=2018 && y<=2020
+2.
+	-cu flori
+azalea=1
+begonia=2
+vriesea=3
+	-fara flori
+busuioc=4
+ferigă=5
 
+142 143 152 153 241 243 251 253 (341) 342 351 352
+
+341= vriesea,busuioc,azalea (d)
+
+3. 
+f(2020,2) -> r 1+f(1010,2) -> 2022 (a)
+f(1010,2) -> r 1+f(505,2) -> 2021
+f(505,2) -> r 2020
+
+4. n-1=16 -> n=17 (b)
+
+5. 
+9 muchii pt 5 noduri - o componenta conexa
+20-5=15 (noduri izolate)
+15+1=16 (componente conexe) (c)
+
+
+SII
+1.
+a)
+n=45530 m=0 c=0 n=4553 m=0
+	    c=3 n=455 m=3
+	    c=5 n=45 m=5
+	    c=5 n=4 m=5
+	    c=4 n=0 m=10
+            tip 10
+b) 1111 1110 1000
+citeşte n (număr natural)
+m<-0
+┌dacă n=0 atunci
+│ m<-10
+│altfel
+│┌cat timp n<>0 executa
+││ c<-n%10; n<-[n/10]
+││┌dacă c≥m atunci
+│││ m<-c
+│││altfel
+│││ m<-10
+││└■
+│└■
+└■
+scrie m
+
+2. 
+struct sera{
+int numar;
+	struct{
+	char denumireStiintifica[20],denumirePopulara[20]
+	} specie[100];
+}s;
+
+SIII
+2.
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int main() {
+    char s[101];
+    cin.getline(s,101);
+    for(int i=0; i<=strlen(s)-1; i++){
+     if(isupper(s[i])){
+            s[i]=s[i]+32;
+        }
+    }
+    s[0]=s[0]-32;
+    for(int i=0; i<=strlen(s)-1; i++){
+        if(s[i]==' ')
+        s[i+1]=s[i+1]-32;
+    }
+    cout<<s;
+    return 0;
+}
