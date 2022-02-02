@@ -66,3 +66,46 @@ int main() {
     
     return 0;
 }
+
+SIII ex3
+#include <iostream>
+
+using namespace std;
+
+struct bursa {
+    int ziua1, ziua2, fluctuatie;
+};
+
+int main() {
+  ifstream cin("valori.in");
+    bursa minn, maxx;
+    int n, last_n, x;
+    cin >> x;
+    cin >> last_n >> n;
+    minn.ziua1 = last_n;
+    minn.ziua2 = n;
+    minn.fluctuatie = abs(n - last_n); ///abs(x) = |x| modul
+    maxx = minn;
+    last_n = n;
+    while (cin >> n) {
+        if(abs(n - last_n) <= minn.fluctuatie) {
+            minn.ziua1 = last_n;
+            minn.ziua2 = n;
+            minn.fluctuatie = abs(n - last_n);
+        }
+        if(abs(n - last_n) >= maxx.fluctuatie) {
+            maxx.ziua1 = last_n;
+            maxx.ziua2 = n;
+            maxx.fluctuatie = abs(n - last_n);
+        }
+        last_n = n;
+    }
+    cout << maxx.fluctuatie << ' ' << minn.fluctuatie << '\n';
+    cout << maxx.ziua1 << ' ' << maxx.ziua2 << '\n';
+    cout << minn.ziua1 << ' ' << minn.ziua2 << '\n';
+}
+/*
+Complexitate O(n), n nr de elem din valoare.in
+Eficient dpdv al mem deoarece are 3 var intregi simple si doua var strcuct cu 3 atribute
+Comparam fluctuatia pentru fiecare pereche de zile consecutive cu fluctuatia maxima, respectiv minima.
+*/
