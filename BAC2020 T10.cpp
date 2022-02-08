@@ -116,3 +116,98 @@ int main() {
 }
 
 SIII
+
+
+
+- Ilea Robert -
+            
+S1:
+1.d
+2.b
+3.c
+4.a
+
+S2:
+1) 
+a) 60
+b) 20 21
+c)
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int x,y,s,i,j,aux;
+    cin>>x>>y;
+    if(x>y){
+        aux=x;
+        x=y;
+        y=aux;
+    }
+    i=x;
+    j=y;
+    s=0;
+    do{
+        s=s+(i%2)*j+(j%2)*i;
+        i++;
+        j--;
+    }while(i<=j);
+    cout<<s;
+    return 0;
+}
+
+d) 
+citeste x,y
+
+daca x>y atunci
+    x<->y
+sfarsit daca
+i<-x; j<-y; s<-0;
+cat timp i<=j executa
+    s<-s+(i%2)*j+(j%2)*i
+    i<-i+1;
+    j<-j-1;
+sfarsit cat timp
+scrie s
+
+2)
+
+struct spectacol{
+	int cod,nrActori,varsta;
+}s[20];
+
+3)
+
+for(i=0;i<4;i++){
+        for(j=0;j<5;j++){
+            a[i][j]=5*(i+1)-j;
+        }
+}
+
+SIII:
+1)
+
+void produs(int n, int &p){
+    int c;
+    p=1;
+    while(n!=0){
+        c=n%10;
+        n/=10;
+        if(c%2==0 && c!=p){
+            p=p*c;
+        }
+    }
+    cout<<p;
+}
+
+
+
+
+
+
+
+
+
+
+
+
