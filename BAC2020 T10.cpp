@@ -293,7 +293,24 @@ Alg este eficient dpdv al memoriei deoarece, am folosit doar 8 variabile simple 
 
 de completat....
 */
+Subiectul III:
 
+Exercitiul 1:
+void produs(int n,int &p){
+    p=1;
+    int c,a[10]={};
+    while(n!=0){
+        c=n%10;
+        n=n/10;
+        if(c%2==0 && a[c]==0){
+            p=p*c;
+            a[c]=1;
+        }
+    }
+    if(p==1){
+        p=-1;
+    }
+}
 
 
 
