@@ -235,7 +235,64 @@ int main() {
 }
 	
 
+SIII ex 3
+	
+#include <bits/stdc++.h>
+using namespace std;
 
+
+int main() {
+   ifstream cin("test.in");
+   ofstream cout("test.out");
+   
+   int a,b,c,r,lung,lmax=0,rmax=0,ok=0;
+
+   cin >> a >> b;
+   lung=2;
+   while(cin >> c){
+     if(b==(a+c)/2){
+       ok=1;
+       r=c-b;
+       lung++;
+     }
+     else{ // c NU face parte dintr-o progresie
+       if(lung>lmax){
+         lmax=lung;
+         rmax=r;
+       }
+      else if(lung==lmax){
+         if(r>rmax){
+           rmax=r;
+         }
+       }
+       lung=2;
+     }
+     a=b;
+     b=c;
+   }
+     if(lung>lmax){  ///verific cazul in care ultimul nr
+         lmax=lung;  /// se afla in progresia de rmax
+         rmax=r;
+       }
+      else if(lung==lmax){
+         if(r>rmax){
+           rmax=r;
+         }
+       }
+   if(ok==0){
+     cout<<"nu exista";
+   }
+   else{
+     cout<<rmax;
+   }
+    return 0;
+}
+/*
+Alg are o complexitate O(n), n nr de elem din fisier
+Alg este eficient dpdv al memoriei deoarece, am folosit doar 8 variabile simple de tipul intreg.
+
+de completat....
+*/
 
 
 
