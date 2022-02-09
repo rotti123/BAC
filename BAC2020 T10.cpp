@@ -201,7 +201,39 @@ void produs(int n, int &p){
 }
 
 
+SIII ex 2)
+	
+#include <bits/stdc++.h>
+using namespace std;
 
+
+int main() {
+   ifstream cin("test.in");
+   ofstream cout("test.out");
+   char s[700], *p, a[700]={}, c[700]={}, ch1 ,ch2 ;
+    cin.getline (s, 100);
+    p=strtok(s," "); // Retinem primul cuvant
+    strcat(a,p);
+    strcat(a," ");
+   ch1=p[strlen(p)-1]; // Retinem ultima litera a cuvantului anterior
+   p=strtok(NULL," "); // Retinem urmatorul cuvant
+
+  while(p){
+    ch2=p[strlen(p)-1];
+    if(ch1==ch2){ // coincid ultimele caractere -> inseram cuv. "succes"
+     strcat(a,"succes ");
+    }
+    strcat(a,p);
+    strcat(a," ");
+    ch1=ch2;
+    p=strtok(NULL," ");///preluam urm. cuv.
+  }
+  strcpy(s,a);/// am modificat in memorie sirul s
+  cout<<s;
+
+    return 0;
+}
+	
 
 
 
