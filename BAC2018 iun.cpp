@@ -1,5 +1,23 @@
 
 SIII ex 3
+  
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+  ifstream cin("test.in");
+  ofstream cout("test.out");
+  int r,n,x,y,k=0;
+  cin>>r>>x>>y>>n;
+  for(int a=1;a<=n;a++){
+    if(a%x==r && a%y==r) k++;
+  }
+  cout<<k;
+}
+
+SIII ex 4
 #include <fstream>
 #include <iostream>
 using namespace std;
