@@ -53,3 +53,61 @@ int main() {
     cout<< y;
     return 0;
 }
+SIII ex 2
+   
+   #include <fstream>
+#include <iostream>
+using namespace std;
+
+void citire(int &n,int &k,int a[][21])
+{
+  cin>>n>>k;
+  for(int i=1;i<=n;i++){
+    for(int j=1;j<=n;j++){
+      cin>>a[i][j];
+    }
+  }
+}
+
+void circularDiagSec(int n,int k,int a[][21])
+{ int c=a[k][n-k];
+  for(int j=n-k;j>1;j--){ ///k+j<n+1 <=> j<n-k+1
+      a[k][j]=a[k][j-1];
+  }
+  a[k][1]=c;
+}
+
+void afisare(int n,int a[][21])
+{
+  for(int i=1;i<=n;i++){
+    for(int j=1;j<=n;j++){
+      cout<<a[i][j]<<" ";
+    }
+    cout<<'\n';
+  }
+}
+
+int main() { 
+  int n,a[21][21]={},k;
+  ifstream cin("bac.txt");
+ // citire(n,k,a);
+   cin>>n>>k;
+  for(int i=1;i<=n;i++){
+    for(int j=1;j<=n;j++){
+      cin>>a[i][j];
+    }
+  }
+
+  
+  circularDiagSec(n,k,a);
+  afisare(n,a);
+  return 0;
+}
+/*
+5 2
+2 3 4 5 6
+2 4 6 8 0
+7 8 9 0 1
+3 5 7 9 1
+7 3 8 5 6
+*/
