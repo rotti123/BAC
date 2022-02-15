@@ -127,7 +127,7 @@ Avem 2 cazuri ce trebuiesc tratate, si anume cand lungimea este mai mare decat l
 egala cu lungimea maxima;
 La sfarsit afisam datele cerute.
 */
-
+-Ilea Robert-
 SI:
 1.d
 2.b
