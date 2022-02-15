@@ -111,3 +111,23 @@ int main() {
 3 5 7 9 1
 7 3 8 5 6
 */
+
+//SIII ex 3
+
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+int main() { 
+  ifstream cin("bac.txt");
+  int x,y,nr=1;
+  cin>>x;
+  while(cin>>y){
+    if(y>=x){
+      nr++;
+    }
+  }
+  cout<<nr;
+  return 0;
+}
+
