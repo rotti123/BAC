@@ -127,3 +127,129 @@ Avem 2 cazuri ce trebuiesc tratate, si anume cand lungimea este mai mare decat l
 egala cu lungimea maxima;
 La sfarsit afisam datele cerute.
 */
+
+SI:
+1.d
+2.b
+3.a
+4.c
+
+SII:
+1)
+
+a) 1 1 1 2 2 2 3 3
+b) 46 50
+c)
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int n,k,t,i,j;
+    cin>>n>>k;
+    t=1;
+    for(i=1;i<=n/k;i++){
+        for(j=1;j<=k;j++){
+            cout<<t<<" ";
+        }
+        t+=1;
+    }
+    for(i=n%k;i>=1;i--){
+        cout<<t<<" ";
+    }
+    return 0;
+}
+
+d) citeste n,k
+   t<-1
+   pentru i<=1,[n/k] executa
+         pentru j<-1,k executa
+		scrie t, ' '
+         sfarsit pentru
+      t<-t+1
+   sfarsit pentru
+   i<-n%k
+   cat timp i>=1 executa
+        scrie t, ' '
+        i--;
+   sfarsit cat timp
+
+2) f(0) = 0
+   f(2020) = 6
+  
+3) 3 
+   4,7
+
+SIII:
+1)
+
+void suma(int n,int &s){
+    int c,a[10]={0};
+    s=0;
+    while(n!=0){
+        c=n%10;
+        if(c%2==1 && a[c]==0){
+            s=s+c;
+            a[c]++;
+        }
+        n/=10;
+    }
+    cout<<s;
+}
+
+3)
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+
+int main() {
+    ifstream cin("bac.txt");
+    int k,lmax=-1,lung=0,p=0,y;
+    cin>>k;
+    while(cin>>y){
+        if(y%k==0){
+            lung++;
+        }
+        else{
+            lung=0;
+        }
+        if(lung>lmax){
+            lmax=lung;
+            p=1;
+        }
+        else if(lmax==lung){
+            p++;
+        }
+    }
+    cout<<lmax<<" "<<p;
+    return 0;
+}
+/* Algoritmul este eficient din punct de vedere al timpului de executie 
+   deoarece are o complexitate O(n) unde n reprezinta numarul de elemente 
+   citite din fisier.
+   Algoritmul este eficient din punct de vedere al memoriei deoarece am
+   folosit doar 5 variabile simple de tip intreg.
+   Pasii facuti de program sunt:
+     -Citeste valoarea k cu care urmeaza sa comparam celelate elemente din sir.
+     -Citeste in mod repetat valorile din sir
+     -Daca gaseste o valoare care se divide cu numarul k atunci crestem lungimea
+      secventei.
+     -Daca valoarea citita nu se devide cu k atunci lungimea va redeveni 0
+     -daca gasim o lungime mai mare decat precedenta atunci o actualizam si 
+      marim aparitia acesteia.
+     -daca lungimea maxima este egala cu lungimea unei secvente atunci marim
+      aparitia acesteia.
+     -afiseaza lungimea maxima si numarul ei de aparitii
+ */
+   
+   
+   
+
+
+
+
+
+
+
