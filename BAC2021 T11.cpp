@@ -32,3 +32,30 @@ int main() {
     cout<<rez;
     return 0;
 }
+
+//SIII ex 2:
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n,k,a[21][21]={},aux;
+    cin>>n>>k;
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=n;j++){
+            cin>>a[i][j];
+        }
+    }
+    for(int poz=1;poz<=k-1;poz++){
+        aux=a[k][poz];
+        a[k][poz]=a[poz][k];
+        a[poz][k]=aux;
+    }
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=n;j++){
+            cout<<a[i][j]<<" ";
+        }
+        cout<<'\n';
+    }
+    return 0;
+}
