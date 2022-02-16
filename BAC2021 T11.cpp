@@ -33,6 +33,26 @@ int main() {
     return 0;
 }
 
+///SIII ex 3
+#include <iostream>
+ 
+using namespace std;
+ 
+int main() {
+    int x,y,n;
+    cin >> x >> y;
+    cout << y << " " << x << " ";
+    if (x == 1) return 0;
+    n = (y-x)/2;
+    while (x != 1){
+        y = x;
+        n--;
+        x = y-2*n;
+        cout << x << " ";
+    }
+    return 0;
+}
+
 //SIII ex 2:
 
 #include <iostream>
