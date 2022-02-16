@@ -54,5 +54,29 @@ int main() {
   }
 }
 
+///SIII ex 3
+#include <iostream>
+#include <fstream>
+using namespace std;
+int main() {
+  ifstream cin("bac.txt");
+  int v[5]={}, x, ok=0;
+  while(cin>>x){
+    if(x%2==0){
+      ok=1;
+      v[x/2]++;
+    }
+  } 
+ if(ok==0) cout<<"Nu exista";
+ else{                            ///Cifrele pare cif: 0 2 4 6 8
+   for(int cif=0; cif<=8; cif+=2){///Codif cif/2     : 0 1 2 3 4
+     for(int i=1; i<=v[cif/2]; i++){
+       cout<<cif<<" ";
+     }
+   }
+ }
+}
 
+
+///  (づ｡◕‿‿◕｡)づ
 ///  ¯\_(ツ)_/¯
