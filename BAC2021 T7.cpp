@@ -76,7 +76,25 @@ int main() {
    }
  }
 }
-
+///SIII ex 1
+  if(e.dataNasterii.an>dataEveniment.an){
+    cout<<"ulterior";
+  }
+  else if(e.dataNasterii.an==dataEveniment.an){
+    if(e.dataNasterii.luna>dataEveniment.luna){
+      cout<<"ulterior";
+    }
+    else if(e.dataNasterii.luna==dataEveniment.luna){
+      if(e.dataNasterii.zi>dataEveniment.zi){
+        cout<<"ulterior";
+      }
+      else 
+        cout<<"nu";
+    }
+    else cout<<"nu"; 
+  }
+  else 
+    cout<<"nu";
 
 ///  (づ｡◕‿‿◕｡)づ
 ///  ¯\_(ツ)_/¯
