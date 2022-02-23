@@ -130,3 +130,31 @@ int main() {
   impusa anterior.*/
 
 
+SIII ex 2
+	#include <fstream>
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int main() {
+  ifstream cin("bac.txt");
+  int m,n,a[21][21]={},ok=0;
+  cin >> n >> m;
+  for(int i=1;i<=n;i++){
+    for(int j=1;j<=m;j++){
+      cin >> a[i][j];
+    }
+  }
+
+  for(int j=1;j<=m;j++){
+    for(int i=n;i>=2;i--){
+      if(a[1][j]==a[i][m]){
+        ok=1;
+        cout<<a[1][j]<<" ";
+      }
+    }
+  }
+  if(ok==0) cout<<"nu exista";
+  return 0;
+}
+ 
