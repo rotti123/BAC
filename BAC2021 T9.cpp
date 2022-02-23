@@ -49,4 +49,38 @@ int main() {
     cout<<"nu exista";
 }
  
+ SIII Ex. 3
+   #include <fstream>
+#include <iostream>
+#include <cstring>
+using namespace std;
+int v[10];
+
+int main() {
+  ifstream cin("bac.txt");
+  int n, c;
+  while (cin >> n){
+    while (n != 0 ){
+      c = n % 10;
+      n /= 10;
+      v[c]++;
+    }
+  }
+  for (c = 9; c >= 0; c--){
+    while (v[c] != 0){ ///for(int i=1;i<=v[c];i++)
+      cout << c;
+      v[c]--; ///asta nu se scrie la 'for'
+    }
+  }  
+}
+ /*
+Algoritmul este eficient dpdv al timpului de exec deoarece are
+o complexitate liniara O(n), unde n repr nr de elem din fisier
+Programul face urmatorii pasi:
+  - pentru fiecare numar x din fisier 
+    retine numarul de aparitii a tuturor cifrelor acestuia
+   intr-un vector de frecventa
+  - parcurgem toate cifrele de la 9 la 0 si afisam cifra curenta
+    conform numarului de aparitii din vectorul de frecventa
+*/
  
