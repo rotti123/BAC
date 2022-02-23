@@ -158,3 +158,178 @@ int main() {
   return 0;
 }
  
+///Rezolvare Maurice///
+SI
+ 1 b
+ 2 c
+ 3 b
+ 4 d
+ 5 c
+    
+SII
+1)
+	a)
+x=2	y=9
+x=-7	y=-7+9=2	x=9 => x=9 y=2
+A
+x = 7 B
+A
+x=5 B
+A
+x=3 B
+A
+x=1 B
+STOP
+R: ABABABAB
+	b)
+	18,19,20
+	
+	c)
+#include <iostream>
+using namespace std;
+int main(){
+	int x,y;
+	cin >> x >> y;
+	if(x<y){
+		x=x-y;
+		y=x+y;
+		x=y-x;
+	}
+	
+	while(x>=y){
+	cout<<'A';
+	x=x-y;
+	if(x%2==0) cout<<'A';
+	else 	   cout<<'B';
+	}
+	return 0;
+	
+}
+d)
+	citeşte x,y (numere naturale)
+	┌dacă x<y atunci
+	│ x<-x-y; y<-x+y; x<-y-x
+	└sf daca
+	
+	daca(x>=y) atunci
+	┌repeta
+	│ scrie ’A’
+	│ x<-x-y
+	│┌dacă x%2=0 atunci scrie ’A’
+	││altfel scrie ’B’
+	│└sf daca
+	└pana cand (x<y)
+	sf daca
+	
+2)
+	struct elev{
+	int cod;
+	float nota1,nota2;
+	}y[30];
+	
+	
+	
+	
+	 
+3)
+	    01234567
+	 s="vorbeste";
+	s[3]=s[0]   b=v vorveste
+	s[5]=s[2]   s=r vorverte
+	s[0]=s[1]+1 v=p porverte
+	s[2]=s[1]-2	r=m pomverte
+	s[6]=s[4]-1 e=d pomverde
+	
+	abcdefghijklmnopqrstuvwyz
+	
+	s="pomverde"
+	t=pom
+	
+	Afisaj:
+	pom
+	verde
+	
+	
+SIII
+1)
+#include <iostream>
+using namespace std;
+int armonie(int x, int y){
+    int c1=0,c2=0,d;
+    for(d=1;d*d<=x;d++){
+        if(x%d==0){
+            ///cout<<d<<" "<<x/d<<endl;
+            c1=c1+d+x/d;
+        }
+    }
+   /// cout<<c1<<endl;
+    for(d=1;d*d<=y;d++){
+        if(y%d==0){
+            ///cout<<d<<" "<<y/d<<endl;
+            c2=c2+d+y/d;
+        }
+        if(d*d==y){
+            c2=c2-d;
+        }
+    }
+   ///cout<<c2<<endl;
+    if(x+y > c1 && x+y < c2) return 1;
+    else return 0;
+}
+div 12=1,2,3,4,6,12
+div 8= 1 2 4 8
+2)
+  #include <iostream>
+using namespace std;
+int main() {
+    int a[21][21]={}, ok=0,m,n;
+    cin >> m >> n;
+    for(int i=1;i<=m;i++){
+        for(int j=1;j<=n;j++){
+            cin >> a[i][j];
+        }
+    }
+    
+    for(int j=1;j<=n;j++){
+        for(int i=m;i>=2;i--){
+            ///cout<<a[1][j]<<" "<<a[i][n]<<'\n';
+            if(a[1][j]==a[i][n]){
+                ok=1;
+               cout<<a[i][n]<<" ";
+            }
+            else if(j==n) break;
+        }
+    }
+    
+    if(ok==0) cout<<"nu exista";
+    
+    
+    return 0;
+}
+3)
+  #include <iostream>
+  #include <fstream>
+using namespace std;
+int main() {
+    ifstreeam cin("bac.txt");
+    int x,y,k=0;
+    cin >> x;
+    while(cin >> y){
+        if(y<x){
+            k++;
+        }
+    }
+    k++;/// numarul se va afla pe pozitia urmatoare 
+    cout<<k;
+    return 0;
+}
+/*
+Algoritmul este eficient dpdv al tipului de executie deoarece, are o complexitate O(n), unde n reprezinta numerele citite din fisier.
+Algoritmul este eficient dpdv al memoriei deoarece, am folosit doar 3 variabile simple de tipul intreg.
+Aloritmul functioneaza urmand urm. pasi:
+1. Citeste un numar x (primul numar din fisier)
+2. Algoritmul numara cate numere sunt mai mici decat x intr-un contor k, deoarece acele numere vor fi in fata lui x ca si pozitie;
+3. Algoritmul returneza valoarea k, unde k reprezinta pozitia numarului x in sirul sortat crescator.
+*/
+
+///End file///
