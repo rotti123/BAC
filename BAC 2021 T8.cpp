@@ -76,4 +76,27 @@ scrie x
 
 2)
   
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int a[51][51]={},n,s1=0,s=0;
+    cin >> n;
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=n;j++){
+            cin >> a[i][j];
+            if(i<j && i+j >n+1){
+                s=s+a[i][j];
+            }
+        }
+    }
+    
+    for(int i=2;i<n;i++){
+        s1=s1+a[i][n];
+    }
+    s=s-s1;
+    cout<<s;
+    return 0;
+}
   
