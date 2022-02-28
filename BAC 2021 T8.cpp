@@ -1,3 +1,4 @@
+///Rezolvare Maurice///
 SI
 
 1 c
@@ -99,4 +100,45 @@ int main() {
     cout<<s;
     return 0;
 }
-  
+
+3)
+  #include <iostream>
+  #include <fstream>
+
+using namespace std;
+
+int main() {
+    ifstream cin("bac.txt");
+    int x,y,ok=0,n1=0,n2=0;
+    cin >> x;
+    if(x%2==1){
+        n1=x;
+    }
+    
+    while(cin >> y){
+        if(y%2==1){
+            if(n1==0){
+                n1=y;
+            }
+            else if(n2==0){
+                ok=1;
+                n2=y;
+            }
+            else if(n1!=0 && n2!=0){
+                ok=1;
+                n1=n2;
+                n2=y;
+            }
+        }    
+    }
+    if(ok==0) cout<<"nu exista";
+    else      cout<<n1<<" "<<n2;
+    return 0;
+}
+
+/*
+Algoritmul este eficient dpdv al timpului de executie, deoarece are o complexitate O(n), unde n reprezinta numerele
+citite din fisier.
+Algoritmul este eficient dpdv al memoriei, deoarece am folosit doar 5 variabile simple de tipul intreg.
+...
+*/
