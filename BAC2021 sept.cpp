@@ -13,6 +13,41 @@ int main() {
   cuburi(n);
 }
 
+SIII ex 2
+#include <iostream>
+using namespace std;
+
+void genmat(int k,int n,int a[][100])
+{
+  for(int j=0;j<n;j++){
+    a[0][j]=k+j;
+  }
+  for(int i=1;i<n;i++){
+    for(int j=0;j<n;j++){
+      a[i][j]=a[i-1][j]+(k-1);
+    }
+  }
+}
+void afisare(int n,int a[][100])
+{
+  for(int i=0;i<n;i++){
+    for(int j=0;j<n;j++){
+      cout<<a[i][j]<<" ";
+    }
+    cout<<'\n';
+  }
+}
+int main() {
+  int k,n,a[100][100]={};
+  cin>>k>>n;
+  genmat(k,n,a);
+  afisare(n,a);
+  return 0;
+}
+
+
+
+
 S III EX 3
     #include <iostream>
 #include <fstream>
