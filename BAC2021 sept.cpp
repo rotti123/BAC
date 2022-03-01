@@ -1,4 +1,7 @@
-
+SII ex 3
+  a[0].venit=4000;
+a[0].dp.anNastere=2000;
+  
 SIII ex1
 
 void cuburi(int n){
