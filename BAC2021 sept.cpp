@@ -1,20 +1,17 @@
 
 SIII ex1
 
-#include <iostream>
-#include <fstream>
-using namespace std;
+void cuburi(int n){
+  for(int i=n;i>=1;i--){
+    cout<<i*i*i<<' ';
+  }
+} 
 
-int main()
-{
-    int n;
-    cin>>n;
-    for(int i=n;i>=1;i-- ){
-        cout<<i*i*i<<" ";
-    }
-    return 0;
+int main() {
+  int n;
+  cin >> n;
+  cuburi(n);
 }
-
 
 S III EX 3
     #include <iostream>
