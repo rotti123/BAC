@@ -1,56 +1,63 @@
-#include <iostream>
+SIII ex 3
+    #include <iostream>
 
 using namespace std;
-int v[100];
+int a[101],b[101];
 
 int main(){
-    int n, m, i = 1, j = 1, x, y;
+    int n, m, i = 1, j = 1, x, y,ok=0;
     cin >> n;
-    while (cin >> x){
-        v[i] = x;
-        i++;
+    for(i=1;i<=n;i++){
+        cin>>a[i];
     }
-    i = 1;
     cin >> m;
+    for(i=1;i<=m;i++){
+        cin>>b[i];
+    }  
+    x=-1;
     while (i <= n && j <= m){
-        cin >> y;
-        if (v[i] % 3 == 0  &&  y % 3 == 0){
-            if (v[i] < y){
-                cout << v[i] << " ";
-                i++;
+       if(a[i]<b[j]){
+            if(a[i]%3==0 && a[i]!=x){
+                cout<<a[i]<<" ";
+                ok=1;
+                x=a[i];
             }
-            else if (v[i] > y){
-                cout << y << " ";
-                cin >> y;
-                j++;
-            }
-            else if (v[i] == y){
-                cout << v[i];
-                cin >> y;
-                i++;
-                j++;
-            }
-        }
-        if (v[i] % 3 != 0){
             i++;
-        }
-        if (y % 3 != 0){
-            cin >> y;
+       }
+       else
+       if(a[i]==b[j]){
+            if(a[i]%3==0 && a[i]!=x){
+                cout<<a[i]<<" ";
+                ok=1;
+                x=a[i];
+            } 
+            i++;
+            j++;
+       }
+       else
+       if(a[i]>b[j]){
+            if(b[j]%3==0 && b[j]!=x){
+                cout<<b[j]<<" ";
+                ok=1;
+                x=b[j];
+            }          
+            j++;
+       }
+    }
+    for(int k=i;k<=n;k++){
+        if(a[k]%3==0){
+            cout<<a[k]<<" ";
+            ok=1;
         }
     }
-    if (i > n){
-        while (cin >> y){
-            if (y % 3 == 0){
-                cout << y << " ";
-            }
+     for(int k=j;k<=m;k++){
+        if(b[k]%3==0){
+            cout<<b[k]<<" ";
+            ok=1;
         }
-    }
-    else if (j > m){
-        for (int c = i; c <= n; c++){
-            if (v[c] % 3 == 0){
-                cout << v[c] << " ";
-            }
-        }
+    } 
+    if(ok==0){
+        cout<<"NU EXISTA";
     }
     return 0;
 }
