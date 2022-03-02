@@ -54,14 +54,14 @@ scrie x
   
  SIII
  1)
-  void nrfp(int n, int &m){
+ void nrfp(int n, int &m){ ///m=cel mai mare nr din [2,n] cu max de fact primi
     int d,k=0,e,nr,kmax=-1;
     m=-1;
     for(int i=2;i<=n;i++){
-        k=0;
+        k=0; //k=nr de factori primi a lui nr
         d=2;
         nr=i;
-        while(nr!=1){
+        while(nr!=1){  ///descompunerea in factori primi a lui nr
             e=0;
             while(nr%d==0){
                 nr=nr/d;
@@ -70,7 +70,7 @@ scrie x
             if(e>0) k++;
             d++;
         }
-        if(k>=kmax){
+        if(k>=kmax){ //kmax = nr max de fact primi
             m=i;
             kmax=k;
         }
