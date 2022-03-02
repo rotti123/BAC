@@ -43,8 +43,10 @@ scrie x
 
 2)
   strcut clasa{
-   float sem1,sem2;
-   int elev[40], numar;
+   int numar;
+	struct media{
+		float sem1,sem2;
+	}elev[40];
    }p;
 
 3)
