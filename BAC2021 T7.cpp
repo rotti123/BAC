@@ -124,3 +124,35 @@ int main() {
     return 0;
 }
 
+///SIII ex 3
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+
+int main() {
+    int x,y,ok=0,v[10]={};
+    while(cin>>x){
+        v[x]++;
+    }
+    for(x=0;x<10;x+=2){
+        if(v[x]!=0) ok=1;
+        for(int i=1;i<=v[x];i++){
+            cout<<x<<" ";
+        }
+    }
+    if(ok==0) cout<<"nu exista";
+    return 0;
+}
+/* Algoritmul este eficient dpdv al timpului de executie, avand o complexitate O(n),unde
+   n reprezinta numarul de elemente din fisier.
+   Algoritmul este eficient dpdv al memoriei deoarece am utilizat doar 3 variabile simple si un\
+   si de 10 pozitii.
+   Algoritmul face urmatorii pasi:
+   Pasul 1: citeste cifra x
+   Pasul 2: creste frecventa cifrei x;
+   Pasul 3: daca mai avem cifre in fisier , trecem la pasul 1;
+   Pasul 4: parcurgem intervalul [0,8] de cifre pare;
+   Pasul 5: pentru fiecare element din interval, il afisam de cate ori apare in fisier;
+   Pasul 6: daca nu avem nici o afisare, atunci afisam 'nu exista';
+*/
