@@ -98,3 +98,29 @@ int main() {
 
 ///  (づ｡◕‿‿◕｡)づ
 ///  ¯\_(ツ)_/¯
+
+
+///SIII ex 2
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int main() {
+  int x, a[11][11],n=0,nr;
+  cin>>x;
+  nr=x;
+  while(nr){
+     nr=nr/10;
+     n++;
+  }
+  for(int j=n; j>=1; j--){
+    for(int i=1; i<=n; i++)
+        a[i][j]=x%10;
+    x=x/10;
+  }
+  for(int i=1; i<=n; i++,cout<<endl)
+    for(int j=1; j<=n; j++)
+        cout<<a[i][j]<<" ";
+    return 0;
+}
+
