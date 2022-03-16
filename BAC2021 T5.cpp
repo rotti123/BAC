@@ -137,3 +137,28 @@ int main() {
   cout<<identice(n);
   return 0;
   }
+		
+///SIII ex 2
+#include <iostream>
+#include <fstream>
+#include <cstring>
+using namespace std;
+
+int main() {
+  ifstream cin("bac.txt");
+  int m, n, a[100][100];
+  cin >> m >> n;
+  for (int i = 1; i <= m; i++){
+    for (int j = 1; j <= n; j++){
+      a[i][j] = i * j % 10;
+    }
+  }
+  for (int i = 1; i <= m; i++){
+    for (int j = 1; j <= n; j++){
+      cout << a[i][j] << " ";
+    }
+    cout << endl;
+  }
+  return 0;
+  }
+
