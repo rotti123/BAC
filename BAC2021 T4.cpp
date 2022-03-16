@@ -42,3 +42,63 @@ int main() {
     else cout << maxx << endl;
   }
 }
+
+//SIII ex3
+#include <iostream>
+#include <fstream>
+using namespace std;
+ifstream f("bac1.txt");
+ifstream g("bac2.txt");
+int main() {
+  int n,m,x,y,i,j,k,ok=0;
+  f>>n>>x;
+  g>>m>>y;
+  i=1; j=1;
+  while(i<=n && j<=m){
+    if(x<y){
+      if(x%5==0)
+        cout<<x<<" ", ok=1;
+      i++;
+      f>>x;
+    }
+    else if(x==y){
+      i++; j++;
+      f>>x;
+      while(x==y && i<=n){
+        f>>x;
+        i++;
+      }
+      int a=y;
+      g>>y;
+      while(y==a &&  j<=m){
+        g>>y;
+        j++;
+      }
+    }
+    else if(x>y){
+      if(y%5==0)
+       cout<<y<<" ", ok=1;
+        j++;
+        g>>y;
+    }
+  }
+  if(i<=n){
+    for(int poz=i; poz<=n; poz++){
+      if(x%5==0)
+        cout<<x<<" ", ok=1;
+      f>>x;
+    }
+  }
+  if(j<=m){
+    for(int poz=j; poz<=m; poz++){
+      if(y%5==0)
+        cout<<y<<" ", ok=1;
+      g>>y;
+    }
+  }
+
+  if(ok==0)
+    cout<<"nu exista";
+
+}
+
