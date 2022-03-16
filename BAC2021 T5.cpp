@@ -67,7 +67,8 @@ scrie y
 2)
 	struct carte{
 		char titlu[51]={};
-		int autor[10],nrExemplare;
+		int nrExemplare;
+		char autor[10][51];
 	}c;
 
 3)
