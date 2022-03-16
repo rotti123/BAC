@@ -83,3 +83,33 @@ int main() {
     cautareSEL(a, n, m);
     return 0;
 }
+
+///SIII ex 3
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+int main() {
+    ifstream cin("bac.in");
+    int f[10]={},z,v[10]={},k=0,fmax=0,a;
+    while(cin>>a){
+        k++;
+        z=a%100/10; //cifra zecilor
+        f[z]++; //crestem frecventa pt nr z
+    
+        v[z]=k; //ultima pozitie a lui z (cifra zecilor) intr-un nr
+    }
+    for(int i=0; i<10; i++){
+        if(f[i]>fmax){
+                fmax=f[i];
+        }
+    }
+    for(int i=0; i<10; i++){
+        if(f[i]==fmax){
+            cout<<v[i]<<" ";
+        }
+    }
+    return 0;
+}
+
+
