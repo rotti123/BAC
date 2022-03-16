@@ -1,3 +1,39 @@
+///SII ex 2
+#include <iostream>
+#include <fstream>
+#include <cstring>
+using namespace std;
+
+struct data 
+{ int zi,luna,an;
+}dataEveniment;
+struct elev 
+{ char nume[30];
+ data dataNasterii;
+}e;
+
+int main() {
+  if(e.dataNasterii.an > dataEveniment.an){
+    cout<<"ulterior";
+  }
+  else if(e.dataNasterii.an == dataEveniment.an){
+      if(e.dataNasterii.luna > dataEveniment.luna){
+        cout<<"ulterior";
+      }
+      else if(e.dataNasterii.luna == dataEveniment.luna){
+        if(e.dataNasterii.zi > dataEveniment.zi){
+          cout<<"ulterior";
+        }
+        else cout<<"nu";
+      }
+      else cout<<"nu";
+    }
+    else cout<<"nu";
+  
+    return 0;
+  }
+
+
 ///SIII ex 1
 #include <iostream>
 
