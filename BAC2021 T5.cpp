@@ -162,3 +162,24 @@ int main() {
   return 0;
   }
 
+///SIII ex 3
+		#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+  ifstream cin("bac.txt");
+    int n, maxx = -1, x;
+    cin >> n;
+    for(int i = 1; i <= n; i++) {
+        cin >> x;
+        if(x > maxx) maxx = x;
+        cout << maxx << ' ';
+    }
+}
+
+/** 
+  Programul este eficient dpdv al timpului de executare, deoarece are o complexitate O(n), n fiind numarul de elemente din fisier.
+  Programul este eficient dpdv al memoriei, deoarece am folosit doar 5 variabile simple.
+  Algoritmul citeste variabila n si n numaere, afisand maximul local pentru fiecare pozitie i.
+**/
