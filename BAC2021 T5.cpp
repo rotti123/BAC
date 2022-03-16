@@ -72,3 +72,42 @@ scrie y
 	}c;
 
 3)
+
+//rezolvare Cristina	
+SIII
+1)
+int identice (int n)
+{
+    int m, d, ok=1;
+    while(n>9)
+    {
+        m=n%10;
+        n=n/10;
+        d=n%10;
+        if (m!=d) ok=0;
+    }
+return ok;
+}
+
+2)
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, m, i, j, a[100][100];
+    cin>>n>>m;
+    
+    for (i=1; i<=n; i++){
+        for (j=1;j<=m; j++){
+            a[i][j]=(i*j)%10;
+        }
+    }
+    
+     for (i=1; i<=n; i++){
+        for (j=1;j<=m; j++){
+            cout<<a[i][j]<<" ";
+        }
+        cout<<endl;
+     }
+    return 0;
+}
