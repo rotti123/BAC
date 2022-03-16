@@ -111,3 +111,29 @@ int main() {
      }
     return 0;
 }
+
+		
+///SIII ex 1
+#include <iostream>
+#include <fstream>
+#include <cstring>
+using namespace std;
+
+int identice(int n){
+  int c, val;
+  val = n % 10;
+  n = n / 10;
+  while(n!=0){
+      c = n % 10;
+      if(val != c) return 0;
+      n = n / 10;
+  }
+  return 1;
+}
+
+int main() {
+  int n;
+  n=222;
+  cout<<identice(n);
+  return 0;
+  }
