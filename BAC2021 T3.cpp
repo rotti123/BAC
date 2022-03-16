@@ -30,3 +30,56 @@ int main() {
     cout << suma(a);
     return 0;
 }
+
+
+///SIII ex 2
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+void citire(int a[][21], int &n, int &m) {
+    cin >> n >> m;
+  for (int i = 1; i<=n; i++) {
+    for (int j = 1;j<=m; j++) {
+        cin >> a[i][j];
+  }
+}
+}
+
+
+void cautareVF(int a[21][21], int n, int m) {
+    int v[401]={}, ok=0;
+  for(int i = 1; i<=n; i++) {
+      v[a[i][1]]++;
+      if(v[a[i][1]]==2 && a[i][1]!=0){
+          cout<<a[i][1]<<" ";
+          ok=1;
+      }
+      v[a[i][m]]++;
+      if(v[a[i][m]]==2 && a[i][m]!=0){
+          cout<<a[i][m]<<" ";
+          ok=1;
+      }
+    }
+  if(ok==0){
+      cout<<"Nu exista";
+  }
+}
+void cautareSEL(int a[21][21], int n, int m) {
+    int ok=0;
+    for(int i=1;i<=n;i++){
+        for(int k=1;k<=n;k++){
+            if(a[i][1]==a[k][m] && a[i][1]!=0){
+               ok=1;
+               cout<<a[i][1]<<" ";
+            }
+        }
+    }
+}
+
+int main() {
+    int a[21][21], n, m;
+    citire(a, n, m);
+    cautareSEL(a, n, m);
+    return 0;
+}
