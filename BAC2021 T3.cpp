@@ -84,6 +84,42 @@ int main() {
     return 0;
 }
 
+///SIII ex 3 - cu struct 
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+struct z_prietene{
+    int poz,fr;
+};
+
+int main() {
+    ifstream cin("bac.txt");
+   z_prietene a[10]={};
+   int x,c,i=1,maxx=0;
+   while(cin>>x){
+    c=x/10%10;
+    a[c].fr++;
+    a[c].poz=i;
+    i++;
+   }
+   for(i=0;i<=9;i++){
+        //cout<<i<<" "<<a[i].fr<<" "<<a[i].poz<<endl;
+       if(a[i].fr>maxx){
+           maxx=a[i].fr;
+       }
+   }
+   for(c=0;c<=9;c++){
+       if(a[c].fr==maxx){
+           cout<<a[c].poz<<" ";
+       }
+   }
+
+
+    return 0;
+}
+
+
 ///SIII ex 3
 #include <fstream>
 #include <iostream>
