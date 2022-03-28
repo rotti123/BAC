@@ -43,3 +43,37 @@ int main()
     return 0;
 }
  
+
+///SIII ex 2
+2 2 2 2 2 
+2 2 2 2 8 
+2 2 2 2 2 
+2 1 2 8 7 
+3 5 2 1 2
+ 
+ #include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+
+int n,m,a[51][51], ok,sol=1;
+  cin>>n;
+  for(int i=1;i<=n;i++) 
+    for(int j=1;j<=n;j++)
+      cin>>a[i][j];
+  for(int k=1;k<=n;k++){ ///marimea submatricei este k x k
+    ok=1;
+    for(int i=1;i<=k;i++){ ///testez submatricea 
+      for(int j=1;j<=k;j++){ //daca are toate elem egale
+        if(a[i][j]!=a[1][1]){
+          ok=0;
+        }  
+      }
+    }
+    if(ok==1){
+      sol=k;
+    }
+  }
+  cout<<sol;
+}
