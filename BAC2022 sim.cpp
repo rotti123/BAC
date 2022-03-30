@@ -63,6 +63,31 @@ int main(){
   }
 }
 
+///SIII ex 3
+#include <iostream>
+#include <fstream>
+using namespace std;
+//ifstream f("bac1.txt");
+//ifstream g("bac2.txt");
+
+int desc(int n, int d) {
+  int cnt = 0,p=d;
+  while(n / p > 0) {
+    cnt=cnt+n/p;
+    p=p*d;
+  }
+  return cnt;
+}
+
+int main() {
+  ofstream cout("bac.txt");
+  int n, frecv_3 = 0, frecv_5 = 0;
+  cin>>n;
+  frecv_3=desc(n,3);
+  frecv_5=desc(n,5);
+  int sol=min(frecv_5,frecv_3/2);
+  cout<<sol;
+}
 
 
   ///  	(づ｡◕‿‿◕｡)づ|l)/
