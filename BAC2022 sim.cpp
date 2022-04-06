@@ -123,6 +123,39 @@ Pentru intervalul [1,n] se realizeaza descompunerea fiecarui numar
 cu 3 si cu 5 si retinem aceste valori in p1 si p2.
 Rezultatul final este min(p1/2, p2)
 */
+SIII ex3 O(log3(n)+log5(n))
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+int main(){
+  int n,p3=0,p5=0, pow3=3, pow5=5;  //n!=3^p1*5^p2*k;
+  cin>>n;
+  while(n/pow3>0){
+    p3=p3+n/pow3;
+    pow3=3*pow3;
+
+  }
+  while(n/pow5>0){
+    p5=p5+n/pow5;
+    pow5=5*pow5;
+  }
+  cout<<min(p3/2,p5);
+}
+/*
+Alg este eficient dpdv al timpului de exec deoarece are o complexitate O(log3(n)+log5(n))
+Alg este eficient dpdv al mem deoarece se folosesc doar
+  cinci variabile intregi simple
+Se calculeaza puterea pentru factorul prim 3 astfel:
+ p3 = [n/3]+[n/3^2]+...
+Iar pentru factorul prim 5 avem:
+ p5= [n/5] +[n/5^2] +...
+Rezultatul final este min(p3/2, p5)
+*/
+
+
+  ///  	(づ｡◕‿‿◕｡)づ|l)/
+
           
 
   ///  	(づ｡◕‿‿◕｡)づ|l)/
