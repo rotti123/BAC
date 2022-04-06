@@ -57,3 +57,45 @@ SIII ex 3
   }
 }
 
+SIII ex 4
+  
+  #include <iostream>
+#include <fstream>
+typedef unsigned int uint;
+using namespace std;
+
+int main(){
+  ifstream cin("bac.txt");
+  uint x, nr1 = 0, nr2 = 0, r,ok=1;
+  int v[1001] = {};
+  while (cin >> x){
+    v[x]++;
+  }
+  for (int i = 0; i<= 1000; i++){
+    if (v[i] != 0 && nr1 == 0){
+      nr1 = i;
+    }
+    else if (v[i] != 0){
+      nr2 = i;
+      break;
+    }
+  }
+  r = nr2 - nr1;
+  for (int i = nr2 + 1; i <= 1000; i++){
+    if (v[i] != 0){
+      if (i - nr2 != r){
+        ok = 0;
+        break;
+      }
+      else{
+        nr2 = i;
+      }
+    }
+  }
+  if (ok == 1){
+    cout << r;
+  }
+  else cout << "Nu exista";
+  return 0;
+}
+
