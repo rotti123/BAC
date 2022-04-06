@@ -38,3 +38,22 @@ int main(){
   }
     return 0;
 }
+
+SIII ex 3
+  void triplete(int a, int b, int c){
+  int ok=0;
+  for(int x=a;x<=b;x++){
+    for(int y=x;y<=b;y++){
+      for(int z=y;z<=b;z++){
+        if(x+y+z==c){
+          ok=1;
+          cout<<"{"<<x<<","<<y<<","<<z<<"} ";
+        }
+      }
+    }
+  }
+  if(ok==0){
+    cout<<"nu exista";
+  }
+}
+
