@@ -92,3 +92,38 @@ int main() {
 
   ///  	(づ｡◕‿‿◕｡)づ|l)/
 
+SIII ex 3
+  #include <fstream>
+#include <iostream>
+using namespace std;
+int descomp(int n, int d){ //calc de cate ori se poate
+  int cnt=0;       ///imparti n la d
+  while(n%d==0){
+    cnt++;
+    n=n/d;
+  }
+  return cnt;
+}
+
+int main(){
+  int n,p1=0,p2=0;  //n!=3^p1*5^p2*k;
+  cin>>n;
+  for(int i=1; i<=n; i++){
+    p1=p1+descomp(i,3);
+    p2=p2+descomp(i,5);
+  }
+  cout<<min(p1/2,p2);
+}
+/*
+Alg este eficient dpdv al timpului de exec deoarece are o complexitate
+O(n).
+Alg este eficient dpdv al mem deoarece se folosesc doar
+  patru variabile intregi simple
+Pentru intervalul [1,n] se realizeaza descompunerea fiecarui numar
+cu 3 si cu 5 si retinem aceste valori in p1 si p2.
+Rezultatul final este min(p1/2, p2)
+*/
+          
+
+  ///  	(づ｡◕‿‿◕｡)づ|l)/
+
