@@ -29,3 +29,35 @@ int main()
   duplicare(n,d);
   cout<<d;
 }
+
+///SIII ex 2
+#include <iostream>
+#include <fstream>
+#include <cstring>
+using namespace std;
+
+int main()
+{  
+ int n;
+  bool oka=0,okb=0;
+  char s[101],*p,a[101]={},b[101]={};
+  cin>>n;
+  cin.getline(s,101);
+  p=strtok(s," ");
+  while(p!=NULL){
+    if(strlen(p)>=n){
+      strcat(a,p);
+      strcat(a,"\n");
+      oka=1;
+    }
+    else{
+      strcat(b,p);
+      strcat(b,"\n");
+      okb=1;
+    }
+    p=strtok(NULL," ");
+  }
+  if((oka==0 && okb==1) || (oka==1 && okb==0))  cout<<"nu exista";
+  else  cout<<a<<b;
+ return 0;
+}
