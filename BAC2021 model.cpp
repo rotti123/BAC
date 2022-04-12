@@ -59,3 +59,42 @@ int main()
   }
   return 0;
 }
+
+///SIII ex3
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+  int a[101]={},k,x,y,maxim=0,nr=0;
+  ifstream cin("cheltuieli.in");
+
+  while(cin>>k>>x>>y){
+    a[k]+=x*y;
+  }
+  for(int i=1;i<=100;i++){
+    if(a[i]>maxim){
+      maxim=a[i];
+      nr=1;
+    }else if(a[i]==maxim){
+      nr++;
+    }
+  }
+  cout<<maxim<<" "<<nr;
+  return 0;
+}
+
+
+/*
+Algoritmul este eficient din punct de vedere al timpului de
+executie deoarece are complexitatea O(n) unde n este numarul
+de randuri din fisierul "cheluieli.in".
+Citim cate un triplet, apoi retinem intr-un vector a suma 
+vanzarilor asociate unui tip de produs. Apoi cautam maximul
+din acest vector si cate produse au suma vanzarilor acest
+maxim.Afisam maximul si numarul de produse care au ca suma
+a vanzarilor acest maxim.
+
+*/
