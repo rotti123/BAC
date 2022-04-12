@@ -36,3 +36,26 @@ int main()
 }
 
 ///SIII ex 2
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{  int n,m,k,a[100][100];
+  cin>>m>>n;
+  k=0;
+  for(int i=m;i>=1;i--){
+    for(int j=n;j>=1;j--){
+      a[i][j]=k*k;
+      k=k+2;
+    }
+  }
+  for(int i=1;i<=m;i++){
+    for(int j=1;j<=n;j++){
+      cout<<a[i][j]<<" ";
+    }
+    cout<<endl;
+  }
+  return 0;
+}
