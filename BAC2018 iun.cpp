@@ -1,3 +1,9 @@
+SII ex 4
+if(i==j) a[i][j]=0;
+else if(i+j>=8)
+	a[i][j]=i+j-8;
+     else
+	a[i][j]=(i+j);
 
 SIII ex 3
   
