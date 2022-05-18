@@ -40,3 +40,33 @@ int main(){
   return 0;
 }
 
+
+Bonus:
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main() { //// italia -> aitalia -> aitali [ultimul caracter devine primul]
+             ////           0123456
+    char s[101] = {}, *p, nou[101] = {}, cuv[101] = {};
+    cin.getline(s, 101);
+    p = strtok(s, " ");
+    while(p != NULL) {
+        char aux[101] = {};
+        strcpy(cuv, p); 
+        if(strlen(cuv) >= 3) {
+            strcpy(aux, "");
+            aux[0] = cuv[strlen(cuv) - 1];
+            strcat(aux, cuv);
+            aux[strlen(cuv)] = '\0';
+            strcpy(cuv, aux);
+        }
+        strcat(nou, cuv);
+        strcat(nou, " ");
+        p = strtok(NULL, " ");
+    }
+    cout << nou;
+    return 0;
+}
