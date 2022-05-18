@@ -70,3 +70,28 @@ int main() { //// italia -> aitalia -> aitali [ultimul caracter devine primul]
     cout << nou;
     return 0;
 }
+
+///SIII ex 3
++#include <iostream>
+#include <cstring>
+
+using namespace std; /// 1 4 3 3 3 3 3 4 1
+
+int main() { 
+   unsigned int x,v[1001]={},k=0;
+  while(cin >> x){
+    v[x]++;
+  }
+  for(int i=1;i<=1000;i++){
+    if(v[i]%2==1){
+      k++;
+    }
+  }
+  if(k>1){
+    cout<<"NU";
+  }
+  else{
+    cout<<"DA";
+  }
+    return 0;
+}
