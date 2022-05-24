@@ -161,7 +161,7 @@ int main()
 /*
 Algoritmul este eficient dpdv al timpului de executie deoarece, are o complexitate O(n), unde n reprezinta numarul de elemente din fisier.
 Algoritmul este eficient dpdv al memoriei deoarece am utilizat doar trei variabile intregi simple.
-Algoritmul genereaza pentru fiecare doi termeni consecutivi (fn si fn-1) un termen anterior fn-2, folosindu-se de formula fn-2 = 2*fn-1 - fn + 2, pana cand se ajunge
+Algoritmul genereaza pentru fiecare doi termeni consecutivi (z si y) un termen anterior x, folosindu-se de formula x = 2*y - z + 2, pana cand se ajunge
 la primii doi termeni ai sirului, 3 respectiv 0.
 */
 
