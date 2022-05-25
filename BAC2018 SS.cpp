@@ -30,3 +30,47 @@ int main(){
   else cout<<sol;
   return 0;
 }
+
+SIII ex 3
+  int echilibrat (int n){
+    int c,sp=0,si=0,poz=0;
+    while(n!=0){
+        c=n%10;
+        n/=10;
+        if(poz%2==0){
+          sp=sp+c;
+        }
+        else{
+          si=si+c;
+        }
+      poz++;
+    }
+  if(sp%2==0 && si%2==1){
+    return 1;
+  }
+  else return 0;
+}
+
+SIII ex 4.
+  #include <iostream>
+
+using namespace std;
+
+struct pozitii { 
+    int first = 0;
+    int last = 0;
+} v[10];
+
+int main() {
+    int maxx = 0, x, i = 1;
+    while(cin >> x) {
+        if(v[x].first == 0) v[x].first = i;
+        v[x].last = i;
+        if(v[x].last - v[x].first + 1 > maxx) maxx = v[x].last - v[x].first + 1;
+        i++;
+    }
+    cout << maxx << endl;
+    for(int j = 0; j <= 9; j++) {
+        if(v[j].last - v[j].first + 1 == maxx) cout << j << ' ';
+    }
+}
