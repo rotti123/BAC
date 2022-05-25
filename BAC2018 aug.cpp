@@ -43,7 +43,7 @@ struct impartire
 }rezultat;
 int x; 
 
-if(x>2018) cout<<"impartire nepermisa";
+if(x==0) cout<<"impartire nepermisa";
 else{
 rezultat.cat=2018/x;
 rezultat.rest=2018%x;
@@ -136,9 +136,7 @@ int interval(int n){
 
 4)
 #include <iostream>
-
 using namespace std;
-
 
 int main()
 {
@@ -149,14 +147,14 @@ int main()
          return 0;
      }
      cout<<z<<" "<<y<<" ";
-     while(x!=3){
+     while(x!=0){
          x=2*y-z+2;///gasim fn-2
-         if(x==3) break;/// am ajuns la n=2
+         if(x==0) break;/// am ajuns la n=2
          cout<<x<<" ";
          z=y;
          y=x;
      }
-     cout<<3<<" "<<0;
+     cout<<0;
 }
 /*
 Algoritmul este eficient dpdv al timpului de executie deoarece, are o complexitate O(n), unde n reprezinta numarul de elemente din fisier.
