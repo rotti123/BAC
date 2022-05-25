@@ -71,6 +71,9 @@ int main()
                 break;
             }
         }
+      
+        if(k!=x) ok=0;
+        
         if(ok==1)
         {
             lung = lung +x; ///adaug la lung secv progresive val x
