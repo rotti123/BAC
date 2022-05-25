@@ -1,3 +1,5 @@
+https://www.pbinfo.ro/resurse/9dc152/examene/2022/E_d_informatica_2022_sp_MI_C_var_04_LRO.pdf
+
 SIII ex 1
   void patrate(int n, int &x, int &y){
   for (x=2; x*x<n; x++){
