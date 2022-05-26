@@ -249,11 +249,13 @@ int main()
 3)
 
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 
 int main()
 {
+    ifstream cin("bac.txt");
     int x,y,lung=0,lmax=-1,k_ap=0;
     cin>>x;
     k_ap++;
