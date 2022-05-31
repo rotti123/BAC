@@ -88,6 +88,41 @@ int main()
     return 0;
 }
 
+########################################################################
+SIII ex 3 [Cosmin]
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int x,y,k=1,lung=0,maxx=0;
+    cin>>x;
+    if(x==1){
+      lung=1;
+      maxx=1;
+      k=0;
+    }
+    while(cin>>y){
+        k++;
+        if(x!=y){
+            if(k==x){
+                lung+=k;
+                if(lung>maxx)   maxx=lung;
+            }
+            else lung=0;
+            k=0;
+        }
+        x=y;
+    }
+    k++;
+    if(k==x){
+      lung+=k;
+      if(lung>maxx)   maxx=lung;
+    }
+    cout<<maxx;
+    return 0;
+}
 
 /*
 
