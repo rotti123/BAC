@@ -191,3 +191,42 @@ int main(){
   else
     cout<<r;
 }
+
+/// testare progresie geometrica
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int x, vf[1001] = {}, minn1 = 1002, minn2 = 1002, maxx = -1, last;
+    int q;
+    bool ok = true;
+    ///minn1 < minn2
+    while(cin >> x) {
+        vf[x]++;
+        if(x < minn2) {
+            if(x > minn1) minn2 = x;
+            else {
+                minn2 = minn1;
+                minn1 = x;
+            }
+        }
+        if(x > maxx) maxx = x;
+    }
+    q = minn2 / minn1;
+    last = minn1;
+    for(int i = minn1 + 1; i <= maxx; i++) {
+        if(vf[i] != 0) {
+            if(i / last != q || (i / last == q && i % last != 0)) {
+                ok = false;
+            }
+            last = i;
+        }   
+    }
+    if(ok == false) {
+        cout << "nu este progresie geometrica";
+    }
+    else {
+        cout << q;
+    }
+}
