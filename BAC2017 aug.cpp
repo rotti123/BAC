@@ -1,3 +1,36 @@
+SII ex 5 Paul Roman
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  float a[51][51] = {}, suma[51] = {};
+  int n;
+  cin >> n;
+  for(int i = 1; i <= n; i++) {
+    for(int j = 1; j <= n; j++) {
+      cin >> a[i][j];
+      suma[j] = suma[j] + a[i][j];
+    }
+  }
+
+  for(int i = n; i >= n / 2 + 1; i--) {
+    for(int j = 1; j <= n; j++) {
+      a[i + 1][j] = a[i][j];
+    }
+  }
+
+  for(int j = 1; j <= n; j++) {
+    a[n / 2 + 1][j] = suma[j] / n;
+  }
+
+  for(int i = 1; i <= n + 1; i++) {
+    for(int j = 1; j <= n; j++) {
+      cout << a[i][j] << ' ';
+    }
+    cout << endl;
+  }
+}
 
 SII ex 5
   #include <iostream>
