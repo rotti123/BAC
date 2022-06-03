@@ -62,3 +62,50 @@ int main()
     cout<<maxx2<<" "<<maxx1;
   }
 }
+
+
+/// MAURICE 
+SIII EX 3
+    
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+    ifstream cin("bac.txt");
+    unsigned int x,y, cnt_imp=0, m1=0,m2=0, ok;
+    cin >> x;
+    if(x%2==1) cnt_imp++;
+    ok=0;/// presupunem ca nu exitsa 2 astfel de numere pare
+    while(cin >> y){
+        if(cnt_imp==3){
+            if(y%2==0){
+                if(m1==0 && m2==0){/// prima aparitie a maximelor
+                    m1=y;
+                    m2=y;
+                }
+                else if(y>m2){/// CAZUL 1    m1 m2 y
+                    ok=1;     /// am gasit 2 astfel de numere
+                    m2=m2;
+                    m2=y;
+                }
+                else if(y>m1){///CAZUL 2  m1 y m2
+                    m1=y;
+                }
+            }
+        }
+        else if(cnt_imp>3) break;/// am depasit numerele pare care sunt precedate de doar 3 numere impare
+        if(y%2==1) cnt_imp++; /// contorizam aparitia numerelor impare
+        x=y;
+    }
+    if(ok==1){
+        cout<<m1<<" "<<m2;
+    }
+    else{
+        cout<<"nu exista";
+    }
+
+    return 0;
+}
