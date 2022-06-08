@@ -25,3 +25,19 @@ int main() {
     cout << endl;
   }
 }
+
+SIII ex 3
+int Fibo(int n) {
+    int cnt = 2;
+    int a = 1, b = 1, c;
+    if(n <= 2) return 1;
+    while(cnt != n) {
+        c = a + b;
+        if(c % 2 == 1) {
+            cnt++;
+            if(cnt == n) return c;
+        }
+        a = b;
+        b = c;
+    }
+}
