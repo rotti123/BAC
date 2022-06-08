@@ -41,3 +41,32 @@ int Fibo(int n) {
         b = c;
     }
 }
+
+SIII ex 4
+  #include <iostream>
+
+using namespace std;
+
+int main() {
+    int nr, vf[101] = {}, last = -1;
+    bool ok = false;
+    while(cin >> nr) {
+        vf[nr] = 1; ///marcam toate valorile din sir care au fost citite
+    }
+    for(int i = 0; i <= 100; i++) {
+        if(vf[i] != 0) {
+            if(last == -1) {/// gasim cea mai mica valoare din sir
+                last = i;
+            }
+            else { ///daca am gasit deja o valoare existenta
+                if(i - last >= 2) {
+              ///verificam daca lungimea intervalului [last,i] este corespunzatoare
+                    cout << last << ' ' << i << endl;
+                    ok = true;
+                  }
+                last = i; ///resetam ultima aparitie a unei valori din sir
+            }
+        }
+    }
+  if(ok == false) cout << "nu exista";
+}
