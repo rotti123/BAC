@@ -39,3 +39,8 @@ int main()
 
 }
   
+/*
+    Programul este eficient din punct de vedere al timpului de executie,avand o complexitate O(n), unde n reprezinta numarul de elemente citite din fisier.
+Pentru fiecare numar citit extragem fiecare dintre subnumerele acestuia si le creste frecventa.
+Calculam precventa maxima si afisam numerele care au acea frecventa maxima.
+    */
