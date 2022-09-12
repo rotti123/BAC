@@ -19,3 +19,23 @@ int main() {
   }
     
 }
+
+III.3
+  
+  #include <iostream>
+using namespace std;
+int main() {
+  int n,a[10]={},c;
+  cin>>n;
+while(n!=0){
+  c=n%10;
+  n=n/10;
+  a[c]++;
+}  
+  for(int i=0;i<=9;i++){
+    if(a[i]>0){
+      cout<<i<<" ";
+    }
+  }
+    
+}
