@@ -26,4 +26,20 @@ int main(){
   }
 }
 
-
+III.3 fara functie!!!!!
+  #include <iostream>
+using namespace std;
+int main() {
+  int n,c,k=0;
+  cin>>n;
+  while(n!=0){
+    c=n%10;
+    n=n/10;
+    if(c==2||c==3 || c==5 || c==7){
+      k++;
+        
+    }
+  }
+  cout<< k; 
+    
+}
