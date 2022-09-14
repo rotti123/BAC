@@ -31,6 +31,7 @@ III.1
   n=(st/10*10+x)*e+dr;
 }
 
+
 III.2
    #include <iostream>
 #include <cstring>
@@ -53,3 +54,53 @@ int main() {
   cout<<s;
     return 0;
 }
+
+III.3
+   
+   #include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+    ifstream cin("bac.in");
+    int x, y, k = 1, lmax = 0, nr_secv = 0;
+    /// k=lung secv curente
+    cin >> x;
+    while(cin >> y)
+    {
+        if(x % 2 == y % 2)
+        {
+            k++;
+        }
+        else
+        {
+            if(k > lmax)
+            {
+                lmax =  k;
+                nr_secv = 1;
+            }
+            else if(k == lmax)
+            {
+                nr_secv ++;
+            }
+            k = 1; /// am o secv ce contine doar y
+        }
+
+    x=y;
+    }
+
+if(k > lmax)
+{
+    lmax =  k;
+    nr_secv = 1;
+}
+else if(k == lmax)
+{
+    nr_secv ++;
+}
+cout << nr_secv  << " " << lmax;
+return 0;
+}
+
