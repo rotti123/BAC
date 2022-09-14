@@ -30,3 +30,26 @@ III.1
   st=n/e;
   n=(st/10*10+x)*e+dr;
 }
+
+III.2
+   #include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main() {
+    char s[51],voc[6]="aeiou",vp;
+    cin.getline(s,50);
+    for(int i=0;i<strlen(s);i++){
+       if(strchr("aeiou",s[i])==NULL){ ///test s[i] consoana
+         for(int j=4;j>=0;j--){
+           if(voc[j]<s[i]){
+             s[i]=voc[j];
+             break;
+           }
+         }
+       }
+    }
+  cout<<s;
+    return 0;
+}
