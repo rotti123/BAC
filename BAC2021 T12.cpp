@@ -26,7 +26,35 @@ else
 
 //##################################
 SIII ex1
+V1
+#include <iostream>
+using namespace std;
+int main() {
+  int a[21][21],n,i,x,j,m,k;
+  cin>>n>>k;
+  for(i=1;i<=n;i++){
+      for(j=1;j<=n;j++){
+        cin >> a[i][j];
+      }
+    }  
+  m=n-k; ///ultima poz din sir
+  
+  x=a[k][n-k];
+  for(j=m-1; j>=1; j--){
+    a[k][j+1] = a[k][j];
+  }
+  a[k][1]=x;
+ 
+  
+  for (int i=1; i<=n; i++) {
+    for (int j=1; j<=n; j++) {
+      cout << a[i][j] << " ";
+      }
+    cout << endl;
+    }
 
+}
+V2
 #include <iostream>
 
 using namespace std;
