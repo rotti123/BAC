@@ -7,26 +7,35 @@ void divX(int n,int x){
 }
 
 ///SIII ex 2
+#include <iostream>
+using namespace std;
 int main() {
-  int n,a[50][50];
+  int a[101][101],n,i,j;
   cin>>n;
-  for(int i=1;i<=n;i++){
-    for(int j=1;j<=n;j++){
-      cin>>a[i][j];
-    }
-  }
-  for(int i=1;i<=n;i++){
+  for(i=1;i<=n;i++){
+      for(j=1;j<=n;j++){
+        cin >> a[i][j];
+      }
+    }  
+///prima coloana j=1
+  for(i=1;i<=n-1;i++){
     cout<<a[i][1]<<" ";
   }
-  for(int j=2;j<=n;j++){
-    cout<<a[n][j]<<" ";
+ ///ultima linie i=n
+for(j=1;j<=n-1;j++){
+  cout<<a[n][j]<<" ";
+}
+  //ultima coloana
+  for(i=n;i>=1;i--){
+    cout<<a[i][n]<<' ';
   }
-  for(int i=n-1;i>=1;i--){
-    cout<<a[i][n]<<" ";
-  }
-  for(int j=n-1;j>=2;j--){
-    cout<<a[1][j]<<" ";
-  }
+
+  //prima linie
+   for(j=n;j>=2;j--){
+     cout<<a[1][j]<<" ";
+   }
+
+
 }
 
 
