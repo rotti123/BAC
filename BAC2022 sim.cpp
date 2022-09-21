@@ -64,6 +64,50 @@ int main(){
 }
 
 ///SIII ex 3
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+ // ifstream cin("bac.txt");
+//  ofstream cout("bac.out");
+  int n, cnt5=0,cnt3=0,nr,i;
+  cin>>n;
+  for (i=5; i<=n; i+=5)
+    {
+      nr=i;
+      while(nr%5==0)
+        {
+          cnt5++;
+          nr/=5; // nr=nr/5;
+        }
+       
+    }
+  for(i=3;i<=n;i+=3)
+    {
+      nr=i;
+      while(nr%3==0)
+        {
+          cnt3++;
+          nr/=3;
+        }
+    }
+
+if (cnt5>cnt3/2)
+  cout<<cnt3/2;
+  else
+  cout<<cnt5;
+    return 0;
+}
+/*
+Algoritmul este eficient dpdv al memoriei deoarece foloseste doar
+cinci variabile intregi simple.
+Algoritmul este eficient dpdv al 
+
+*/
+
 #include <iostream>
 #include <fstream>
 using namespace std;
