@@ -125,3 +125,35 @@ int main() {
   }
   return 0;
 }
+
+
+III. 3.
+   #include <iostream>
+#include <cstring>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+  ifstream cin("bac.txt");
+  ofstream cout("bac.out");
+  int x, y, a=0, b, k=0, ok=1;
+  cin>>x>>y;
+  while(cin>>b && ok){
+    if(a!=b && b>=x && b<=y){
+      k++;
+    }
+    if(b>y){
+      ok=0;
+    }
+    a=b;
+  }
+  cout<<k;
+  return 0;
+}
+/**
+programul este eficient dpdv al memoriei, deoarece foloseste doar 6 variabile simple.
+algoritmul este eficient dpdv al timpului de executie, deoarece are o complexitate O(n), unde n este nr de elemente din fisier.
+programul verifica daca elementul curent citit din fisier apartine intervalului si este diferit de elementul anterior, pentru a putea fi contorizat.
+
+*/
