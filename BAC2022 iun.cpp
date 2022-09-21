@@ -23,6 +23,41 @@ cout<<id_CH;
     return 0;
 }
 
+III.1
+   #include <iostream>
+#include <cstring>
+#include <fstream>
+using namespace std;
+
+void secventa(int &n){
+  int p=1,m=0;
+  while(n!=0){
+    if(n%100==22){
+      m=m+p*0;  //adaug cifrele 2,0 de la stg la drp
+      p=p*10;
+      m=m+p*2;
+      p=p*10;
+      n=n/100;
+    }
+    else{
+      m=m+p*(n%10);  ///adaug ultima cifra (din n) in m
+      p=p*10;
+      n=n/10;
+    }
+  }
+  n=m;
+  
+}
+int main() {
+  ifstream cin("bac.txt");
+  ofstream cout("bac.out");
+  int n;
+  cin>>n;
+  secventa(n);
+  cout<<n;
+  return 0;
+}
+
 III. 2
    #include <iostream>
 #include <cstring>
