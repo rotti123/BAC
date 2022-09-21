@@ -102,10 +102,11 @@ if (cnt5>cnt3/2)
     return 0;
 }
 /*
-Algoritmul este eficient dpdv al memoriei deoarece foloseste doar
-cinci variabile intregi simple.
-Algoritmul este eficient dpdv al 
+Algoritmul este eficient dpdv al memoriei deoarece foloseste doar cinci variabile intregi simple.
+Algoritmul este eficient dpdv al timpului de executie deoarece are o complexitate O(n/5+n/3), unde n este numarul citit
 
+Algoritmul va calcula puterea la care apare 3 in descomp in fact primi a lui n in var cnt3. Similar va calcula cnt5 pentru factorul prim 5 din desc.
+Rezultatul final este min(cnt3/2,cnt5).
 */
 
 #include <iostream>
