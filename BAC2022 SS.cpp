@@ -12,28 +12,34 @@ SIII ex 1
 }
 
 SIII ex 2
+#include <iostream>
+#include <cstring>
+#include <fstream>
+
+using namespace std;
+
 int main() {
-  int a[101][101],n,i,j;
+  ifstream cin("bac.txt");
+  ofstream cout("bac.out");
+  int n, a[101][101];
   cin>>n;
-  for(i=1;i<=n;i++)
-    for(j=1;j<=n;j++)
-      {
-        cin>>a[i][j];
-      }
-  for(i=1;i<=n;i++)
-    for(j=1;j<=n;j++)
-      {
-        if(i<j)
-          a[i][j-1]=a[i][j];
-      }
-  for(i=1;i<=n;i++){
-    for(j=1;j<n;j++)
-      {
-        cout<<a[i][j]<<" ";
-        
-      }
-      cout<<endl;
+  for(int i=1;i<=n;i++){
+    for(int j=1;j<=n;j++){
+      cin>>a[i][j];
     }
+  }
+  for(int i=1;i<=n-1;i++){
+    for(int j=i+1; j<=n;j++){
+      a[i][j-1]=a[i][j];
+    }
+  }
+    
+   for(int i=1;i<=n;i++){
+     for(int j=1;j<=n-1;j++){
+       cout<<a[i][j]<< " ";
+     }
+     cout<<endl;
+   } 
     return 0;
 }
 
