@@ -1,5 +1,3 @@
-
-u
 II.3
    #include <iostream>
 #include <cstring>
