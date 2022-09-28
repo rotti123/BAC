@@ -57,50 +57,80 @@ int main() {
 
 III.3
    
-   #include <iostream>
+#include <iostream>
+#include <cstring>
 #include <fstream>
 
 using namespace std;
 
-int main()
+int main ()
 {
-    ifstream cin("bac.in");
-    int x, y, k = 1, lmax = 0, nr_secv = 0;
-    /// k=lung secv curente
-    cin >> x;
-    while(cin >> y)
+  ifstream cin("bac.txt");
+  ofstream cout("bac.out");
+  
+  int x, y, lung=1, lmax=0, k=0;
+  cin>>x;
+  while(cin>>y)
     {
-        if(x % 2 == y % 2)
+      if(x%2==y%2)
+        lung++;
+      else
+      {
+        if(lung>lmax)
         {
-            k++;
+          lmax=lung;
+          k=1;
         }
         else
-        {
-            if(k > lmax)
-            {
-                lmax =  k;
-                nr_secv = 1;
-            }
-            else if(k == lmax)
-            {
-                nr_secv ++;
-            }
-            k = 1; /// am o secv ce contine doar y
-        }
-
-    x=y;
+        if(lung==lmax)
+          k++; 
+        lung=1; //secventa il contine doar pe y 
+      
+      }
+      x=y;
     }
+   if(lung>lmax)
+        {
+          lmax=lung;
+          k=1;
+        }
+        else
+        if(lung==lmax)
+          k++;
+  cout<<k<<" "<<lmax;
+  return 0;
+}
 
-if(k > lmax)
+/*** V2 **/
+
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+int main()
 {
-    lmax =  k;
-    nr_secv = 1;
+    ifstream f("bac.txt");
+    int nr=1,maxim=0,a,b,nrmax=0;
+    f>>a;
+    while(f>>b)
+    {
+        if(a%2==b%2)
+        {
+            nr++;    //nr=nr de cifre in sir
+            if(nr>maxim)
+                {maxim=nr;  //maxim de cifre cu aceeasi paritate gasit
+                nrmax=1;    //nrmax nr de siruri cu aceeasi paritate maxima
+                }
+            else if(maxim==nr)
+                    {nrmax++;}
+        }
+        else
+            nr=1;
+        a=b;
+
+    }
+    cout<<nrmax<<" "<<maxim;
 }
-else if(k == lmax)
-{
-    nr_secv ++;
-}
-cout << nr_secv  << " " << lmax;
-return 0;
-}
+
+//
 
