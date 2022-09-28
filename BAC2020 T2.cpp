@@ -17,7 +17,43 @@ int main() {
     return 0;
 }
 
-///SIII ex 2
+///SIII ex 2 V1
+#include <iostream>
+#include <cstring>
+#include <fstream>
+
+using namespace std;
+
+char s[100], a[100];
+
+int main ()
+{
+ // ifstream cin("bac.txt");
+ // ofstream cout("bac.out");
+    cin.getline (s, 100);
+    int l = strlen (s), k = 0;
+    for (int i = 0; i < l; i++)
+    {
+        if (s[i] == '-')
+            {
+                while (s[i] != ' ') {
+                i++;
+                }
+                i--;
+            }
+        else
+        {
+          a[k] = s[i];
+          k++;
+         // cout << s[i];
+          }
+    }
+  strcpy(s,a);
+  cout<<s;
+}
+
+
+///SIII ex 2 V2
 #include <iostream>
 #include <cstring>
 using namespace std;
