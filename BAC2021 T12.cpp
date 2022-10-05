@@ -25,6 +25,40 @@ else
    cout<<s[i];
 
 //##################################
+
+SIII ex 1
+#include <iostream>
+
+using namespace std;
+void frate(int x, int &y)
+{
+    int p=1,c=0;
+    y=0;
+    while(x>0)
+    {
+        c=x%10;
+        x/=10;
+        if(c==9)
+        {
+            y=-1;
+            return ;
+        }
+        c++;
+        y=c*p+y;
+        p*=10;
+        
+    }
+    
+}
+int main() {
+    int x, y=7;
+    cin>>x;
+    frate(x,y);
+    
+    cout<<y;
+    return 0;
+}
+   
 SIII ex1
 V1
 #include <iostream>
