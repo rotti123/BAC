@@ -88,31 +88,31 @@ int main() {
     }
 
 }
-V2
+SIII ex 2 V2
 #include <iostream>
 
 using namespace std;
 
-void frate(int x,int &y)
-{   y=0;
-    int p=1,c;
-    while(x!=0){
-        c=x%10;
-        if(c==9){
-            y=-1;
-            return;
-        }
-        x/=10;
-        y=y+(c+1)*p;
-        p*=10;
-    }
-}
-
+    
 int main() {
-    int x,y;
-    cin >> x;
-    frate(x,y);
-    cout<< y;
+   int a[20][20];
+   int n, k;
+   cin>>n>>k;
+   k--;
+   for(int i=0;i<n;i++)
+        for(int j=0;j<n;j++)
+            cin>>a[i][j];
+   int x=a[k][n-k-2];
+   
+   for(int j=n-k-3;j>=0;j--)
+	    a[k][j+1]=a[k][j];
+	    
+   a[k][0]=x;
+   for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++)
+         cout<<a[i][j]<<" ";
+    cout<<endl;
+   }
     return 0;
 }
 SIII ex 2
