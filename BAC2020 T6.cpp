@@ -74,3 +74,41 @@ int main() {
     }
     return 0;
 }
+
+///SIII ex 3
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main ()
+{
+  ifstream cin("bac.txt");
+  ofstream cout("bac.out");
+  int p1, p2, c1, c2, c3, c4, c;
+  cin>>p1>>p2;
+  for(c1=9; c1>=1; c1--){
+    if(p1%c1==0){
+      c2=p1/c1;
+      if(c2<10){
+        for(c=9; c>=0; c--){
+          for(c3=9; c3>=1; c3--){
+            if(p2%c3==0){
+              c4=p2/c3;
+              if(c4<10){
+                cout<<c1<<c2<<c<<c<<c<<c3<<c4<<'\n';
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* programul este eficient dpdv al timpului de executie, deoarece are un nr redus de operatii. 
+definim p1=c1*c2, p2=c3*c4, iar nr cerut este de forma c1 c2 c c c c3 c4
+programul are o complexitate O(9*9*10*9*9)->O(1).
+
+algoritmul construieste secvential nr cifra cu cifra de la st la dr, astfel: c1 ia valori de la 9 la 1; daca c1 este divizorul lui p1, atunci c2=p1/c1. daca c2 este format dintr o singura cifra, vom construi cele 3 cifre din mijloc parcurgand intervalul [0, 9] in ordine descrescatoare, iar pt construirea cifrelor c3 si c4 se respecta criteriile de la c1 si c2. 
+*/
