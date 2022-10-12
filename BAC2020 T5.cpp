@@ -32,3 +32,26 @@ Programul este eficient dpdv al mem deoarece am folosit doar trei var intregi si
 Descriere algoritm
 Suma curenta se actualizeaza astfel daca suma anterioara este negativa, suma va deveni ultimul element citit, altfel se adauga elementul curent la suma. 
 */
+
+
+SIII ex 3 V2
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main ()
+{
+  ifstream cin("bac.txt");
+  ofstream cout("bac.out");
+int x, smax=-1000, s=0;
+while (cin>>x)
+  {
+    s+=x;
+    if (s>smax)
+      smax=s;
+    if (s<0)
+      s=0;
+  }
+  cout<<smax;
+}
