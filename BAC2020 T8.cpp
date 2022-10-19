@@ -42,6 +42,42 @@ int main() {
     return 0;
 }
 
+#include <fstream>
+#include <iostream>
+
+using namespace std;
+
+struct cifra {
+  int fr, poz;
+} a[10];
+
+int main() {
+  ifstream cin("bac.txt");
+  ofstream cout("bac.out");
+  int x, k = 0, cmax = -1;
+  while (cin >> x) {
+    k++;
+    a[x % 10].poz = k;
+    a[x % 10].fr++;
+  }
+  for (int c = 0; c <= 9; c++) {
+    if (a[c].fr > cmax) {
+      cmax =a[c].fr;
+    }
+  }
+  for(int c=0; c<=9; c++){
+    if(a[c].fr==cmax){
+      cout<<a[c].poz<<" ";
+    }
+  }
+  }
+
+/* 
+programul este eficient dpdv al timpului de executie, deoarece are o complexitate O(n), unde n reprezinta nr de elemente citite din fisier. 
+programul retine pozitia si contorizeaza nr de aparitii al ultimei cifre fiecarui nr. la final gasim frecventa maxima, si afisam pozitia pt fiecare nr cu frecv maxima.
+
+*/
+
 ex3:
 
 #include <iostream>
