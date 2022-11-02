@@ -60,7 +60,7 @@ cout<<s;
 
 SIII ex 2
 	
-	///var 1\\\
+	/*var 1*/
 #include <iostream>
 #include <cstring>
 
@@ -84,15 +84,13 @@ int main() {
     return 0;
 }
 
-	///var 2\\\
+	/*var 2*/
 #include <cstring>
 #include <iostream>
 
 using namespace std;
 
 int main() {
-  //ifstream cin("bac.txt");
-  //ofstream cout("bac.out");
   int n,ok=0;
   char a[21][21], *p;
   cin>>n;
@@ -100,8 +98,6 @@ int main() {
   for(int i=0; i<n; i++){
     cin>>a[i];
   }
-
-
   for(int i=0; i<n-1; i++){
     p=strstr(a[i], a[n-1]);
     if(strcmp(p,a[i])==0){
