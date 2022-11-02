@@ -200,6 +200,48 @@ void produs(int n, int &p){
     cout<<p;
 }
 
+SIII ex 2 V1
+#include <iostream>
+#include <fstream>
+#include <cstring>
+using namespace std;
+
+  char s[700],aux[700],cuv1[101],cuv2[101],*p;
+  int ok=0;
+int main() {
+  ifstream cin("bac.in");
+  ofstream cout("bac.out");
+  cin.getline(s,100);
+  p=strtok(s," ");
+  strcpy(aux,p);
+  strcat(aux," ");
+  strcpy(cuv2,p);
+  p=strtok(NULL," ");
+  strcpy(cuv1,p);
+  while(p!=NULL){
+       // cout<<p<<" "<<cuv2<<" "<<cuv1<<'\n';
+     if(cuv1[strlen(cuv1)-1]==cuv2[strlen(cuv2)-1])
+     {
+        strcat(aux,"succes ");
+       ok=1;
+     }
+    strcat(aux,cuv1);
+  strcat(aux," ");
+    strcpy(cuv2,cuv1);
+    p=strtok(NULL," ");
+    if(p!=NULL){
+      strcpy(cuv1,p);
+    }
+  }
+  if(ok==0){
+     cout<<"nu exista";
+  }
+  else{
+      strcpy(s,aux);
+      cout<<s;
+    }
+return 0;
+}
 
 SIII ex 2)
 	
