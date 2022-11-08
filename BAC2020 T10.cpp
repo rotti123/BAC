@@ -57,7 +57,7 @@ s=48+12=60
 
 a) 60
 
-b)x=10 s=90 y=?
+b)x=10 s=90 y=20 sau 21
 
 c)
 #include <iostream>
