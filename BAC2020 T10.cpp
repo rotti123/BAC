@@ -243,6 +243,8 @@ int main() {
 return 0;
 }
 
+
+
 SIII ex 2)
 	
 #include <bits/stdc++.h>
@@ -278,6 +280,57 @@ int main() {
 	
 
 SIII ex 3
+#include <fstream>
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    ifstream f("bac.txt");
+    int x,r,l_max,pre,r_max,lun=0,ok=1;		//l_max=lungimea maxima 
+    f>>pre>>x;					//r_max=ratia maxima
+    r=x-pre;					//r=ratia curenta	
+    pre=x;					//lun=lungimea curenta
+    lun=2;
+    l_max=2;
+    r_max=r;	//scriu variabilele in functie de primele 2 numere
+
+    while(f>>x)
+    {
+        if(x-pre==r)		//se citeste urmatorul numar si se verifica daca noua pereche are aceeasi 
+            {lun++;		//ratie
+            ok=0;
+            }				//daca nu are aceeasi r verificam daca lun este egala sau mai mare
+        else			//decat l_max
+        {
+            if(lun==l_max)		//daca sunt egale se verifica care ratie e mai mare din r si s_max
+                if(r>r_max)		
+                    r_max=r;
+            if(lun>l_max)		//daca lun>l_max se modifica l_max si r_max
+            {
+                l_max=lun;
+                r_max=r;
+            }
+            lun=2;		//lungimea curenta devine 2 pentru ca am iesit din vechea secventa
+            r=x-pre;		//r devide la fel, unul nou
+        }
+        pre=x;
+    }
+    if(lun==l_max)		//se verifica din nou conditiile din else pentru ultima secventa si
+        if(r>r_max)			//pentru a modifica datele daca e nevoie
+            r_max=r;
+    if(lun>l_max)
+        r_max=r;
+
+    if(ok)				//se verfica daca exista sau nu o asemenea secventa prin variabila ok
+        cout<<"nu exista";
+    else
+        cout<<r_max;
+}
+
+	
+	
 	
 #include <bits/stdc++.h>
 using namespace std;
