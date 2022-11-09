@@ -128,37 +128,37 @@ int main() {
 
 SIII ex2
 #include <iostream>
+#include <fstream>
 #include <cstring>
 
 using namespace std;
 
-
 int main() {
-    char s[101] = {}, aux[101]= {}, cuv[101]={}, *p;
-    int lung;
-    cin.getline (s, 100);
-    p = strtok (s, " ");
-    while (p != NULL){
-        strcpy (cuv, p);
-        lung = strlen (cuv);
-        if ('a' <= cuv[0] && cuv[0] <= 'z'){
-            cuv[0] -= 32;
-        }
-        for (int i = 1; i<lung; i++){
-           if ('A' <= cuv[i] && cuv[i] <= 'Z'){
-            cuv[i] += 32;
-            }
-        }
-        strcat (aux, cuv);
-        p = strtok (NULL, " ");
-        if (p != NULL){
-            strcat (aux, " ");
-        }
-    }
-    
-   strcpy (s, aux);
-   cout << s;
+  //ifstream cin("bac.txt");
+  //ofstream cout("bac.out");
+  char s[101],aux[101],cuv[101],*p;
+  cin.getline(s,100);
+  p=strtok(s," ");
+ // for(p=strtok(s," "); p!=NULL; p=strtok(NULL," "))
+  while(p!=NULL){
+      strcpy(cuv,p);
+     if(cuv[0]>='a' && cuv[0]<='z'){
+       cuv[0]=cuv[0]-32;
+     }
+     for(int i=1;i<strlen(p);i++){
+       if(cuv[i]>='A' && cuv[i]<='Z'){
+         cuv[i]=cuv[i]+32;
+       }
+     }
+     strcat(aux,cuv);
+     strcat(aux," ");
+     p=strtok(NULL," ");
+  }
+  strcpy(s,aux);
+  cout<<s;
+  return 0;
 }
+
 ex 3:
 #include <iostream>
 
