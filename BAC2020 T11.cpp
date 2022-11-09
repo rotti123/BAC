@@ -179,17 +179,14 @@ int main() {
     return 0;
 }
 /* Programul este eficient din punct de vedere al timpului de executie 
-   avand o complexitate O(x).
+   avand o complexitate O(x), unde x repr. nr. de elem din fisier.
    Programul este eficient din punct de vedere al memoriei deoarece am
    utilizat doar 3 variabile simple de tip intreg.
-   Programul executa urmatorii pasi:
-   -se citeste primul numar din sir, dupa care incepem citirea repetata de la
-   al doilea numar.
+   Algoritmul executa urmatorii pasi:
    -verifica daca primul numar citit este egal cu al doilea, in caz afirmativ
-   ii crestem aparitia,iar in caz negativ afisam numarul si cifra k , unde k 
-   reprezinta numarul de aparitii al acestuia.
-   -la final schimbam valoarea lui n cu valoarea urmatoare.
-   /*
+   ii crestem aparitia, iar in caz contrar afisam numarul si frecventa k.
+   -la final actualizam valoarea lui n cu ultima valoare citita.
+   */
 
 - Simedre Patricia - test 11 - 2020
 SI
