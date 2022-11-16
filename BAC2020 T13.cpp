@@ -32,6 +32,34 @@ int main() {
 }
 
 
+SIII ex 2
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int main()
+{
+  int a[401][21], n, k,pv=1;
+  cin >> n >> k;
+  for(int i = 1; i <= n * k; i++){
+     a[i][1]=pv;
+     if(i%k==0) pv++;
+    for(int j = 2; j <= n; j++){
+      a[i][j] = a[i][j-1]+1;
+
+    }
+  }
+  for(int i = 1 ; i <= n*k; i++){
+    for(int j = 1; j <= n; j ++){
+      cout << a[i][j] << " ";
+    }
+    cout << '\n';
+  }
+
+    return 0;
+}
+
+
 -Simedre Patricia-
     
     test 13
