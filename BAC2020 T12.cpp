@@ -245,8 +245,7 @@ int main() ///antetul functiei main
 
 
 /*
-2*log2(n)=log2(n^2)
-Rezulta ca a re complexitatea O(log2(n^2))
+Complexitatea este de O(n).
 */
 
 
