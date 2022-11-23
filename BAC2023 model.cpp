@@ -32,3 +32,27 @@ int main()
   }
   return 0;
 }
+
+II.3
+  plantau fistic
+01234567890123
+s1+7 =" fistic"
+
+p=s1+7 -s1 =7 [p]
+s1+p+1=s1+8="fistic"
+s2=s1+8="fistic"  [s2]
+         012345
+s2+2="stic"
+"u fistic" <- "stic"
+s1+p-1=s1+6 <- "stic"
+
+plantastic [s1]
+0123456789
+s1="plantastic"
+s2+1="istic" <-"antastic"
+s1+2 = "antastic"
+s2=fantastic
+
+7fantastic
+
+
