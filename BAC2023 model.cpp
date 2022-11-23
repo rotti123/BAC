@@ -56,3 +56,26 @@ s2=fantastic
 7fantastic
 
 
+III.1
+  #include <iostream>
+
+using namespace std;
+int DoiTrei(int n){
+    if(n==0){
+      return 0;
+    }
+    while(n!=0){
+        if(n%10!=2 && n%10!=3){
+            return 0;
+        }
+      n=n/10;
+    }
+    return 1;
+}
+int main() {
+    int n;
+    cin>>n;
+    cout<<DoiTrei(n);
+    return 0;
+}
+
