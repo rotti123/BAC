@@ -80,11 +80,15 @@ int main() {
 }
 
 III.2
-  #include <iostream>
+#include <iostream>
 using namespace std;
 int dx[4]={-1,0,1,0};
 int dy[4]={0,1,0,-1};
-
+int inside(int x,int y,int n){
+  return (1<=x && x<=n && 1<=y && y<=n);
+}
+{
+}
 int main() {
     int n,a[105][105]={},x,y,sol=0;
     cin>>n;
@@ -107,7 +111,7 @@ int main() {
         for(int k=0;k<4;k++){
           x=i+dx[k];
           y=j+dy[k];
-          if(a[x][y]==0) ok=0;
+          if(inside(x,y,n) && a[x][y]==0) ok=0;
         }
         if(ok==1) cout<<i<<" ",sol=1;
         }
@@ -116,4 +120,5 @@ int main() {
   if(sol==0) cout<<"nu exista";
     return 0;
 }
+
 
