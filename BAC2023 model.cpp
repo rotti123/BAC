@@ -121,4 +121,31 @@ int main() {
     return 0;
 }
 
+III.3
+  /*  
+  5
+22 37 21 8 15 2 3 14 4 5
 
+k_pare=2*n ||
+k_imp=2*n
+
+prima 1/2	a doua 1/2
+22 37 21 8 15	2 3 14 4 5
+
+min_par=8   >	max_imp=5
+min_imp=15  >	max_par=14
+
+(x,y) x>y, x%2!=y%2
+
+3
+10 20 30 1 3 5   DA
+
+min_par=10	> max_imp=5
+min_impar=100001 > max_par=-1
+
+3
+10 20 30 1 101 201  NU
+
+min_par=10	> max_imp=201
+min_impar=100001 > max_par=-1
+*/
