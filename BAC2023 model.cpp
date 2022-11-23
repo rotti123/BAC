@@ -79,3 +79,41 @@ int main() {
     return 0;
 }
 
+III.2
+  #include <iostream>
+using namespace std;
+int dx[4]={-1,0,1,0};
+int dy[4]={0,1,0,-1};
+
+int main() {
+    int n,a[105][105]={},x,y,sol=0;
+    cin>>n;
+//memset(a,1,sizeof(a));
+  for(int i=1;i<=n;i++){
+    for(int j=1;j<=n;j++){
+      cin>>a[i][j];
+    }
+  }
+  for(int j=0;j<=n+1;j++){
+    a[0][j]=4;
+    a[n+1][j]=4;
+    a[j][0]=4;
+    a[j][n+1]=4;
+  }
+  for(int i=1;i<=n;i++){
+    for(int j=1;j<=n;j++){
+      if(a[i][j]==3){
+        int ok=1;
+        for(int k=0;k<4;k++){
+          x=i+dx[k];
+          y=j+dy[k];
+          if(a[x][y]==0) ok=0;
+        }
+        if(ok==1) cout<<i<<" ",sol=1;
+        }
+    }
+  }
+  if(sol==0) cout<<"nu exista";
+    return 0;
+}
+
