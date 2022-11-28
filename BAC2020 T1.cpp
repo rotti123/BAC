@@ -1,3 +1,38 @@
+///SIII ex 1
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+void putere(int n,int &d,int &p)
+{
+  int dmax=0,pmax=0,e;
+  d=2;
+  while(n!=1)
+    {
+      e=0;
+      while(n%d==0)
+      {
+         n=n/d;
+         e++;
+      }
+      if(e>=pmax){
+        pmax=e;
+        dmax=d;
+      }
+      d++;
+    }
+  d=dmax;
+  p=pmax;
+}
+ int main(){
+  int n,d,p;
+   cin>>n;
+   putere(n,d,p);
+   cout<<d<<" " <<p;
+
+ }
+
+
 ///SIII ex 2
 #include <iostream>
 
