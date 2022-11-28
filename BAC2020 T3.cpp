@@ -1,3 +1,38 @@
+///SII ex 3
+
+#include <iostream>
+#include <fstream>
+#include <cstring>
+using namespace std;
+
+int main(){
+  char s[21];
+  int p=0;
+  cin.getline(s,21);
+  if(s[0]=='A'){
+    if(s[1]!='I')
+        cout<<s[0];
+  }
+  p++;
+  while(s[p]!=NULL)
+    {
+      if(s[p]=='A')
+      {
+        if(!(s[p-1]=='I' || s[p+1]=='I'))
+        {
+          cout<<"A";
+        }
+
+      }
+      else
+      {
+        cout<<s[p];
+      }
+      p++;
+    }
+}
+
+
 ///SIII ex 1:
 #include <iostream>
 
