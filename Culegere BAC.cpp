@@ -46,3 +46,18 @@ int main(){
   if(ok) cout<<"DA";
   else cout<<"NU";
 }
+
+Pr 3/107 partiala (fara intersch cifre)
+  #include <iostream>
+#include <cmath>
+#include <cstring>
+using namespace std;
+char s[101],x[101];
+int main(){
+  float x=1234.76543,sol;
+  cin>>x;
+  x=sqrt(x);
+  sol=floor(x*100)/100;
+  cout<<sol;
+}
+
