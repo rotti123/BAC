@@ -26,3 +26,23 @@ int main(){
     cout << "NU";
   }
 }
+
+Pr 2/106
+  #include <iostream>
+#include <fstream>
+#include <cstring>
+using namespace std;
+char s[101],x[101];
+int main(){
+  cin.getline (s,101); ///textul de unde preiau caracterele
+  cin.getline (x,101); ///textul unde caut caracterele
+  int ok=1;
+  for(int i=0;i<=strlen(s)-1;i++){
+
+    if(strchr(x,s[i])==NULL){ ///caut s[i] in x
+      ok=0; //daca nu exista s[i] modific ok=0
+    }
+  }
+  if(ok) cout<<"DA";
+  else cout<<"NU";
+}
