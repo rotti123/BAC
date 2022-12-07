@@ -46,7 +46,79 @@ int main() {
         cout<<endl;
     }
 }
-///SIII ex 3
+///SIII ex 3 brand new
+#include <iostream>
+#include <fstream>
+using namespace std;
+int a[1000001], b[1000001], c[2000002];
+int main() {
+ // ifstream cin("bac.txt");
+  int i, j, n, m;
+  cin >> n >> m;
+  for(i = 1 ; i <= n; i++){
+    cin >> a[i];
+  }
+  for(i = 1; i <= m; i ++){
+    cin >> b[i];
+  }
+  i = 1;
+  j = 1;
+  int k = 1;
+  int par = -1;
+  ///aleg primul elem din sirul solutie
+  if(a[1] < b[1]){
+    c[1] = a[1];
+    par = a[1] % 2;
+    i++;
+  }
+  else{
+    c[1] = b[1];
+    par = b[1] % 2;
+    j++;
+  }
+  while(i <= n && j <= m){
+    if(a[i] <= b[j] && a[i] % 2 != par){
+      k ++;
+      c[k] = a[i];
+      par = a[i] % 2;
+      i ++;
+    }
+    else if(b[j] <= a[i] && b[j] % 2 != par){
+      k ++;
+      c[k] = b[j];
+      par = b[j] % 2;
+      j ++;
+    }
+    else {
+      if(a[i] < b[j]) i ++;
+      else j ++;
+    }
+  }
+  if(i <= n){
+    for(int poz = i; poz <= n; poz ++){
+      if(a[poz] % 2 != par){
+        k ++;
+        c[k] = a[poz];
+        par = a[poz] % 2;
+      }
+    }
+  }
+  else if(j <= m){
+    for(int poz = j; poz <=m; poz ++){
+      if(b[poz] % 2 != par){
+        k ++;
+        c[k] = b[poz];
+        par = b[poz] % 2;
+      }
+    }
+  }
+  for(int poz = 1; poz <= k; poz ++){
+    cout << c[poz] << " ";
+  }
+
+}
+
+///SIII ex 3 creepy
 #include <iostream>
 #define nmax 1000005
 using namespace std;
