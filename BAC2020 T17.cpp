@@ -73,34 +73,50 @@ int main() {
   cout<<s;
   return 0;
 }
-
+/*********************************************************/
 SIII ex 3.
 #include <iostream>
 #include <fstream>
+
 using namespace std;
-int main(){
-  //ifstream cin ("bac.txt");
-  int a[10001]={},m, n,x,y,v[10001]={}, cnt=0;
-  cin>> n>>x;
-  a[x]=1; ///vector de aparitii
-  v[x]=x;
-  /// v[x] = valoarea curenta/anterioara din interval
-  for(int i = 2; i <= n; i++)
-    {
-      cin >> y;
+
+int main()
+{
+   // ifstream cin("bac.txt");
+
+   int n, a[10001]={}, v[10001]={},x,y,k=0;
+  cin>>n>>x;
+  a[x]=1; ///a[x] = vector de aparitii
+  v[x]=x; /// v[x]= valoarea elem curent/anterior din sir
+  for(int i=2;i<=n;i++)
+  {
+      cin>>y;
       a[y]=1;
       v[y]=y;
-      for(int j=x+1;j<=y-1;j++){
-        v[j]=x;
-      }
-      x=y;
-    }
-  while (cin >> x >> y) { ///for(int i=m;i>=1;i--)
-    if (v[x] == v[y] && a[x] == 0 && a[y] == 0)
-      cnt++;
+      for(int j=x;j<y;j++)
+        {
+          v[j]=x;
+        }
+    x=y;
   }
-  cout << cnt;
-
-return 0;
+  while(cin>>x>>y)
+    {
+      if(v[x]==v[y] && a[x]==0 && a[y]==0)
+        k++;
+    }
+  cout<<k;
 }
 
+
+/*
+Construim vectorul de aparitii a[] pentru sirul din fisier.
+Fie x si y doua valori consecutive din sirul preluat din fisier.
+Vectorul v reprezinta un sir al vecinatatilor din stanga corespunzatoare fiecarui element din intervalul [x,y)
+De exemplu daca avem x=4 si y=8 atunci pentru fiecare pozitie poz din [4,8) vom avea v[poz]=x
+
+Pentru un interval citit [x,y] testam validitatea acestuia folosind urmatoarea expresie logica:
+v[x]==v[y] && a[x]==0 && a[y]==0
+
+La final afisam numarul de intervale valide.
+
+*/
