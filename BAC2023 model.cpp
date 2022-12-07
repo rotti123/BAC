@@ -150,54 +150,48 @@ min_par=10	> max_imp=201
 min_impar=100001 > max_par=-1
 */
   
-  #include <fstream>
-#include <iostream>
+ #include <iostream>
+#include <fstream>
 using namespace std;
-
 int main() {
-  // ifstream cin("bac.txt");
-  int n, min_par = 1000001, min_imp = 1000001, max_imp = -1, max_par = -1, x;
-  int k_pare1 = 0, k_imp1 = 0, i;
-  int k_pare2 = 0, k_imp2 = 0;
-  cin >> n;
-  /// prima 1/2
-  for (i = 1; i <= n; i++) {
-    cin >> x;
-    if (x % 2 == 0) {
-      k_pare1++;
-      if (x < min_par)
-        min_par = x;
-    } else {
-      k_imp1++;
-      if (x < min_imp)
-        min_imp = x;
+  ifstream cin("bac.txt");
+  int n,x;
+  int min_par=10000001,min_imp=1000001;
+  int max_par=-1,max_imp=-1;
+  cin>>n;
+
+  ///gasim min_par, min_impar in prima 1/2
+  for(int i=1; i<=n; i++){
+    cin>>x;
+    if(x<min_par && x%2==0){
+      min_par=x;
+    }
+    if(x<min_imp && x%2==1){
+      min_imp=x;
     }
   }
-  /// a doua 1/2
-  for (i = n + 1; i <= 2 * n; i++) {
-    cin >> x;
-    if (x % 2 == 0) {
-      k_pare2++;
-      if (x > max_par)
-        max_par = x;
-    } else {
-      k_imp2++;
-      if (x > max_imp)
-        max_imp = x;
+  ///gasim max_par, max_impar in a doua 1/2
+  for(int i=1; i<=n; i++){
+    cin>>x;
+    if(x>max_par && x%2==0){
+      max_par=x;
+    }
+    if(x>max_imp && x%2==1){
+      max_imp=x;
     }
   }
-
-  if ((k_pare1 + k_pare2) == 2 * n || (k_imp1 + k_imp2) == 2 * n) {
-    cout << "DA";
-    return 0;
+  ///testam daca este p-ordonat
+  if(min_par>max_imp && min_imp>max_par){
+    cout<<"Da";
   }
-
-  if (min_par > max_imp && min_imp > max_par) {
-    cout << "DA";
-    return 0;
+  else{
+    cout<<"Nu";
   }
-  cout << "NU";
-
   return 0;
 }
+
+/*
+min_par > max_imp=-1
+min_imp=100001  >max_par
+*/
 
