@@ -40,3 +40,35 @@ i<-x; j<-y; s<-0
 └până când i>j
 sf dacă
 scrie s
+
+
+SIII ex 3.
+#include <iostream>
+#include <fstream>
+using namespace std;
+int main(){
+  //ifstream cin ("bac.txt");
+  int a[10001]={},m, n,x,y,v[10001]={}, cnt=0;
+  cin>> n>>x;
+  a[x]=1; ///vector de aparitii
+  v[x]=x;
+  /// v[x] = valoarea curenta/anterioara din interval
+  for(int i = 2; i <= n; i++)
+    {
+      cin >> y;
+      a[y]=1;
+      v[y]=y;
+      for(int j=x+1;j<=y-1;j++){
+        v[j]=x;
+      }
+      x=y;
+    }
+  while (cin >> x >> y) { ///for(int i=m;i>=1;i--)
+    if (v[x] == v[y] && a[x] == 0 && a[y] == 0)
+      cnt++;
+  }
+  cout << cnt;
+
+return 0;
+}
+
