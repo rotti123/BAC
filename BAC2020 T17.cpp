@@ -40,7 +40,39 @@ i<-x; j<-y; s<-0
 └până când i>j
 sf dacă
 scrie s
-
+SIII ex 2.
+ #include <iostream>
+#include <cstring>
+using namespace std;
+int main() {
+  char s[101], *p , s1[202]={},cuv[101];
+  int ok=1;
+  cin.getline(s,101);
+  p=strtok(s, " ");
+  while(p!=NULL)
+    {
+      ok=1; ///pt fiecare cuvant in parte
+      strcpy(cuv,p);
+      for(int i=0; i<strlen(cuv); i++)
+        { if(strchr("aeiou", cuv[i])==0)
+          ok=0;
+        }
+      cout<<endl<<cuv<<" "<<ok<<endl;
+      if(ok==1)
+      {
+        strcat(s1, cuv);
+        strcat(s1, " ");
+       
+      }
+        strcat(s1, cuv);
+        strcat(s1, " ");
+      
+      p=strtok(NULL, " ");
+    }
+  strcpy(s,s1);
+  cout<<s;
+  return 0;
+}
 
 SIII ex 3.
 #include <iostream>
