@@ -26,3 +26,32 @@ int main()
     else         cout << "DA";
     return 0;
 }
+
+SIII ex 3.
+  #include <iostream>
+#include <fstream>
+using namespace std;
+int main()
+{
+ // ifstream cin ("bac.txt");
+  int a, b, ok = 0;
+  cin >> a;
+  if (a % 2 == 0){
+    cout << a<<" ";
+    ok=1;
+  }
+  while (cin >> b)
+    {
+      if (b % 2 == 0 && b != a)
+      {
+        cout << b << ' ';
+        ok = 1;
+      }
+      a = b;
+    }
+  if (ok == 0)
+  {
+    cout << "nu exista";
+  }
+}
+
