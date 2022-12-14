@@ -56,34 +56,38 @@ int main()
     cout<<s;
 }
 
-
+SIII ex 2.
 #include <iostream>
+#include <fstream>
 #include <cstring>
-
 using namespace std;
-
-int main() {
-    char s[21][21] = {}, model[20] = {}, *p;
-    int n, k;
-    bool ok = false;
-    cin >> n >> k;
-    for(int i = 0; i < n; i++) {
-        cin >> s[i];
-    }
-    strcpy(model, s[k - 1]);
-    for(int i = 0; i < n; i++) {
-        if(i == k - 1) continue;
-        p = strstr(s[i], model);
-        if(p != NULL) {
-            if(strcmp(model, p) == 0) {
-                ok = true;
-                cout << s[i] << " ";
-            }
-        }
-    }
-    if(ok == false) cout << "nu exista";
-    return 0;
+int main()
+{
+ // ifstream cin ("bac.txt");
+  int n,k,lungk=0,lungcuv=0,ok=0;
+  char cuv[21][21],suf[21];
+  cin>>n>>k;
+  cin.ignore();
+  for(int i=0;i<n;i++){
+    cin.getline(cuv[i],20);
+  }
+  strcpy(suf,cuv[k-1]);
+  lungk=strlen(cuv[k-1]);
+  for(int i=0;i<n;i++){
+        lungcuv=strlen(cuv[i]);
+       if(lungcuv>lungk &&
+          strcmp(suf,cuv[i]+lungcuv-lungk)==0){
+            cout<<cuv[i]<<" ";
+            ok=1;
+       }
+  }
+  if(ok==0){
+    cout<<"nu exista";
+  }
 }
+
+
+
 
 ///SIII ex3
 #include <iostream>
