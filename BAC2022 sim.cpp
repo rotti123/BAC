@@ -42,21 +42,12 @@ for(j=1;j<14;j++)
 #include <iostream>
 using namespace std;
 void rest(int x,int y,int n,int &k){
-     for(int i=1; i<=n; i++){
-        if(i%y==2 && i%x==2){
-            k=i;
-        }
+  for(k=n;k>=1;k--){
+    if(k%x==2 && k%y==2){
+      return ;
     }
-}
-
-void restM(int x,int y,int n,int &k){
-    k=0;
-    for(int i=1; i<=n; i++){
-        if(i%y==2 && i%x==2){
-            k=i;
-        }
-    }
-
+  }
+  k=0;
 }
 int main(){
   int n,x,y,k;
