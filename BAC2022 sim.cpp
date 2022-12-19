@@ -234,3 +234,39 @@ Rezultatul final este min(p3/2, p5)
 
   ///  	(づ｡◕‿‿◕｡)づ|l)/
 
+ 
+#include <iostream>
+#include <cstring>
+#include <fstream>
+using namespace std;
+ int nrdiv(int n,int d)
+{
+ int cnt=0,p=1;
+  while(p*d<=n){
+    p=p*d;
+    cnt = cnt + n/p;
+  }
+  return cnt;
+}
+
+int main() {
+  int n;
+  cin>>n;
+  cout<<min(nrdiv(n,3)/2,nrdiv(n,5));;
+}
+
+/*
+
+descomp in factori
+T(n/5 +n/3) => O(n)
+
+n/5 + n/3 = (3n+5n)/15=8n/15 ~= n/2  
+
+O(log3(n) + log5(n))
+
+45=3^2*5^1
+
+n!=3^p*5^q     3^7*5^6= 3*3^6*5^6=3*(3^2*5^1)^3*5^3
+sol=min(p/2,q);
+*/
+
