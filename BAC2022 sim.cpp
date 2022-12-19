@@ -61,29 +61,34 @@ int main(){
   ///  	(づ｡◕‿‿◕｡)づ|l)/
 
 ///SIII ex 2
-#include <fstream>
-#include <string.h>
 #include <iostream>
+#include <cstring>
+#include <fstream>
 using namespace std;
 
-int main(){
+int main() {
+ // ifstream cin("bac.txt");
   int ok=0;
-  char s[250],x[50],*p,prenume[50],nume[50];
-  cin.getline(s,250);
-  cin.getline(x,50);
-  p=strtok(s,"; ");
-  strcpy(prenume,p);
-  p=strtok(NULL," ;");
-  strcpy(nume,p);
+char s[250],cuv[250], *p, *ptr,a[250];
+  cin.getline(s,250); ///textul nume prenume;..
+  cin.getline(cuv,250);
+  strcat(cuv," "); ///cuv <- "DAN "
+  p=strtok(s,";"); //retin [nume prenume]
   while(p!=NULL){
-      if(strcmp(x,prenume)==0){
-         ok=1;
-         cout<<nume<<" ";
-      }
-      p=strtok(NULL,"; ");
-      strcpy(prenume,p);
-      p=strtok(NULL," ;");
-      strcpy(nume,p);
+    strcpy(a,p);
+   if(a[0]==' '){
+    strcpy(a+0,a+1); ///elimin ' ' din fata
+   }
+     //   cout<<"#"<<a<<'\n';
+    ptr=strstr(a,cuv); ///ptr=textul de la cuv pana in capat din p
+    if(ptr!=NULL && strcmp(ptr,a)==0){
+      cout<<a+strlen(cuv)<<" "; ///afisez doar prenume (sar peste prenume)
+      ok=1;
+    }
+    p=strtok(NULL,";");
+  }
+  if(ok==0){
+    cout<<"Nu";
   }
 }
 
