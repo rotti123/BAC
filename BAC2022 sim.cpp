@@ -1,3 +1,17 @@
+//SII ex 1d)
+citește n,x (numere naturale nenule)
+nr<-0
+┌pentru i<-1,n execută
+│ citește y (număr natural)
+│┌cât timp y≠0 și y%2≠x%2 execută
+││ y<-[y/10]
+│└■
+│┌dacă y=x atunci nr<-nr+1
+│└■
+└■
+scrie nr
+
+
 ///SII ex 3
 ok=0;
 for(j=1;j<14;j++)
