@@ -1,3 +1,22 @@
+//SII ex 1c)
+#include <iostream>
+using namespace std;
+int main() {
+    int n,x,y,i=1;
+    cin>>n>>x;
+    int nr=0;
+    while(i<=n){
+        cin>>y;
+        while(y!=0 && (y%2)!=(x%2)){
+            y=y/10;
+        }
+        if(y==x){
+            nr++;
+        }
+        i++;
+    }
+    cout<<nr;
+}
 //SII ex 1d)
 citește n,x (numere naturale nenule)
 nr<-0
