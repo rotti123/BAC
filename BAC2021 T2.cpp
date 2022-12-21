@@ -1,3 +1,26 @@
+///BAC2021 SII ex 3
+#include <cstring>
+#include <iostream>
+using namespace std;
+char s[21], v1[6]="aeiou", v2[6]="AEIOU", s2[11];
+char a[100];
+int main()
+{
+  cin.getline(s, 21);
+    for(int j=0; j<6; j++)
+      {
+        if(strchr(s, v1[j])==NULL){
+                a[0]=v1[j];
+          strcat(s2, a);
+        }
+        if(strchr(s, v2[j])==NULL){
+                a[0]=v2[j];
+          strcat(s2, a);
+        }
+      }
+  cout<<s2;
+    return 0;
+}
 
 ///SIII ex 1
 int factori(int n,int m){
