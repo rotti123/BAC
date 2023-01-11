@@ -54,6 +54,56 @@ b=c;
 c=d;
 
 SIII ex 3
+ 
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+   // ifstream f("bac1.txt");
+  //  ifstream h("bac2.txt");
+    int x,y,z,k,i,n;
+    cin>>n>>x>>y>>z;
+
+    for(i=n;i>=4;i--){
+        if(i%2==0){
+            k=i/2;
+            cout<<(k-1)*(z-x) +y<<" ";
+        }
+        else{
+            k=(i-1)/2;
+            cout<<k*z -(k-1)*x<<" ";
+        }
+    }
+    cout<<z<<" "<<y<<" "<<x;
+    return 0;
+}
+
+////var 
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n,x,y,z;
+    cin>>n>>x>>y>>z;
+    while(n>1)
+    {
+        if(n%2==0)
+            cout<<((n-2)/2)*z-((n-2)/2)*x+y<<" ";
+        else
+            cout<<(((n-2)/2)+1)*z-((n-2)/2)*x<<" ";
+        n--;
+    }
+    cout<<1;
+}
+
+ 
+ //older
 #include <iostream>
 #include <fstream>
 
