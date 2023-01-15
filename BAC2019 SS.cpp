@@ -54,7 +54,27 @@ b=c;
 c=d;
 
 SIII ex 3
- 
+ /*
+f1=x
+f2=y
+f3=z
+f4=z+y-x = 1*(z-x) +y
+f5=z+y-x +z -y=2*z -x
+f6=2*z - x + z+y-x - z = 2*z -2*x +y
+f6=2*(z-x) +y
+f7=2*(z-x) +y +2*z -x -(z+y-x)
+f7 = 2*z-2*x +y +2*z -x -z -y +x
+f7 = 3*z - 2*x 
+f8 = 3*z - 2*x + 2*(z-x) +y - (2*z -x)
+f8=  3*(z -x) +y
+
+k>2 ...
+f[2k] = (k-1)*(z-x) +y
+f[2k+1] = k*z -(k-1)*x
+
+i=2*k  --> k=i/2
+i=2*k+1  --> k=(i-1)/2
+ */
 #include <iostream>
 #include <fstream>
 
