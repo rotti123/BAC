@@ -34,8 +34,27 @@ int main()
 }
 
 II.3
-  plantau fistic
+  
+  Explicatia 1:
+
+plantau fistic
 01234567890123
+strcpy(s1, "plantau fistic"); 
+p=strchr(s1,' ')-s1;   //p=7
+                                       012345
+strcpy(s2,s1+p+1);    ///s2 <- s1+8 = "fistic"
+strcpy(s1+p-1,s2+2); /// s1+6 <- "stic"
+                         s1=planta[u fistic] -> planta[stic]
+strcpy(s2+1,s1+2);    ///s2+1 = f[istic] <- f[antastic]
+                         
+cout<<p<<s2; |
+      7fantastic
+  
+  Explicatia 2:
+
+plantau fistic
+01234567890123
+
 s1+7 =" fistic"
 
 p=s1+7 -s1 =7 [p]
