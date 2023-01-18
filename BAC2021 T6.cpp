@@ -28,7 +28,41 @@ int main() {
     return 0;
 }
 
+SIII ex 3 [pentru un nr variabil de elem negative]
+/*
+15 21 -61 9 870 -23 11 5 8 -81  5 14
+pre=2     lun=2     lun=3
+          pre=2     pre=3       lun=2
+*/
 
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    ifstream f("bac.in");
+
+    int x,maxim=0,lun=0,pre=0;
+    while(f>>x)
+    {
+        if(x>0)
+            lun++;
+        else
+            {
+                if(pre+lun+1>maxim)
+                    maxim=pre+lun+1;
+                pre=lun;
+                lun=0;
+            }
+    }
+
+    if(pre+lun+1>maxim)
+        maxim=pre+lun+1;
+    cout<<maxim;
+    return 0;
+}
 SIII ex 3
     
     #include <iostream>
