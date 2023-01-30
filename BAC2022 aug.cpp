@@ -21,6 +21,17 @@ else cout << "NORMAL";
 }
 
 III.1
+   //V1
+   void schimb(int &n,int x,int p)
+{
+  int A=0,B=0,putere=1;
+  putere=pow(10,p);
+  A=n/putere;
+  B=n%putere;
+  A=(A/10)*10+x;
+  n=A*putere+B; 
+}
+//V2
    void schimb_cata(int &n, int x, int p){
   int e=1,st,dr;
   for(int i=1; i<=p; i++){
