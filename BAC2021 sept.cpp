@@ -52,44 +52,58 @@ int main() {
 
 
 S III EX 3
-    #include <iostream>
+#include <cmath>
 #include <fstream>
+#include <iostream>
 using namespace std;
 
-int main()
-{
-   int na, nb, x, u, z, a[100]={}, b[100]={}, aux;
-   cin>>na>>nb;
-   for(int i=1;i<=na;i++){
-       cin>>x;
-       u=x%10;
-       z=(x%100)/10;
-       if(z>u){
-           aux=z;
-           z=u;
-           u=aux;
-       }
-       x=z*10+u;
-       a[x]++;
-   }
-   for(int i=1;i<=nb;i++){ 
-       cin>>x;
-       u=x%10;
-       z=(x%100)/10;
-       if(z>u){
-           aux=z;
-           z=u;
-           u=aux;
-       }
-       x=z*10+u;
-       b[x]++;
-   }
-   long long sol=0;
-   for(x=0;x<=99;x++){
-      sol+=a[x]*b[x];
-   }
-   cout<<sol;
-    return 0;
+int main() {
+  int na,nb,a[100]={},b[100]={},nr,u,z;
+  long long sol=0;
+  cin>>na>>nb;
+  for(int i=1;i<=na;i++){
+      cin>>nr;
+      u=nr%10;
+      z=nr/10%10;
+      if(z>u)
+      {
+        int aux=u;
+         u=z;
+         z=aux;
+      }
+    nr=z*10+u;
+    a[nr]++;
+  }
+  for(int i=1;i<=nb;i++){
+      cin>>nr;
+      u=nr%10;
+      z=nr/10%10;
+      if(z>u)
+      {
+        int aux=u;
+         u=z;
+         z=aux;
+      }
+    nr=z*10+u;
+    b[nr]++;
+  }
+  for(int i=0;i<=99;i++)
+    {
+      sol=sol+a[i]*b[i];
+    }
+cout<<sol; ///O(na+nb)
 }
+
+/**
+Ultimele doua cifre dintr-un numar se aranjeaza in ordine
+crescatoare si formeaza astfel codul pentru acel numar.
+Construim doi vectori de frecventa pentru aceste coduri, 
+corespunzatori celor doua siruri initiale.
+Solutia problemei consta in parcurgerea intervalului [0,99]
+si adunarea produselor a[i]*b[i], unde a[i] este vect
+de frecv asociat primului sir iar b[i] 
+pentru cel de-al doilea sir.
+*/
+
 
 
