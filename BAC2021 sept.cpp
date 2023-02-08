@@ -27,7 +27,7 @@ void genmat(int k,int n,int a[][100])
   }
   for(int i=1;i<n;i++){
     for(int j=0;j<n;j++){
-      a[i][j]=a[i-1][j]+(k-1);
+      a[i][j]=a[i-1][j]+(k-1); ///observam ca putem genera urmatoarele linii crescand fiecare elem de pe linia anterioara cu k-1
     }
   }
 }
