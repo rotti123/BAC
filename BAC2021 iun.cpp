@@ -34,7 +34,28 @@ int main() {
 }
 
 ///SIII ex 3
+#include <cmath>
+#include <fstream>
+#include <iostream>
+using namespace std;
 
+int main() {
+    ifstream cin("bac.txt");
+    int x, y, a, b, s1 = 0, s2 = 0;
+    cin >> x >> a;
+    while(cin >> b){
+      if(a % 1000 == x && b % 1000 == x){
+        s1 = a;
+        s2 = b;
+      }
+      a = b;
+    }
+    if(s1 != 0) cout << s1 << " " << s2;
+    else cout << "nu exista";
+  return 0;
+}
+
+///VAR2 ???
 #include <iostream>
 #include <fstream>
 using namespace std;
