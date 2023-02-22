@@ -1,3 +1,37 @@
+II.2
+struct calculator{
+   char monitor;
+   struct{
+	unsigned int interna,externa; 
+   }memorie;
+}c;
+
+
+II.3
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+//ifstream cin("bac.txt");
+
+int main() {
+  int i,j;
+  char a[10][10];
+   for(i=0;i<9;i++)
+    for(j=0;j<9;j++)
+      if (i>j && i+j>8)
+        a[i][j]='<';
+      else
+        a[i][j]='>';
+
+  for(i=0;i<9;i++)
+    {  for(j=0;j<9;j++)
+      cout<<a[i][j]<<" ";
+      cout<<endl
+    }
+    return 0;
+}
+
 #include <iostream>
 #include <fstream>
 #include <cstring>
