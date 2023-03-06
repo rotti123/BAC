@@ -1,3 +1,10 @@
+//SII ex 3
+ for(i=0; i<=4; i++){
+    if(a[i][0]==2020 || a[i][6]==2020){
+      cout<<i<<" ";
+    }
+  }
+
 //SIII ex 1
 #include <iostream>
 #include <fstream>
