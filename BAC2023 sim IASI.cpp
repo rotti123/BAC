@@ -1,3 +1,5 @@
+http://sparknews.ro/wp-content/uploads/2023/01/E_d_Informatica_sp_MI_C_C_simulare_ian_2023_subiect.pdf?fbclid=IwAR1GQElDu16DA2pD2HkeJ3mszVhNbBggiU0OI1YslLWOGdxhYcxT8afJvqY
+
 SI.2
   fac(0,f) -> f=1
 fac(1,f) -> fac(0,g) -> g=1
