@@ -8,6 +8,62 @@ fac(2,f) -> fac(1,g) -> g=1
             f=g*n=1*2=2
 Raspuns d. fac(n-1,g)
 
+SII
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+struct fractie{
+ int numarator, numitor;
+};
+struct fractie f1,f2, suma;
+
+int cmmdc_rec(int a,int b){
+  if(b==0) return a;
+  return cmmdc_rec(b,a%b);
+}
+
+int cmmdc_it(int a,int b){
+  int r;
+  while(b!=0){
+    r=a%b;
+    a=b;
+    b=r;
+  }
+}
+
+int cmmdc(int x, int y)
+{
+  while(x!=y)
+    {
+      if(x>y)
+        x-=y;
+      else
+        y-=x;
+    }
+  return x;
+}
+
+int main()
+{ 
+  int div;
+  
+  cin>>f1.numarator>>f1.numitor>>f2.numarator>>f2.numitor;
+
+  suma.numarator = f1.numarator*f2.numitor+f1.numitor*f2.numarator;
+  suma.numitor = f1.numitor*f2.numitor;
+
+  div=cmmdc(suma.numarator, suma.numitor);
+
+  suma.numarator/=div;
+  suma.numitor/=div;
+  
+  return 0;
+}
+
+
 SIII 1.  Var I
 #include <iostream>
 using namespace std;
