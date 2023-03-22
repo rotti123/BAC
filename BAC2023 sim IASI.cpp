@@ -141,3 +141,71 @@ int main()
   return 0;
 }
 
+SIII.2
+  #include <iostream>
+
+using namespace std;
+
+int main()
+{
+  int a[101][101], n, m,newn,newm;
+  cin >> n >> m;
+  for(int i = 1 ; i <= n; i ++){
+    for(int j = 1 ; j <= m; j ++){
+      cin >> a[i][j];
+    }
+  }
+  int xmin=1, ymin=1, xmax=1, ymax=1,
+  minn = a[1][1], maxx = a[1][1];
+  for(int i = 1; i <= n; i ++){
+    for(int j = 1; j <= m; j ++){
+      if(a[i][j] <= minn){
+        minn = a[i][j];
+        xmin = i;
+        ymin = j;
+      }
+      if(a[i][j] >= maxx) {
+        maxx = a[i][j];
+        xmax = i;
+        ymax = j;
+      }
+    }
+  }
+
+    if(xmin == xmax){
+    cout << n - 1 << " ", newn=n-1;
+  }
+  else{
+    cout << n - 2 << " ",newn=n-2;
+  }
+  if(ymin == ymax){
+    cout << m - 1 << endl,newm=m-1;
+  }
+  else{
+    cout << m - 2 << endl,newm=m-2;
+  }
+
+///
+  int x=0,y; /// initial consider ca nu am nicio linie (x=0)
+  for(int i=1;i<=n;i++){
+    if(!(i==xmin||i==xmax)){
+      x++; ///am o linie valida, pot sa o generez
+      y=0;
+      for(int j=1;j<=m;j++){
+        if(!(j==ymin||j==ymax)){
+          y++;
+          a[x][y]=a[i][j];
+        }
+      }
+    }
+  }
+   n=newn; m=newm;
+    for(int i=1;i<=n;i++){
+      for(int j=1;j<=m;j++){
+        cout<<a[i][j]<<" ";
+      }
+      cout<<endl;
+    }
+
+  return 0;
+}
