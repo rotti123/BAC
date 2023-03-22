@@ -209,3 +209,45 @@ int main()
 
   return 0;
 }
+
+SIII 3
+  #include <iostream>
+
+using namespace std;
+int nr_cifre(int x){
+  return log10(x)+1;
+}
+
+int Fibonacci(int n,int &x){  ///fct returneaza val Fib(n-1)
+  int a,b,y=x+1; ///a= nr_cifre(x), b=nr_cifre(y)
+  a=nr_cifre(x);
+  b=nr_cifre(y);
+  if(n==1){
+    return 1; 
+  }
+  int c;
+  if(n==2){
+     return 1;
+  }
+  do{
+    c=a+b;
+    a=b;
+    b=c;
+  }while(c<n);
+  return a;  
+}
+int main()
+{
+  int x,k,n;
+  char c;
+  cin>>x>>k;
+  n=Fibonacci(k,x);
+  for(int i=1;i<=n;i++){
+     cin>>c;
+     cout<<c;
+    
+  }
+ 
+  return 0;
+}
+
