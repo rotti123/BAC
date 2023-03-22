@@ -75,3 +75,66 @@ int main()
   else cout<<"nu";
 }
 
+SIII.3 partial fara suma
+#include <iostream>
+#include <fstream>
+#include <cmath>
+using namespace std;
+
+int putere(int n)
+{
+    int k=0;
+    while(n%3==0)
+    {
+        n/=3;
+        k++;
+    }
+
+    if(n!=1) return -1;
+    else return k;
+}
+
+int main()
+{
+    ifstream f("bacul.txt");
+    int lun=0, lunmax=0,x,v[14]= {},e,sol[14]= {},ok=0;
+
+    while(f>>x)
+    {
+         e=putere(x);
+       //   cout<<e<<" ";
+        if(e!=-1)
+        {
+            lun++;
+          //  cout<<"+"<<lun<<endl;
+            v[e]++;
+        }
+        else
+        {
+            if(lun>lunmax)
+            {
+                lunmax=lun;
+                for(int i=0; i<14; i++)
+                {
+                    sol[i]=v[i];
+                    v[i]=0;
+                }
+                lun=0;
+            }
+        }
+    }
+    if(lunmax==0)
+        cout<<0<<endl<<"NU EXISTA SECVENTA";
+    else
+    {
+        cout<<lunmax<<endl;
+        for(int i=0; i<14; i++)
+        {
+            if(sol[i]!=0)
+            {
+                for(int j=0; j<sol[i]; j++)
+                    cout<<pow(3,i)<<" ";
+            }
+        }
+    }
+}
