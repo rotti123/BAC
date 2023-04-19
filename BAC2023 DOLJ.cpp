@@ -50,3 +50,37 @@ int main()
     strcpy(s, fin);
     cout<<s;
 }
+
+SIII.3
+  #include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ifstream cin("bac.txt");
+  int x, prod = 1, prodmax = 0, st,lungime=0, stanga,poz=0,lmax=0;
+  while (cin >> x) {
+    poz++;
+    if (x != 0) {
+      prod = prod * x;
+      lungime++;
+    }
+    if (x == 0) {
+      if (prod > prodmax) {
+        prodmax = prod;
+        lmax=lungime;
+        st = poz-lungime;
+       // cout<<prodmax<<" "<<lmax<<" "<<st<<endl;
+      }
+      prod = 1;
+      lungime=0;
+    }
+  }
+  if (prod > prodmax) {
+        prodmax = prod;
+        lmax=lungime;
+        st = poz-lungime+1;
+  }
+  cout << lmax<< " " << st;
+  return 0;
+}
