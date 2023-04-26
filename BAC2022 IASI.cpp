@@ -27,7 +27,35 @@ int main() {
     return 0;
 }
 
-SIII ex2
+SIII ex2 V1
+#include <cstring>
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+
+int main() {
+  char s[11], v[101], *p, a[101][101];
+  int k=0, ok=0;
+  cin.getline(s,10);
+  cin.getline(v,300);
+  p=strtok(v, " ");
+  while(p!=NULL){
+    k++;
+    strcpy(a[k], p);
+    p=strtok(NULL, " ");
+  }
+  for(int i=2; i<k; i++){
+    if(strcmp(s,a[i])==0){
+      cout<<a[i-1]<<" "<<a[i+1]<<endl;
+      ok=1;
+    }
+  }
+  if(ok==0) cout<<"nu exista";
+  return 0;
+}
+
+SIII.2 V2
 
 #include <iostream>
 #include <cstring>
