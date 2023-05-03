@@ -60,7 +60,7 @@ int main(){
 
   ///  	(づ｡◕‿‿◕｡)づ|l)/
 
-///SIII ex 2
+///SIII ex 2 V1
 #include <iostream>
 #include <cstring>
 #include <fstream>
@@ -90,6 +90,37 @@ char s[250],cuv[250], *p, *ptr,a[250];
   if(ok==0){
     cout<<"Nu";
   }
+}
+///SIII ex 2 V2
+#include <cstring>
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  char s[251], x[250], a[251][251], *p;
+  int i = 0, n, ok = 0;
+  cin.getline (s, 250);
+  cin.getline (x, 250);
+  p = strtok (s, " ;");
+  while (p != NULL)
+    {
+      i++;
+      strcpy (a[i], p);
+      p = strtok (NULL, " ;");
+    }
+  n = i;
+  for (i = 1; i <= n; i += 2)
+    {
+      if (strcmp(x, a[i]) == 0)
+      {
+        cout << a[i+1] << " ";
+        ok = 1;
+      }
+    }
+  if (ok == 0)
+    cout << "NU EXISTA";
 }
 
 ///SIII ex 3
