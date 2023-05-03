@@ -1,3 +1,5 @@
+https://profesorjitaruionel.com/wp-content/uploads/2022/02/E-d-Simulare-Constanta-BAC2022-INFO-MI-subiect.pdf?fbclid=IwAR24vCTEKqDPZ-4rZwebwQAMTniM35h-qx7jrdCeW5SKtDpDAU39bHNucxE
+
 /**
  
 S1
@@ -33,6 +35,86 @@ b.111
 c.
 d.
  
+ ///SIII 3
+ #include <cstring>
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+int main() 
+{      
+  int m, n, s[101], x,k=0,i,j,ant=-1;
+  cin>>n;
+  for(i=1; i<=n; i++){
+    cin>>x;
+    if(x%3==0){
+      k++;
+      s[k]=x;      
+    }  
+  }
+   n=k;
+   k=0;
+  cin>>m>>x;
+  i=1;
+  j=1;
+  while(i<=n && j<m){
+    if(s[i]<x){
+      if(s[i]!=ant){
+        cout<<s[i]<<" ";
+        ant=s[i];
+        i++;
+      }
+    }
+    else if(s[i]==x){
+      if(s[i]!=ant){
+        cout<<s[i]<<" ";
+        ant=s[i];
+        i++;
+        j++;
+        cin>>x;
+      }
+    }
+    else if(s[i]>x){
+      if(x%3==0){
+        if(x!=ant){
+          cout<<x<<" ";
+        }
+      }
+      j++;
+      cin>>x;
+    }
+  }
+  if(i<=n){
+    for(int cnt=i; cnt<=n; cnt++){
+      if(s[cnt]!=ant){
+        cout<<s[cnt]<<" ";
+        ant=s[cnt];
+      }
+    }
+  }
+  if(j<=m){
+    for(int cnt=j; cnt<=m; cnt++){
+      if(x%3==0){
+        if(ant!=x){
+          cout<<x<<" ";
+          ant=x;
+        }
+      }
+      cin>>x;
+    }
+  }
+  if(ant==-1) cout<<"nu exista";
+  return 0;
+}
+
+
+/**
+  Dpdv a timpului de exec -> Algoritmul are o complexitate O(n+m)
+  Dpdv al mem alg foloseste 7 var simple si un sir de 100 elem int
+  Folosim alg de interclasare pt rezolv probl adaptat pt afisarea
+  val multiple de 3 si distincte doua cate doua.
+  
+*/
 Citește n (numar natural)
 m<-0; p<-1;
  daca n>0 atunci
