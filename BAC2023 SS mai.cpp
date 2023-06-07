@@ -99,3 +99,66 @@ int main() {
   return 0;
 }
 
+SIII.3
+  #include <iostream>
+using namespace std;
+///Alexia
+int main() {
+  int a,pmin=0,p=1,pmax=0,st=0,dr=0,aux,n;
+  /// [x,y]= p-interval curent
+  cin>>a;
+  x=a;
+  y=a;
+  while(cin>>a){
+    p++;
+    if(a<x){
+       x=a;
+    }
+    else if(y<a){
+      y=a;
+    }
+    else{
+      if(pmin==0){
+         pmin=p;   
+      }
+      pmax=p;
+    }
+    
+  }
+  if(pmin!=0){
+    cout<<pmin<<" "<<pmax;
+  }
+  else{
+    cout<<"nu exista";
+  }
+  return 0;
+}
+
+///Dania
+int a, b, c, pmin=0, pmax, aux, p;
+cin>>a>>b;
+p=2;
+if(a>b){
+  aux=a;
+  a=b;
+  b=aux;
+}
+while(cin>>c){
+  p++;
+  if(a<=c && c<=b){
+    if(pmin==0){
+      pmin=p;
+      pmax=p;
+    }
+      pmax=p;
+  }
+  else{
+    if(a>c){
+      a=c;
+    }
+    else if(b<c){
+      b=c;
+    }
+  }
+}
+
