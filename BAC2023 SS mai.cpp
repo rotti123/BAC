@@ -59,4 +59,43 @@ int main() {
   cout<<x<<" "<<p;
     return 0;
 }
+SIII.2
+  #include <iostream>
+using namespace std;
+
+int main() {
+  int n, a[21][21] = {};
+  cin >> n;
+  for (int i = 1; i <= n; i++) {
+    cin >> a[1][i];
+  }
+  ///Var I
+      for(int i=2;i<=n;i++){
+        for(int j=1;j<=n;j++){
+            if(i+j>n+1){
+                a[i][j]=-1;
+            }
+            else{
+                a[i][j]=(a[i-1][j]+a[i-1][j+1])%100;
+            }
+        }
+    }
+  /*Var II
+  for (int i = 2; i <= n; i++) {
+    for (int j = 1; j <= n-i+1; j++) {   ///i+j==n+1 pe diag sec, j=n-i+1
+      a[i][j]=(a[i-1][j]+a[i-1][j+1])%100;
+    }
+    for(int j=n-i+2;j<+n;j++){
+      a[i][j]=-1;
+    }
+  }
+  */
+  for(int i=1;i<=n;i++){
+        for(int j=1;j<=n;j++){
+            cout<<a[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+  return 0;
+}
 
