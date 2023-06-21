@@ -1,3 +1,46 @@
+SIII.3
+#include <iostream>
+using namespace std;
+/* Ex:
+n=900000=3^2*2^5*5^5
+x=3^1*2^2*5^2
+x^2=3^2*2^4*5^4
+y=3^0*2^1*5^1
+
+sqrt(n)=x*sqrt(y)
+n = x^2 * y =>  y=n/x^2
+  */
+void radical (int n, int &x, int &y)
+{
+    x = 1;
+    int d = 2, epn, cpn;
+    cpn = n;
+    while (d * d <= n)
+    {
+        epn = 0;
+        while (n % d == 0)
+        {
+            n /= d;
+            epn++;
+        }
+            for (int i = 1; i <= epn / 2; i++)
+                x *= d;
+        d++;
+    }
+    y = cpn / x / x;
+}
+
+int main()
+{
+    int n, x, y;
+    cin >> n;
+    radical(n, x, y);
+    cout << x << " " << y;
+
+    return 0;
+}
+
+SII.xx
 #include <iostream>
 #include <fstream>
 #include <cstring>
