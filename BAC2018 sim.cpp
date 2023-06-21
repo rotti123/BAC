@@ -74,6 +74,15 @@ int main()
             }
           }
           cuv[q]='\0';
+         
+         /*
+                char aux[101];
+                strcpy(aux,v[i]);
+                strcpy(a,aux+l/2+1);
+                aux[l/2+1]=aux[l/2];
+                strcpy(aux+l/2+2,a);
+         
+         */
           cout<<a[i]<<" "<<cuv<<'\n';
           for(int j = 0; j < k; j++)
             {
