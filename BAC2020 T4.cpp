@@ -74,3 +74,41 @@ int main()
   cout<<cnt;
 }
 
+///SIII ex 3
+#include <iostream>
+#include <fstream>
+
+
+using namespace std;
+
+int main()
+{
+  ifstream cin("bac.in");
+  int x,y,cnt=1,ok=0;
+  cin>>x;
+  while(cin>>y)
+    {
+      if(x==y) cnt++;
+      else 
+      {
+        if(cnt==2) 
+        {
+          cout<<x<<" ";
+          ok=1;
+        }
+        cnt=1; //resetam contorul pt ca x!=y
+      }
+      x=y; ///pregatesc urmatoarea pereche
+    }
+  if(ok==0)
+    cout<<"nu exista";
+}
+
+/*
+Complexitate liniara O(n)
+Eficienta a memoriei: 4 var int simple
+Algoritmul testeaza  pentru oricare doua elemente citite consecutive x si y
+daca sunt egale contorul creste cu 1 iar altfel se verifica daca contorul anterior 
+este egal cu 2 Atunci se afiseaza numarul anterior x.
+  La sfarsit daca nu exista un astfel de numar se afiseaza mesajul "nu exista". */
+
