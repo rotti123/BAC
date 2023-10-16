@@ -1,4 +1,12 @@
-
+SI ex 2:
+f(0) -> nimic
+f(1) -> f(0) 1 -> 1
+f(2) -> i=2 f(1) 2
+        i=1 f(1) 1 ->1211 
+f(3) -> i=3 f(2) 3 
+        i=2 f(2) 2
+        i=1 f(2) 1 ->121131211212111
+  
 ///SIII ex 3
 #include <iostream>
 #include <fstream>
