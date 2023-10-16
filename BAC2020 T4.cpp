@@ -43,3 +43,34 @@ int main() {
     cin>>n;
     generatoare(n);
 }
+///SIII ex 2
+#include <iostream>
+#include <fstream>
+
+
+using namespace std;
+
+int main()
+{
+    int a[21][21],m,n,ok,cnt=0;
+    cin>>n>>m;
+    for(int i=1;i<=m;i++)
+       for(int j=1;j<=n;j++)
+         {
+           cin>>a[i][j];
+         }
+     for(int j=2;j<=n;j++)
+       { ok=1;
+          for(i=1;i<=m;i++)
+            {
+              if(a[i][j]==a[i][1]){ ///compar col 1 cu col j
+                 ok=0; ///am gasit o contradictie
+                 break; //iesire fortata din "for i"
+              }
+            }
+        if(ok==1)
+          cnt++;
+       }
+  cout<<cnt;
+}
+
