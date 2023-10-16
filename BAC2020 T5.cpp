@@ -6,7 +6,18 @@ f(2) -> i=2 f(1) 2
 f(3) -> i=3 f(2) 3 
         i=2 f(2) 2
         i=1 f(2) 1 ->121131211212111
-  
+
+ ///SI ex 3:
+ {cămașă, cravată, pantaloni, pantofi, sacou, șosete}
+    1        2        3          4         5      6
+1...2 	2...5 	3,6...4
+1 2 3 5 6 4
+1 2 3 6 4 5 
+1 2 3 6 5 4
+1 2 5 3 6 4
+1 2 5 6 3 4 
+1 2 6 3 4 5<-c
+1 2 6 5 3 4
 ///SIII ex 3
 #include <iostream>
 #include <fstream>
