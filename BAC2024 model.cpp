@@ -95,3 +95,52 @@ int main()
   }
     return 0;
 }
+
+
+III. 3.
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+
+int main()
+{
+    ifstream f("bac.txt");
+    int i,n1,n2,n3,x,ap[1001]= {},p1=0,p2=0,p3=0;
+    f>>n1>>n2>>n3;
+    while(f>>x)
+        ap[x]++;
+    for(i=1000; i>=10; i--)
+    {
+        if(ap[i]>=n1)
+        {
+            p1=i;
+            break;
+        }
+
+    }
+    for(i=p1-1; i>=10; i--)
+    {
+        if(ap[i]>=n2)
+        {
+            p2=i;
+            break;
+        }
+    }
+    for(i=p2-1; i>=10; i--)
+    {
+        if(ap[i]>=n3)
+        {
+            p3=i;
+            break;
+        }
+    }
+
+if(p3==0)
+{
+    cout<<"nu exista";
+}
+else
+    cout<<p1<<' '<<p2<<' '<<p3;
+return 0;
+}
