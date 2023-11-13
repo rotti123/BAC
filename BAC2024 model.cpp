@@ -144,3 +144,10 @@ else
     cout<<p1<<' '<<p2<<' '<<p3;
 return 0;
 }
+/* Alg este eficient dpdv al timpului de exectie deoarece are o complexitate liniara
+O(n), unde n este nr de elemente din fisier.
+  Alg retine intr-un vector de frecv datele referitoare la preturi.
+  Gasim rand pe rand pe baza datelor din vector valoarea pt pI, pII, PIII.
+  La nu se poate stabili valoarea PIII afisam "Nu exista", altfel 
+  problema are solutie pe care o afisam.
+  */
