@@ -18,6 +18,44 @@ f(3) -> i=3 f(2) 3
 1 2 5 6 3 4 
 1 2 6 3 4 5<-c
 1 2 6 5 3 4
+///SII ex 3
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+
+int main()
+{
+ char a[100][100];
+ int i,j,n=6;
+ for(i=0;i<6;i++){
+         for(j=0;j<6;j++){
+           a[i][j]='@';
+         }
+
+      }
+
+  for(i=0;i<6;i++)
+   for(j=0;j<6;j++)
+     if ((i>j&& i+j<6-1) || (i+j>6-1 && i<j))
+       a[i][j]='*';
+    else if (j<3)
+      a[i][j]='(';
+         else 
+      a[i][j]=')';
+
+       for(i=0;i<6;i++){
+         for(j=0;j<6;j++){
+           cout<<a[i][j];
+         }
+    cout<<'\n';
+      }
+
+      return 0;
+}
+        
+        
 ///SIII ex 3
 #include <iostream>
 #include <fstream>
