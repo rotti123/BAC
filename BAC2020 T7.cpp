@@ -99,3 +99,26 @@ int main() {
     cout<<smin;
     return 0;
 }
+ Algoritmul este eficient dpdv al mem deoarece am folosit doar trei var de tipul int.
+ Alg este eficient dpdv al timpului de exec deoarece are o complexitate liniara 
+ O(n), unde n repr nr de elemente din fisier
+
+ Algoritmul modifica suma curenta astfel:
+ - daca suma curenta este negativa elementul citit se adauga la suma
+ - daca suma curenta este pozitiva aceasta se reseteaza la elementul curent
+ Verificam suma minima la fiecare elem citit.
+/*
+-4 6 -7 -2 1 -4 10   3 -9 -2 2
+-4
+   2
+     -7
+        -9
+          -8
+             -12    <---smin
+                 -2
+                    1
+                      -9
+                        -11
+                            -9
+ */
+  
