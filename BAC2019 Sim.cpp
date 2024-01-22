@@ -89,3 +89,23 @@ int main() {
     cout<<a;
     return 0;
 }
+///SIII ex 3
+int main()
+{
+    /*n par => a[n]=(n/2-1)*(z-x)+y
+n impar => a[n]=(n/2)*z-(n/2-1)*x;
+
+   int n,x,y,z;
+   cin>>n>>x>>y>>z;
+   for(int i=n;i>=1;i--)
+   {
+       if(i%2==0)
+       {
+            cout<< (i/2-1)*(z-x)+y<<" ";
+       }
+       else{
+            cout<<(i/2)*z-(i/2-1)*x<<" ";
+       }
+   }
+    return 0;
+}
