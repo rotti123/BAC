@@ -51,40 +51,33 @@ rezultat.rest=2018%x;
 
 4) 3,8,4,5,7
 5)
-  #include <iostream>
-
+#include <iostream>
+#include <fstream>
 using namespace std;
+int main(){
+ int n,a[100][100]={},b[100]={};
+  cin>>n;
+  for(int i=0;i<n;i++){
+    cin>>b[i];  }
+  for(int j=0;j<n;j++){
+    for(int i=0;i<n;i++){
+      if(j%2!=0){
+        a[i][j]=b[i];
+      }
+      else
+      a[i][j]=b[n-i-1]; ///a[n-i-1][j]=b[i]
+    }
+  }
+ for(int i=0;i<n;i++){
+   for(int j=0;j<n;j++){
+    cout<<a[i][j]<<" ";
+   }
+   cout<<'\n';
+ }
 
-int main()
-{
-     unsigned int n, a[100][100]={}, b[100]={};
-     cin >> n;
-     for(int i=0;i<n;i++){
-         cin >> b[i];
-     }
-     
-     for(int j=0;j<n;j+=2){/// construim colonaele pare de jos in sus
-         for(int i=n-1;i>=0;i--){
-             a[i][j]=b[n-i-1];
-         }
-     }
-     
-     for(int i=0;i<n;i++){/// construim coloanele impare de sus in jos
-         for(int j=1;j<n;j+=2){
-             a[i][j]=b[i];
-         }
-     }
-     
-     for(int i=0;i<n;i++){
-         for(int j=0;j<n;j++){
-             cout<<a[i][j]<<" ";
-         }
-         cout<<endl;
-     }
-     
 
-    return 0;
 }
+
 
 SIII
 1)
