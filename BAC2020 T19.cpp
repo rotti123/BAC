@@ -1,3 +1,26 @@
+citește n (număr natural nenul)
+┌cât timp n≠0 execută
+│ cn%10; n[n/10]
+│┌dacă c%2≠0 atunci
+││ cc+1
+│└■
+  daca c>0 si c<10 atunci
+│┌ execută
+││ scrie c
+││ cc*2
+│└cât timp c>0 și c<10
+  sfarsit daca
+└■
+SIII ex 1
+void paritate(int n,int &nr){
+    nr=0;
+    for(int i=1;i<=n;i++)
+    {
+        if(n%i==0 && n%2==i%2)
+            nr++;
+    }
+}
+
 SIII ex 2
   #include <iostream>
 
