@@ -79,3 +79,29 @@ cin.ignore();///ignor Enter dupa n
   return 0;
 }
 
+SIII ex 3
+  #include <iostream>
+#include <fstream>
+using namespace std;
+
+
+int main()
+{
+ ifstream cin("bac.txt");
+  int v[1001]={},x;
+  while(cin>>x){
+    v[x]++;
+  }
+  for(x=1;x<=1000;x++){
+    if((v[x]!=0)){
+   //  cout<<x<<" "<<v[x]<<endl;
+     if((v[x]%2==x%2) && (v[x]<=x)){
+       cout<<"DA";
+       return 0;
+     }
+    }
+  }
+  cout<<"NU";
+  return 0;
+}
+
