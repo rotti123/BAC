@@ -1,3 +1,19 @@
+SII ex 4
+  #include <iostream>
+#include <fstream>
+#include <cstring>
+
+using  namespace std;
+
+int main()
+{
+ char b[21];char a[21]={};
+  cin.getline(b,21);
+   strncpy(a,b,strlen(b)/2);
+  // a[strlen(b)/2]='\0';
+    cout<<a;
+}
+
 
 SII ex 5
 #include <iostream>
