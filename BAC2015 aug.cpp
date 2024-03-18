@@ -43,3 +43,47 @@ int main() {
   cout<< k; 
     
 }
+
+SIII.4
+
+  #include <iostream>
+#include <fstream>
+using  namespace std;
+ifstream f("BAC.TXT");
+/// Sol=s_imp1*s_pare2 + s_pare1*s_imp2;
+int main()
+{
+    int n,x,s_imp1=0,s_imp2=0,s_pare1=0,s_pare2=0;
+  f>>n;
+  for(int i=1; i<=n; i++) ///primele n valori
+    {f>>x;
+     if(x%2==0)
+       s_pare1=s_pare1+x;
+     else
+       s_imp1=s_imp1+x;
+    }
+  for(int i=n+1; i<=2*n; i++) ///urmatoarele n valor
+  {f>>x;
+   if(x%2==0)
+     s_pare2=s_pare2+x;
+   else
+     s_imp2=s_imp2+x;
+  }
+    cout<<s_imp1*s_pare2 + s_pare1*s_imp2;
+}
+
+/*
+1 2 0 0 5 | 4 2 3 1 0
+
+Caz 1) I*P
+
+1*4 + 1*2 + 1*0 + 5*4 + 5*2 + 5*0=
+
+1*(4+2+0) + 5*(4+2+0) = (1+5)*(4+2+0)
+=s_imp1*s_pare2
+
+Caz2) P*I
+=s_pare1*s_imp2
+Sol=s_imp1*s_pare2 + s_imp2*s_pare1;
+*/
+
