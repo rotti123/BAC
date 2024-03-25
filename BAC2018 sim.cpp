@@ -1,3 +1,69 @@
+SII.4
+ #include <iostream>
+using  namespace std;
+
+int main()
+{
+    int a[9][9],i,j;
+    for(i=0; i<9; i++){
+        for(j=0; j<9; j++)
+        {
+            if(abs(i+j-8)<=0 || abs(i-j)<=0)
+                a[i][j]=8;
+            else                a[i][j]=1;
+            cout<<a[i][j]<<" ";
+        }
+        cout<<'\n';
+    }
+    return 0;
+}
+
+SII.5
+ #include <iostream>
+#include <fstream>
+#include <cstring>
+using  namespace std;
+ifstream f("bac.txt");
+int descentrate(char a[], char b[])
+{char aux[101],c[101];
+int mij;
+strcpy(c,b);
+mij=strlen(c)/2;
+strcpy(aux,c+mij+1);
+strcpy(c+mij,aux);
+if (strcmp(a,c)==0)
+    return 1;
+else
+    return 0;
+
+}
+int main()
+{char a[101],mat[101][101],*p;
+int k=0;
+ cin.getline(a,101);
+   p=strtok(a," ");
+   while (p)
+   {
+    strcpy(mat[k],p);
+    k++;
+    p=strtok(NULL," ");
+
+   }
+   for (int i=0;i<k-1;i++)
+    for (int j=i+1;j<k;j++)
+   {
+    if (descentrate(mat[i],mat[j]) ||
+        descentrate (mat[j],mat[i]))
+    {
+        cout<<"DA";
+        return 0;
+    }
+   }
+   cout<<"NU";
+    return 0;
+}
+
+
 SIII.3
 #include <iostream>
 using namespace std;
