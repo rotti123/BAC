@@ -47,3 +47,77 @@ int main() {
        cout<<endl;
      }
 }
+
+SIII.1
+  int multiplu(int n)
+{
+  int d=1;
+  while(d*d%n!=0){
+    d++;
+  }
+  return d*d;
+}
+
+SIII.2
+int main()
+{
+  char s[124];
+  bool ok=false;
+  cin.get(s,124);
+  int n=strlen(s);
+  for(int i=0;i<n;i++)
+  {
+      if(s[i]=='<')
+          ok=true;
+      else if(s[i]=='>')
+          ok=false;
+      else if(ok && s[i]!=' ')
+          s[i]=s[i]+'A'-'a';
+  }
+  cout<<s;
+  return 0;
+}
+  
+SIII.3
+  #include <iostream>
+#include <fstream>
+#include <cstring>
+using  namespace std;
+
+int main()
+{
+  int x , y, z, dif, difmin=100000000, sol=-1;
+  ifstream cin("bac.txt");
+  cin >> x >> y;
+  while (cin >> z){
+    if (x<y && z<y){
+        dif=abs(x-z);
+        if (dif<=difmin){
+            difmin=dif;
+            sol=y;
+        }
+    }
+    x=y;
+    y=z;
+  }
+  if (sol!=-1){
+    cout << sol;
+  }
+  else {
+    cout << "nu exista";
+  }
+}
+ /* Folosim tripletul x, y, z de numere consecutive din sir 
+ pentru a testa daca y este varf. In caz afirmativ atunci 
+ testam diferenta in modul dintre vecinii lui y si retinem 
+ diferenta cea maimica si varful asociat ultimei diferente 
+ minime. In functie de rezultatul obtinut afisam solutia sau 
+ mesajul nu exista.
+    Programul este eficient din punct de vedere al memoriei
+deoarece am folosit doar 6 variabile intregi simple.
+    Algoritmul are o complexitate liniara O(n) unde n este
+numarul de valori citite din fisier.
+*/
+ 
+
+
