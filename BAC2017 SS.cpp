@@ -1,3 +1,34 @@
+SIII ex 3
+  #include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+void identice(int a,int b)
+{
+    int x=1,cif,masc=1,ok=0;
+    while(x<=b){
+        for(cif=1;cif<=9;cif++){
+            x=masc*cif;
+            if(x>=a && x<=b){
+                cout<<x<<" ";
+                ok++;
+            }
+        }
+        masc=masc*10+1;
+    }
+    if(ok==0){
+        cout<<"nu exista";
+    }
+}
+int main()
+{
+    int a,b;
+    cin>>a>>b;
+    identice(a,b);
+
+    return 0;
+}
+
+
 SIII ex 4
 #include <iostream>
 #include <fstream>
