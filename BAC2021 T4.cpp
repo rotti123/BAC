@@ -43,7 +43,7 @@ int main() {
   }
 }
 
-//SIII ex3
+//SIII ex3 var 001
 #include <iostream>
 #include <fstream>
 using namespace std;
@@ -101,4 +101,72 @@ int main() {
     cout<<"nu exista";
 
 }
+
+///SIII ex3 - var 002
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    ifstream f("bac1.txt");
+    ifstream g("bac2.txt");
+    int n1,n2,x,y,flag=0;
+    f>>n1;
+    g>>n2;
+    int i=1,j=1;
+    f>>x;
+    g>>y;
+    while(i<=n1 && j<=n2)
+    {
+
+        while(x < y && i<=n1)
+        {
+            if(x % 5 == 0){ 
+                cout << x << ' ' , flag=1;
+            }
+            f>>x;
+            i++;
+        }
+
+        while (y < x && j<=n2) 
+        {
+            if(y%5 == 0) {
+                cout << y << ' ' , flag=1;
+            }
+            g>>y;
+            j++;
+        }
+
+        if(x == y)
+        {
+            i++, j++;
+            f>>x;
+            g>>y;
+        }
+
+    }
+
+    while(i<=n1)
+    {
+        f>>x;
+        if(x % 5 == 0) {
+            cout << x << ' ' , flag=1;
+        }
+        i++;
+
+    }
+    while(j<=n2)
+    {
+        g>>y;
+        if(y % 5 == 0) {cout << y << ' ' , flag=1;
+        }
+        j++;
+
+    }
+
+
+        if (flag==0) cout<<"nu exista";
+}
+
 
