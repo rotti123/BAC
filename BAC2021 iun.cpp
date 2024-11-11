@@ -1,3 +1,37 @@
+///SIII ex 2
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main()
+{
+int n,k,cnt=0;
+char sol[21][21];
+char s[21];
+cin >> n >> k;
+for(int i=0;i<n;i++){
+    cin>>s;
+    int poz=strlen(s)-1;
+    if(strchr("aeiou",s[poz])!=0){
+        strcpy(sol[cnt],s);
+        cnt++;
+    }
+
+}
+if(cnt<k){
+    cout<<"NU EXISTA";
+}
+else{
+    for(int i=0;i<k;i++){
+        cout<<sol[i]<< endl;
+    }
+
+}
+}
+
+
+
 ///SIII ex 1
 
 #include <iostream>
