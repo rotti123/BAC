@@ -63,6 +63,58 @@ int main() {
 }
 
 ///SIII ex 3
+#include <fstream>
+
+using namespace std;
+
+/*
+void divX(int n, int x)
+{
+    for(int i = n; i >= 1; i--)
+    {
+        cout << x * i<< " ";
+    }
+}
+*/
+
+ifstream cin("bac.in");
+ofstream cout("bac.out");
+
+int main()
+{
+    int x,p1=0,p2=0,i=0;
+    while(cin >> x)
+    {
+        i++;
+       if(x>0 && p1==0){
+            p1=i;
+       }
+       if(x>0){
+        p2=i;
+       }
+    }
+    cout<<max(p2,i-p1+1);
+    return 0;
+}
+
+/* Este eficient dpdv al memoriei deoarece am folosit 
+doar 4 variablile intregi simple.
+    Este eficient dpdv al timpului de executie deoarece are 
+complexitatea O(n).
+    Pentru fiecare valoare citita se stabileste pozitia
+si se fixeaza pozitia primului si ultimului element pozitiv 
+din valorile citite,si anume p1 respectiv p2.
+    Am afisat maximul dintre lungimea intervalelor [1,p2] si 
+[p1,i],unde i este pozitia ultimului element.
+    */
+
+
+
+
+
+
+
+///SIII ex 3 ????
 
 #include <iostream>
 #include <fstream>
