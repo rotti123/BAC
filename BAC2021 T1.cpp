@@ -40,29 +40,65 @@ for(j=1;j<=n-1;j++){
 
 
 ///SIII ex 3
-int main() {
-  ifstream cin("bac.txt");
-  int k=0,u,z,x,a[100]={},max1=-1,max2=-2;
-  while(cin>>x){
-    if(x<=99){
-      a[x]++;
+#include <fstream>
+
+using namespace std;
+
+/*
+void divX(int n, int x)
+{
+    for(int i = n; i >= 1; i--)
+    {
+        cout << x * i<< " ";
     }
-    }
-  for( x=98;x>=10;x--){
-    u=x%10;
-    z=x/10;
-    if(u!=z && a[x]==0){
-      k++;
-      if(k==1){
-        max1=x;
-      }
-      if(k==2){
-        max2=x;
-      }
-    }
-  }
-  if(max2!=-2){
-    cout<<max1<<" "<<max2;
-  }
-  else cout<<"NU EXISTA";
 }
+*/
+
+ifstream cin("bac.in");
+ofstream cout("bac.out");
+
+int main()
+{
+    int x, v[101] = {};
+    while(cin >> x)
+    {
+        if(x < 100)
+            v[x] = 1;
+    }
+    int a = 0, b = 0;
+    for(int i = 99; i >= 10; i --)
+    {
+        if(!v[i] && (i/10 != i % 10)) {
+            // knt ++;
+            if(!a)
+                a = i;
+            else {
+                b = i;
+                break;
+            }
+        }
+    }
+    if(!a && !b)
+        cout << "nu exista";
+    else
+        cout << a << " " << b;
+}
+
+/**
+Algoritmul este eficient dpdv al timpului deoarece
+are o complexitate O(n), unde n repr nr de elem din fisier
+
+Initial retinem prin intermediul unui vector de aparitii
+numerele care apar in fisier cu val <100
+Parcurgem vectorul de aparitii si retinem cele mai mari
+doua valori ce nu apar in vector.
+Daca nu exista afisam mesaj.
+
+*/
+
+
+
+
+
+
+
