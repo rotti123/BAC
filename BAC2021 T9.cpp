@@ -1,3 +1,55 @@
+SIII.ex 2
+      int ok=0;
+    char *p;
+    char s[101];
+    int sum=0;
+
+    cin.getline(s,101);
+    p=strtok(s," ");
+    while(p!=NULL)
+    {
+        int v[6]= {};
+        for(int i=0; i<strlen(p); i++)
+        {
+            if(p[i]=='a')
+            {
+                v[0]=1;
+            }
+            if(p[i]=='e')
+            {
+                v[1]=1;
+            }
+            if(p[i]=='i')
+            {
+                v[2]=1;
+            }
+            if(p[i]=='o')
+            {
+                v[3]=1;
+            }
+            if(p[i]=='u')
+            {
+                v[4]=1;
+            }
+        }
+        for(int i=0; i<=4; i++)
+        {
+            sum=sum+v[i];
+        }
+        if(sum==1)
+        {
+            cout << p << endl;
+            ok=1;
+        }
+        sum=0;
+        p=strtok(NULL," "); //urmatorul cuvant!
+    }
+
+        if(ok==0)
+        {
+            cout << "NU EXISTA";
+        }
+
 SIII ex 1
   #include <fstream>
 #include <iostream>
