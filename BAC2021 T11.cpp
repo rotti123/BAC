@@ -65,8 +65,37 @@ int main()
     }
     return 0;
 }
+///SIII ex 3 V1
+#include <iostream>
+#include <fstream>
+using namespace std;
 
-///SIII ex 3
+
+
+int main()
+{
+    unsigned int x,y,dif;
+    cin>>x>>y;
+    dif=y-x;
+    cout << y<<' '<<x<<' ';
+    while(x!=1)
+    {
+        dif=dif-2;
+        x=x-dif;
+    cout<<x<<' ';
+    }
+
+    return 0;
+}
+
+
+/*
+Complexitatea este O((y-x)/2)
+
+*/
+
+
+///SIII ex 3 V2
 #include <iostream>
  
 using namespace std;
