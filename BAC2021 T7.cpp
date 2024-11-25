@@ -160,7 +160,41 @@ int main() {
     return 0;
 }
 
-///SIII ex 3
+///SIII ex 3 V I
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    ifstream cin ("bac.txt");
+    int x,ok=0,v[10]={};
+    while(cin>>x){
+        if(x%2==0){
+            v[x]++;
+            ok=1;
+        }
+    }
+    for(int i=0;i<=9;i++){   ////cifra i
+        for(int j=1;j<=v[i];j++){  ////v[i]=nr aparitii pt cifra i
+            cout<<i<<" ";
+        }
+    }
+    if(ok==0){
+        cout<<"nu exista";
+    }
+    return 0;
+}
+/* 
+Algoritmul este eficient dpdv al timpului deoarece are complexitate O(n)
+unde n este nr de elemente afisate.
+Folosim un vector de frecventa pentru a retine nr de aparitii a fiecarei cifre
+Afisam cifrele pare folosind datele din vectorul de frecventa.
+Se trateaza si cazul in care nu exista cifre pare.
+*/
+
+///SIII ex 3 var 2
+
 #include <iostream>
 #include <cstring>
 using namespace std;
