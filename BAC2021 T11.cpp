@@ -37,6 +37,34 @@ int main()
     cout<<rez;
     return 0;
 }
+///SIII ex2
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+
+
+int main()
+{
+    unsigned int n,k,a[21][21],i,j,aux;
+    cin>>n>>k;
+    for (i=1; i<=n; i++)
+        for(j=1; j<=n; j++)
+            cin>>a[i][j];
+    for (i=1; i<=k-1; i++)
+    {
+        aux=a[i][k];
+        a[i][k]=a[k][i];
+        a[k][i]=aux;
+    }
+    for (i=1; i<=n; i++)
+    {
+        for(j=1; j<=n; j++)
+            cout<<a[i][j]<<" ";
+        cout<<endl;
+    }
+    return 0;
+}
 
 ///SIII ex 3
 #include <iostream>
