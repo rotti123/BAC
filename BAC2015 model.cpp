@@ -21,3 +21,62 @@ int main() {
     }
     
 }
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+void subperfect(int a ,int b ){
+     int x,sp,ok=0;
+     for(x=b;x>=a;x=x-1){
+        sp=0;
+        for(int d=2;d<=x/2;d++){
+            if(x%d==0){
+                sp=sp+d;
+            }
+        }
+        if(sp>x){
+            cout<<x<<" ";
+            ok++;
+        }
+
+     }
+     if(ok==0){
+        cout<<"nu exista";
+     }
+
+
+}
+
+
+int main()
+{
+    ifstream cin("bac.txt");
+    int n,x,p,v[10]={},k=0;
+    cin>>n;
+    while(cin>>x){
+        p=0;
+        while(x!=1){
+            x=x/2;
+            p++;
+        }
+        v[p]++;
+    }
+    p=9;
+    while(k+v[p]<n && p>=0){
+        k=k+v[p];
+        p--;
+    }
+      if(p<0){
+        cout<<"Nu exista";
+      }
+      else{
+        x=1;
+        for(int i=1;i<=p;i++){
+            x=x*2;
+        }
+        cout<<x;
+      }
+}
+
+
+
