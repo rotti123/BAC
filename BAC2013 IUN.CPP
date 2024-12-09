@@ -1,3 +1,36 @@
+II.5
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int main ()
+{
+    int n,m,a[50][50]= {};
+    cin>>m>>n;
+    int ok=0;
+    for(int i=0; i<m; i++)
+    {
+        for(int j=0; j<n; j++) cin>>a[i][j];
+    }
+    for(int j=0; j<n; j++)
+    {
+        int k=0;
+        for(int i=0; i<m; i++)
+        {
+            if(a[i][j]!=a[0][j])
+                k=1;
+        }
+        if(k==0){
+            ok=1;
+            cout<<a[0][j]<<" ";
+        }
+    }
+    if(ok==0) cout<<"Nu exista";
+}
+
+
+
 1, 8, 3, 6, 5, 4, 7, 2
 1  2  3  4  5  6  7  8
 
