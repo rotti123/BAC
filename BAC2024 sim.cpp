@@ -35,49 +35,56 @@ int n;
 }
 
 SIII ex 2
-  #include <iostream>
+#include <iostream>
 #include <cstring>
 using namespace std;
 
-
 int main()
 {
- int n,lung,ok=1;
-  char s[101],cuv[100][11],*p, sol[101]={};
-cin>>n;
-cin.ignore();///ignor Enter dupa n
-  for(int i=0;i<n;i++){
-    cin>>cuv[i];
-  }
-  cin.ignore(); ///ignor Enter dupa ultimul cuvant
-  cin.getline(s,100);
-  p=strtok(s," ");
-  while(p!=NULL){
-    lung=strlen(p);
-    if(p[0]=='*'){ ///caut cuvant pentru masca *****
-      ok=0; //pp ca nu am gasit cuvantul de lungime lung
-      for(int i=0;i<n;i++){
-        if(strlen(cuv[i])==lung){
-          strcat(sol,cuv[i]);
-          strcat(sol," ");
-          ok=1;
-          break;
+    int n,ok=0;
+    char a[101][11]={},s[11],t[101];
+    char *p,sol[101]={};
+    cin>>n;
+    //cin.ignore();
+    for(int i=0;i<=n-1;i++){
+        cin>>a[i]; ///retin cuvintele in matrice
+    }
+    cin.ignore();
+    cin.getline(t,100);
+    p=strtok(t," "); ///preiau primul cuvant din t
+    while(p!=NULL)
+    {
+        if(p[0]=='*') ///p este o masca ****
+        {
+            ok=0;
+            for(int i=n-1;i>=0;i--)
+            if(strlen(a[i])==strlen(p))
+            {
+                strcat(sol,a[i]);
+                strcat(sol," ");
+                ok=1;
+                break;
+            }
+            if(ok==0)
+            {
+                cout<<"imposibil";
+                return 0;
+            }
         }
-      }
-      if(ok==0){
-        cout<<"imposibil";
-        return 0;
-      }
+        else ///p este un cuvant
+        {
+            strcat(sol,p);
+                strcat(sol," ");
+        }
+        p=strtok(NULL," ");///urmatorul cuvant
+
     }
-    else{
-      strcat(sol,p);
-      strcat(sol," ");
-    }
-    p=strtok(NULL," ");
-  }
-  cout<<sol;
-  return 0;
+cout<<sol;
+return 0;
 }
+
+
+
 
 SIII ex 3
   #include <iostream>
