@@ -87,28 +87,34 @@ return 0;
 
 
 SIII ex 3
-  #include <iostream>
-#include <fstream>
+#include <iostream>
+#include <cstring>
+#include<fstream>
 using namespace std;
 
-
+int v[1001];
 int main()
 {
- ifstream cin("bac.txt");
-  int v[1001]={},x;
-  while(cin>>x){
+    ifstream cin("bac.txt");
+     int x,ok=1;
+while(cin>>x)
+{
     v[x]++;
-  }
-  for(x=1;x<=1000;x++){
-    if((v[x]!=0)){
-   //  cout<<x<<" "<<v[x]<<endl;
-     if((v[x]%2==x%2) && (v[x]<=x)){
-       cout<<"DA";
-       return 0;
-     }
-    }
-  }
-  cout<<"NU";
-  return 0;
 }
+   for(int x=0;x<=1000;x++)
+   {
+     if(v[x]!=0 && (v[x]>x || v[x]%2!=x%2) )
+     ok=0;
+
+
+   }
+   if(ok==0)
+    cout<<"NU";
+   else
+    cout<<"DA";
+return 0;
+}
+
+
+
 
