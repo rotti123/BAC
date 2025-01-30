@@ -52,25 +52,49 @@ SIII ex 3
 }
 
 SIII ex 4.
-  #include <iostream>
+#include <iostream>
+#include <fstream>
 
 using namespace std;
 
-struct pozitii { 
-    int first = 0;
-    int last = 0;
-} v[10];
+struct element{
+   int st;
+   int dr;
+}a[10];
 
-int main() {
-    int maxx = 0, x, i = 1;
-    while(cin >> x) {
-        if(v[x].first == 0) v[x].first = i;
-        v[x].last = i;
-        if(v[x].last - v[x].first + 1 > maxx) maxx = v[x].last - v[x].first + 1;
-        i++;
+int main()
+{
+    ifstream cin ("bac.txt");
+    int x,poz=0,lmax=0,lung=0;
+    while(cin>>x){
+       poz++;
+       if(a[x].st==0){
+        a[x].st=poz;
+       } /// prima aparitie a lui x
+       a[x].dr=poz;
     }
-    cout << maxx << endl;
-    for(int j = 0; j <= 9; j++) {
-        if(v[j].last - v[j].first + 1 == maxx) cout << j << ' ';
+    for(int i=0;i<=9;i++){
+        lung=a[i].dr-a[i].st+1;
+        if(lung>lmax){
+            lmax=lung;
+        }
     }
+    cout<<lmax<<endl;
+    for(int i=0;i<=9;i++){
+        lung=a[i].dr-a[i].st+1;
+        if(lung==lmax){
+            cout<<i<<" ";
+        }
+    }
+    return 0;
 }
+/** Algoritmul este eficient dpdv al timpului de executie deoacere
+are o complexitate O(n), unde n repr nr de elemente din fisier.
+Am definit o structura ce retine pentru fiecare cifra prima si ultima aparitie
+in sir. In urma parcurgerii tuturor elementelor din fisier am stabilit
+prima si ultima aparitie a acelor valori distincte.
+Ulterior am stabilit lungimea maxima a unei secvente incadrate.
+Am afisat aceasta valoare.
+In final am afisat crescator toate elementele care au lungimea secventei
+incadrate asociata egala cu lungimea maxima.
+*/
