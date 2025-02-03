@@ -1,3 +1,27 @@
+SII. 4
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main()
+{
+    int n;
+    char s[11]={};
+    n=0;
+    for(int i=1; i<=; i++)
+    {
+        cin>>s;
+        char *p;
+        p=strstr(s,"are");
+        if(strcmp(p,"are")== 0){
+            n++;
+        }
+    }
+    cout<<n;
+    return 0;
+}
+
 SII ex 5 Paul Roman
 #include <iostream>
 
