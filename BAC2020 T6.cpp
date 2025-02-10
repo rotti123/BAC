@@ -77,38 +77,55 @@ int main() {
 
 ///SIII ex 3
 #include <iostream>
+#include <cstring>
 #include <fstream>
-
 using namespace std;
+ofstream fout("bac.out");
 
-int main ()
+int main()
 {
-  ifstream cin("bac.txt");
-  ofstream cout("bac.out");
-  int p1, p2, c1, c2, c3, c4, c;
-  cin>>p1>>p2;
-  for(c1=9; c1>=1; c1--){
-    if(p1%c1==0){
-      c2=p1/c1;
-      if(c2<10){
-        for(c=9; c>=0; c--){
-          for(c3=9; c3>=1; c3--){
-            if(p2%c3==0){
-              c4=p2/c3;
-              if(c4<10){
-                cout<<c1<<c2<<c<<c<<c<<c3<<c4<<'\n';
-              }
+    int p1,p2;
+    cin >> p1 >> p2;
+    int c1,c2,c6,c7;
+    for(c1=9; c1>=1; c1--)
+    {
+        c2=p1/c1;
+        if(c1*c2==p1 && c2<=9)
+        {
+            for(int c=9; c>=0; c--)
+            {
+                for(c6=9; c6>=1; c6--)
+                {
+                    c7=p2/c6;
+                    if(c6*c7==p2 && c7<=9)
+                    {
+                        fout<<c1<<c2<<c<<c<<c<<c6<<c7;
+                        fout << endl;
+
+                    }
+                }
             }
-          }
+
         }
-      }
     }
-  }
 }
+/**
+Var I
+Vom folosi c1,c2 pentru primele doua cifre.
+Stiind ca p1=c1*c2, deducem ca c2=p1/c1.
+Iteram c1 de la 9 la 1 si in functie de val lui c1
+determinam valoarea lui c2.
+Similar putem genera si cifrele asociate lui p2.
+In acest mod vom genera descrescator toate solutiile 
+posibile.
+Observam ca nr maxim de pasi este 9*10*9=810 deci putem
+considera complexitatea de timp O(1).
+Rezolvarea este eficienta din punct de vedere al memoriei
+deoarece folosteste doar 7 variablile de tip int. 
 
-/* programul este eficient dpdv al timpului de executie, deoarece are un nr redus de operatii. 
-definim p1=c1*c2, p2=c3*c4, iar nr cerut este de forma c1 c2 c c c c3 c4
-programul are o complexitate O(9*9*10*9*9)->O(1).
-
-algoritmul construieste secvential nr cifra cu cifra de la st la dr, astfel: c1 ia valori de la 9 la 1; daca c1 este divizorul lui p1, atunci c2=p1/c1. daca c2 este format dintr o singura cifra, vom construi cele 3 cifre din mijloc parcurgand intervalul [0, 9] in ordine descrescatoare, iar pt construirea cifrelor c3 si c4 se respecta criteriile de la c1 si c2. 
+Var II
+algoritmul construieste secvential nr cifra cu cifra de la st la dr, astfel:
+c1 ia valori de la 9 la 1; daca c1 este divizorul lui p1, atunci c2=p1/c1. 
+daca c2 este format dintr o singura cifra, vom construi cele 3 cifre din mijloc
+parcurgand intervalul [0, 9] in ordine descrescatoare, iar pt construirea cifrelor c3 si c4 se respecta criteriile de la c1 si c2. 
 */
