@@ -63,34 +63,41 @@ int main(){
 ///SIII ex 2 V1
 #include <iostream>
 #include <cstring>
-#include <fstream>
 using namespace std;
 
-int main() {
- // ifstream cin("bac.txt");
+int main()
+{
+  char x[100]={};
+  char s[251]={};
+  char pr[100]={};
   int ok=0;
-char s[250],cuv[250], *p, *ptr,a[250];
-  cin.getline(s,250); ///textul nume prenume;..
-  cin.getline(cuv,250);
-  strcat(cuv," "); ///cuv <- "DAN "
-  p=strtok(s,";"); //retin [nume prenume]
-  while(p!=NULL){
-    strcpy(a,p);
-   if(a[0]==' '){
-    strcpy(a+0,a+1); ///elimin ' ' din fata
-   }
-     //   cout<<"#"<<a<<'\n';
-    ptr=strstr(a,cuv); ///ptr=textul de la cuv pana in capat din p
-    if(ptr!=NULL && strcmp(ptr,a)==0){
-      cout<<a+strlen(cuv)<<" "; ///afisez doar prenume (sar peste prenume)
-      ok=1;
+
+  cin.getline(s,250);
+  cin>>x;
+  char *p,*q;
+  p=strtok(s,"; ");
+  strcpy(pr,p);
+  //q=p;
+  p=strtok(NULL,"; ");
+  while(p){
+    if(strcmp(x,pr)==0){
+        ok=1;
+        cout<<p<<" ";
     }
-    p=strtok(NULL,";");
+    p=strtok(NULL,"; ");
+    if(p==NULL) break;
+    strcpy(pr,p);
+    //q=p;
+    p=strtok(NULL,"; ");
   }
-  if(ok==0){
-    cout<<"Nu";
-  }
+  if(ok==0) cout<<"NU";
+
 }
+
+
+
+
+
 ///SIII ex 2 V2
 #include <cstring>
 #include <fstream>
