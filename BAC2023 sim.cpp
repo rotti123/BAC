@@ -50,30 +50,40 @@ int main()
   return 0;
 }
 SIII. 3
-  #include <iostream>
+#include <iostream>
 #include <cstring>
 #include <fstream>
 using namespace std;
-ifstream fin ("bac.txt");
+
 int main()
-{
-    int a,b,max1=0,k=1;
-    fin >> a;
-    max1=a;
-    cout << k << " ";
-    while(fin >> b)
+{ ifstream fin("bac.txt");
+int poz=1,a,b,MAX;
+fin>>a;
+cout<<poz<<" ";
+MAX=a;
+while(fin>>b)
+{ poz++;
+    if(b>MAX)
     {
-        k++;
-        if(b>max1)
-        {
-            cout << k << " ";
-            max1=b;
-        }
-        else
-        {
-            if(b==max1 && a!=max1)
-                cout << k << " ";
-        }
-        a=b;
+        MAX=b;
+        cout<<poz<<" ";
     }
+   else if(b==MAX && a!=b)
+    cout<<poz<<" ";
+   a=b;
 }
+    fin.close();
+    return 0;
+}
+/** algoritmul este eficient dpdv al memoriei,deoarece am folosit
+ doar 4 variabile intregi simple.
+ 
+ algoritmul este eficient dpdv al timpului de executie, deoarece are 
+ o complexitate O(n), unde n reprezinta cate nr am in fisier.
+ 
+ retinem maximul local in variabila MAX. avem urmatoarele situtii:
+ -am intalnit un nou maxim, atunci afisam poz acestuia.
+ -am intalnit aceeasi val max, dar elem anterior este diferit, atunci 
+ afisam poz acestuia.
+ */
+
