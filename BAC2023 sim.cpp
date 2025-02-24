@@ -1,3 +1,18 @@
+SII.3
+   int a[10][10],i,j;
+    for(i=1;i<=5;i++){
+        for(j=1;j<=5;j++){
+            a[i][5-j+1]=max(i,j)-1;
+           // a[5-i+1][j]=max(i,j)-1;
+        }
+    }
+    for(i=1;i<=5;i++){
+        for(j=1;j<=5;j++){
+            cout<<a[i][j]<<" ";
+        }
+    cout << endl;
+    }
+
 SIII 2.
   #include <iostream>
 #include <fstream>
@@ -33,4 +48,32 @@ int main()
   strcpy(s,aux);
   cout<<s;
   return 0;
+}
+SIII. 3
+  #include <iostream>
+#include <cstring>
+#include <fstream>
+using namespace std;
+ifstream fin ("bac.txt");
+int main()
+{
+    int a,b,max1=0,k=1;
+    fin >> a;
+    max1=a;
+    cout << k << " ";
+    while(fin >> b)
+    {
+        k++;
+        if(b>max1)
+        {
+            cout << k << " ";
+            max1=b;
+        }
+        else
+        {
+            if(b==max1 && a!=max1)
+                cout << k << " ";
+        }
+        a=b;
+    }
 }
