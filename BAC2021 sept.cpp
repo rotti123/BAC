@@ -103,6 +103,7 @@ Solutia problemei consta in parcurgerea intervalului [0,99]
 si adunarea produselor a[i]*b[i], unde a[i] este vect
 de frecv asociat primului sir iar b[i] 
 pentru cel de-al doilea sir.
+Complexitatea este O(na+nb)
 */
 
 
