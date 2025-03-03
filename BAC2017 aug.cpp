@@ -254,3 +254,55 @@ int main() {
         cout << q;
     }
 }
+SIII ex 4
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+    ifstream f("bac.in");
+    int x,m1=100000,m2=100000,ap[1001]={},r;
+    while(f>>x)
+    {
+        if(x<m1 && ap[x]==0)
+        {
+            m2=m1;
+            m1=x;
+
+        }
+        else
+            if(x<m2 && ap[x]==0)
+            m2=x;
+        ap[x]=1;//marcam aparitia lui x
+    }
+    r=m2-m1;
+
+    while (m2<=1000)
+    {
+        for(x=m2+1;x<=m2+r-1;x++)
+            if(ap[x]==1)
+        {
+            cout<<"NU";
+            return 0;
+
+        }
+        if(ap[m2+r]==0){
+            cout << "nu";
+            return 0;
+        }
+        m1=m1+r;
+        m2=m2+r;
+
+    }
+    cout<<r;
+    return 0;
+}
+/*
+
+   X    M1    M2
+   M1   M2
+
+   */
+    
