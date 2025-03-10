@@ -1,3 +1,39 @@
+SII. ex 5
+  #include <iostream>
+#include <cstring>
+
+using namespace std;
+
+
+
+int main()
+{
+    int n,k;
+    char a[21][21];
+    char v[420]={};
+
+    cin>>n;
+    for(int i=0;i<n;i++)
+        cin>>a[i];
+    cin>>k;
+    for(int i=0;i<n;i++)
+        if(strlen(a[i])==k)
+        {
+            strcat(v,a[i]);
+            strcat(v," ");
+        }
+    for(int i=0;i<n;i++)
+        if(strlen(a[i])!=k)
+        {
+            strcat(v,a[i]);
+            strcat(v," ");
+        }
+          cout<<v;
+    return 0;
+
+}
+
+
 SIII ex 3
   #include <iostream>
 #include <bits/stdc++.h>
