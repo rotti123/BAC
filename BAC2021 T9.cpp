@@ -1,55 +1,37 @@
 SIII.ex 2
-      int ok=0;
-    char *p;
-    char s[101];
-    int sum=0;
+  #include <iostream>
+#include <cstring>
+using namespace std;
 
-    cin.getline(s,101);
-    p=strtok(s," ");
+int main()
+{
+    char a[101],*p,voc[6]="aeiou",cnt=0,ok=0;
+    cin.getline(a,100);
+    p=strtok(a," ");
     while(p!=NULL)
     {
-        int v[6]= {};
-        for(int i=0; i<strlen(p); i++)
+        cnt=0;
+        for(int i=0;i<=4;i++)
         {
-            if(p[i]=='a')
+            if(strchr(p,voc[i])!=NULL )
             {
-                v[0]=1;
-            }
-            if(p[i]=='e')
-            {
-                v[1]=1;
-            }
-            if(p[i]=='i')
-            {
-                v[2]=1;
-            }
-            if(p[i]=='o')
-            {
-                v[3]=1;
-            }
-            if(p[i]=='u')
-            {
-                v[4]=1;
+                cnt++;
             }
         }
-        for(int i=0; i<=4; i++)
+        if(cnt==1)
         {
-            sum=sum+v[i];
-        }
-        if(sum==1)
-        {
-            cout << p << endl;
             ok=1;
+            cout<<p<<endl;
         }
-        sum=0;
-        p=strtok(NULL," "); //urmatorul cuvant!
+        p=strtok(NULL," ");
     }
-
-        if(ok==0)
-        {
-            cout << "NU EXISTA";
-        }
-
+    if(ok==0)
+    {
+        cout<<"nu exista";
+    }
+    return 0;
+}
+ 
 SIII ex 1
   #include <fstream>
 #include <iostream>
