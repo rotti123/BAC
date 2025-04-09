@@ -58,6 +58,49 @@ int main()
 }
 
 III.1
+V1.
+  #include <iostream>
+#include <fstream>
+#include <cmath>
+using namespace std;
+int fulg(int n){
+    int val,nrc,ap[10]={};
+    val=n;
+    if (n==0){
+        return 0;
+    }
+    nrc=log10(n)+1; /// calculam nr. de cifre al unui nr.!!!
+    if (nrc!=9){
+        return 0;
+    }
+    while (val>0){
+        ap[val%10]=1;
+        val/=10;
+    }
+    if (ap[0]==1){
+        return 0;
+    }
+    for (int i=5;i<=9;i++){
+        if (ap[i]==1){
+            return 0;
+        }
+    }
+    for (int i=1;i<=4;i++){
+        if (ap[i]==0){
+            return 0;
+        }
+    }
+    return 1;
+}
+
+
+int main()
+ {
+    cout<<fulg(12344321);
+        return 0;
+}
+
+  V2.
 #include <iostream>
 #include <cstring>
 using namespace std;
