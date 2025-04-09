@@ -168,6 +168,50 @@ int main()
 
 
 III.3
+V1.
+#include <iostream>
+#include <fstream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    ifstream cin("bac.in");
+   int x, cmax=0, c1, c2, n1=-1, n2=-1;
+   while(cin >> x){
+        if(x<=9){
+            if(x>cmax){
+                n1=x;
+                cmax=x;
+                n2=-1;
+            }
+            else if(x==cmax){
+                n2=x;
+            }
+        }
+        else{
+            c1=x%10;
+            c2=x/10;
+            if(c1>cmax || c2>cmax){
+                n1=x;
+                cmax=max(c1, c2);
+                n2=-1;
+            }
+            else if(cmax==max(c1, c2)){
+                n2=x;
+            }
+        }
+   }
+   if(n2==-1){
+    cout << "nu exista";
+   }
+   else{
+   cout << n1 << " " << n2;
+   }
+    return 0;
+}
+
+  V2.
 #include <iostream>
 #include <cstring>
 #include <fstream>
