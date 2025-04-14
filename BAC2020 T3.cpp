@@ -57,6 +57,28 @@ int main(){
 
 
 ///SIII ex 1:
+V1
+int factori( int n, int m){
+    int d=2;
+    
+    int cont=0;
+    while(n>1 && m > 1){
+        if (n%d == 0 && m%d==0 ) {
+            cont++;
+        }
+        while ( n % d == 0 ) {
+            n = n / d;
+        }
+        while ( m % d == 0 ) {
+            m = m / d;
+        }
+        d++;
+    }
+        return cont;
+}
+V2
+
+
 #include <iostream>
 
 using namespace std;
