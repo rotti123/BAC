@@ -1,5 +1,28 @@
 ///SII ex 3
+V1
 
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+
+     int p=1;
+     char s[21];
+     cin>>s;
+     if((s[0]== 'A' && s[1]!= 'I') || s[0]!= 'A')
+     {
+         cout<<s[0];
+     }
+     while(s[p] != '\0')
+     {
+        if((s[p]== 'A' && (s[p+1]!= 'I' && s[p-1]!= 'I'))
+           || s[p]!= 'A')
+            cout<<s[p];
+        p++;
+     }
+}
+V2
 #include <iostream>
 #include <fstream>
 #include <cstring>
