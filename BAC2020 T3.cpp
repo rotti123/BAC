@@ -169,7 +169,8 @@ Alg este eficient dpdv al timpului de executie deoarece are o complexitate O(n).
 Este eficeint dpdv al memoriei deoarece foloseste doar 6 variabile simple. 
 Algoritmul contorizeaza cate numere sunt citite, iar dupa verifica daca numarul citit este negativ.
 In caz afirmativ se retine pozitia primului si a ultimului numar gasit.
-Compara cate numere se afla de la primul numar negativ pana la ultimul citit si de la primul numar citit pana la ultimul numar negativ 
+Compara cate numere se afla de la primul numar negativ pana la ultimul citit si 
+de la primul numar citit pana la ultimul numar negativ 
 La sfarsit se afiseaza numarul cel mai mare dintre cele doua valori comparate anterior.*/
 
 https://pastebin.com/DqzmX88h
