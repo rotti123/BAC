@@ -168,5 +168,68 @@ int main()
 
         if (flag==0) cout<<"nu exista";
 }
+V2 SIII ex 3
+  #include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+ifstream f1("bac1.txt");
+ifstream f2("bac2.txt");
+    int n,m,x,y,i=1,j=1,ok=0;
+    f1>>n>>x;
+    f2>>m>>y;
+    while(i<=n && j<=m){
+        if(x<y){
+            if(x%5==0){
+                cout<<x<<" ";
+                ok=1;
+            }
+            i++;
+            f1>>x;
+        }
+        else if(x>y){
+            if(y%5==0){
+                cout<<y<<" ";
+                ok=1;
+            }
+            j++;
+            f2>>y;
+        }
+        else if(x==y){
+            i++;
+            j++;
+            f1>>x;
+            f2>>y;
+        }
+
+    }
+    while(i<=n){
+        if(x%5==0){
+            cout<<x<<" ";
+            ok=1;
+        }
+        i++;
+        f1>>x;
+    }
+    while(j<=m){
+        if(y%5==0){
+            cout<<y<<" ";
+            ok=1;
+        }
+        j++;
+        f2>>y;
+    }
+    if(ok==0){
+        cout<<"nu exista";
+    }
+    return 0;
+}
+//Complexitate O(n1+n2)
+//eficient  din punct de vedere al memoriei deoarece am folosit
+//7 variabile intregi si simple
+//pentru rezolvare am folosit algoritmul de interclasare
+//optimizat pt lucru cu 2 fisiere
 
 
