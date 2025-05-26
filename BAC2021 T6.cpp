@@ -122,3 +122,102 @@ S3  7..12 L3=k-(b+1)+1
 cout<<max(l1,max(l2,l3))
 
 */
+
+
+Completare:
+#include <iostream>
+
+using namespace std;
+
+void numar(int n, int c, int &m)
+{
+    m=0;
+    if(n==0 && c!=0){
+    m=0;
+    return;
+    }
+    int p=1, ok=0;
+    while(n!=0)
+    {
+        if(n%10!=c)
+          {
+              m=n%10*p+m;
+              p=p*10;
+              ok=1;
+          }
+          n=n/10;
+
+
+    }
+    if(ok==0)
+        m=-1;
+
+
+}
+int main()
+{
+    int x,a=0,b=0,c=0,poz=0,l=0,lmax=0;
+    while(cin >> x)
+    {
+        poz++;
+        if(x<0)
+        {
+            if(a==0)
+            a=poz;
+            else
+                if(b==0)
+            {
+                b=poz;
+                l=b-1;
+                lmax=l;
+            }
+            else
+            if(c==0)
+               {
+                  c=poz;
+                  l=c-a-1;
+                  if(l>lmax)
+                    lmax=l;
+               }
+            else
+              {
+
+                   a=b;
+                   b=c;
+                   c=poz;
+                   l=c-a-1;
+                  if(l>lmax)
+                    lmax=l;
+              }
+
+
+        }
+
+    }
+    l=poz-b;
+    if(l>lmax)
+        lmax=l;
+    cout << lmax;
+  /*  int a[21][21],n;
+    cin>>n;
+    for(int i=0;i<=n-1;i++){
+        for(int j=0;j<=n-1;j++){
+
+            if(i<j){
+                a[i][j]=j-i;
+            }
+            else{
+                a[i][j]=i-j;
+            }
+
+        }
+
+    }
+    for(int i=0;i<=n-1;i++){
+        for(int j=0;j<=n-1;j++){
+                cout<<a[i][j]<<' ';}
+        cout<<"\n";
+    }*/
+    return 0;
+}
+
