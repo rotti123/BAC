@@ -77,3 +77,35 @@ int n,m,a[51][51], ok,sol=1;
   }
   cout<<sol;
 }
+
+SIII.3
+ #include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    ifstream cin("bac.txt");
+    int x,v[1001]={},i;
+    while(cin>>x)
+    {
+      v[x]++;
+    }
+    for(int i =1;i<=1000;i=i+2)
+    {
+        for(int j=1;j<=v[i];j++)
+        {
+            cout<<i<<' ';
+        }
+    }
+    for(int i =2;i<=1000;i=i+2)
+    {
+        for(int j=1;j<=v[i];j++)
+        {
+            cout<<i<<' ';
+        }
+    }
+
+    return 0;
+}
+
