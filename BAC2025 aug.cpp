@@ -22,6 +22,41 @@ int main()
     return 0;
 }
 
+SIII.2
+  #include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int a[101][101], n, m, col, x, Min, i,j;
+    cin>>n>>m;
+    for(i=0; i<n; i++)
+        for(j=0; j<m; j++)
+            cin>>a[i][j];
+    Min=a[0][0];
+    for(i=0; i<n; i++)
+        for(j=0; j<m; j++)
+        {
+            if(a[i][j]<Min)
+            {
+                Min=a[i][j];
+                col=j;
+            }
+        }
+    x=a[n-1][m-1];
+    for(i=0; i<=n-1; i++)
+        a[i][col]=x;
+    for(i=0; i<n; i++)
+    {
+        for(j=0; j<m; j++)
+        {
+            cout<<a[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
+
 
 SIII. 3.
   #include <iostream>
