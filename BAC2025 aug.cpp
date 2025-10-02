@@ -58,6 +58,76 @@ int main()
 }
 
 
+Var 001
+SIII 3.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+   // fstream fin("bac.in",ios::in);
+   ifstream fin("bac.in");
+    int minp,minz,x,zi=0,suma=0,a=0,b=0,ok=0;
+    fin>>minz>>minp;
+    while(fin>>x)
+    {
+        zi++;
+        if(x>=minz)
+        {
+            if(a==0)
+            {
+                a=zi;
+                b=zi;
+                suma=x;
+            }
+            else
+            {
+                b=zi;
+                suma=suma+x;
+            }
+        }
+        else
+        {
+         if(a!=0 && b>a && suma >minp)
+         {
+             cout<<a<<" "<<b<<" "<<suma<<endl;
+             ok=1;
+         }
+         a=0;
+         b=0;
+         suma=0;
+        }
+      //  cout<<a<<" "<<b<<" "<<suma<<'\n';
+      //  getchar();
+    }
+    if(a!=0 && b>a && suma >minp)
+         {
+             cout<<a<<" "<<b<<" "<<suma<<endl;
+             ok=1;
+         }
+     if(ok==0){
+        cout<<"nu exista";
+     }    
+    return 0;
+}
+
+/**
+este eficient dpdv al memoriei pentru ca am folosit 
+8 variabile intregi simple.
+este eficient dpdv a timpului de executie 
+deoarece are o complexitate O(n)
+unde n reprezinta numarul de zile.
+
+Algoritmul prelucreaza datele pentru fiecare zi astfel
+Asociaza un numar de ordine fiecarei zile (var zi)
+Se testeazza daca avem cantitate suficienta atunci
+actualizam perioada cu capetele intervalului si suma asociata
+
+Daca am validat o perioada o afisam
+
+Tratam si cazul in care nu exista astfel de perioade.
+*/
+Var 002
 SIII. 3.
   #include <iostream>
 #include <cmath>
