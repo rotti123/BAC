@@ -1,3 +1,28 @@
+SIII.1
+  #include <bits/stdc++.h>
+using namespace std;
+void teren(int x,int y)
+{
+    int A=x*y, ok=0;
+    for(int d=2; d<=A/2; d++) /// d*d<=A
+        if(A%d==0 && d%2==0 && d<A/d)
+        {
+            cout<<d<<" parcele de arie "<<A/d<<endl;
+            ok=1;
+        }
+    if(ok==0)
+        cout<<"nu exista";
+
+}
+
+int main()
+{
+
+    teren(6,8);
+    return 0;
+}
+
+
 SIII. 3.
   #include <iostream>
 #include <cmath>
