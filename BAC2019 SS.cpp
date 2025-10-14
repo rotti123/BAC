@@ -52,6 +52,27 @@ d c b a
 a=b;
 b=c;
 c=d;
+SIII ex2.
+ #include <iostream>
+#include <cstring>
+using namespace std;
+
+int n,a=0,c,p=1;
+int main()
+{
+   int n,ok=0;
+   char v[101],*p;
+   cin.getline(v,100);
+   cin>>n;
+   p=strtok(v," ");
+   while(p!=NULL)
+   {
+       if(strlen(p)==n) cout<<p<<endl,ok=1;
+       p=strtok(NULL," ");
+   }
+   if(ok==0) cout<<"nu exista";
+    return 0;
+}
 
 SIII ex 3
  /*
