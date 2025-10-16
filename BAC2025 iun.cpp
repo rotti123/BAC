@@ -85,3 +85,33 @@ int main()
 
 }
 
+SIII. 3
+  #include<iostream>
+#include <fstream>
+#include<cstring>
+using namespace std;
+int main()
+{
+   ifstream cin("bac.in");
+   int x,y,a,b,i=0,poz=0,cnt=0;
+   cin>>a>>b;
+   while(cin>>x>>y)
+   {
+       i++;
+       if(max(a,x)<min(b,y))
+       {
+         cnt++;
+         poz=i;
+       }
+
+   }
+   cout<<cnt<<" "<<poz;
+    return 0;
+
+}
+/* Alg este eficient dpdv al timpului de exec deoarece are complex O(n), n = nr de intervale
+Alg este eficient dpdv al mem deoacere se folosesc 6 var intregi simple
+Alg retine intervalul in care este disponibil tanarul [a,b]
+Pentru fiecare interval asoc unui muzeu testam daca este disponibil.
+In caz afirmativ crestem contorul si retinem ultima pozitia
+*/
