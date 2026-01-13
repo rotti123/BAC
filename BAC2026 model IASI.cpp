@@ -41,3 +41,56 @@ int main()
     cout<<c<<" "<<d;
     return 0;
 }
+
+SIII.2
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int anagrame(char a[101], char b[101])
+{
+    int va[26]={},vb[26]={};
+    int cod;
+    for(int i=0;i<strlen(a);i++){
+        cod=a[i]-'a';
+        va[cod]++;
+    }
+    for(int i=0;i<strlen(b);i++){
+        cod=b[i]-'a';
+        vb[cod]++;
+    }
+    for(int i=0;i<=25;i++){
+        if(va[i] != vb[i]){
+            return 0;
+        }
+    }
+    return 1;
+}
+
+int main()
+{
+    char s[101],c[21],*p,t[101],mat[101][101];
+    int k=0,ind=0;
+    cin.getline(s,101);
+    cin>>c;
+    p=strtok(s," ");
+    while(p){
+        if(anagrame(p,c)){
+            k++;
+        }
+        else{
+        strcpy(mat[ind],p);
+        ind++;
+        }
+        p=strtok(NULL," ");
+    }
+    if(k==0){
+        cout<<"nu exista";
+    }else{
+    for(int i=0;i<=ind-1;i++){
+        cout<<mat[i]<<' ';
+    }
+    }
+    return 0;
+}
+
