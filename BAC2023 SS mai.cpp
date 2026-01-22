@@ -101,64 +101,51 @@ int main() {
 
 SIII.3
   #include <iostream>
+#include<fstream>
 using namespace std;
-///Alexia
-int main() {
-  int a,pmin=0,p=1,pmax=0,st=0,dr=0,aux,n;
-  /// [x,y]= p-interval curent
-  cin>>a;
-  x=a;
-  y=a;
-  while(cin>>a){
-    p++;
-    if(a<x){
-       x=a;
+
+int main()
+{
+    ifstream fin("bac.in");
+    int p=0, pst=0, pdr=0,x,mini=1000000,maxi=-1000000,a,b;
+    while(fin>>x)
+    {
+        p++;
+        a=mini;
+        b=maxi;
+        if(x<mini)
+        {
+            mini=x;
+
+        }
+        if(x>maxi)
+        {
+            maxi=x;
+        }
+        if(a==mini && b==maxi)
+        {
+            if(pst==0)
+                pst=p;
+            pdr=p;
+        }
+
+
+
     }
-    else if(y<a){
-      y=a;
-    }
-    else{
-      if(pmin==0){
-         pmin=p;   
-      }
-      pmax=p;
-    }
-    
-  }
-  if(pmin!=0){
-    cout<<pmin<<" "<<pmax;
-  }
-  else{
-    cout<<"nu exista";
-  }
-  return 0;
+    if(pdr==0)
+        cout<<"nu exista";
+     else cout<<pst<<" "<<pdr;
+    return 0;
 }
 
-///Dania
-int a, b, c, pmin=0, pmax, aux, p;
-cin>>a>>b;
-p=2;
-if(a>b){
-  aux=a;
-  a=b;
-  b=aux;
-}
-while(cin>>c){
-  p++;
-  if(a<=c && c<=b){
-    if(pmin==0){
-      pmin=p;
-      pmax=p;
-    }
-      pmax=p;
-  }
-  else{
-    if(a>c){
-      a=c;
-    }
-    else if(b<c){
-      b=c;
-    }
-  }
-}
+/*Algoritmul este eficien  dpdv al memorirei, deoarece a folosit un
+nr limitat de variabile intregi simple.
+Algoritmul este eficient dpdv ala timpului de executi, deoarece avem o complexitate 
+O(n), unde n este numarul de numere din fisier.
+Citim din fisier numerele, crestem pozitia. actualizam valoarea minimului partial,
+la fel si al maximului partial. Daca minimul actual coincide cu minimul de la poz 
+anterioara, respectiv maximul actual coincide cu maximul de la pozitia anterioara, 
+atunci atunci am gasit un p valid. La sfarsit afisam primul  si ultimul p valid, 
+in caz contrar mesajul corespunzator.
+*/
 
