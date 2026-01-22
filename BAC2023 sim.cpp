@@ -14,41 +14,44 @@ SII.3
     }
 
 SIII 2.
-  #include <iostream>
-#include <fstream>
-#include <cmath>
+#include <iostream>
+#include<fstream>
+#include <cstring>
 using namespace std;
 
 int main()
 {
-  //  ifstream f("bacul.txt");
-   char s[303],*p,aux[303]={};
-  cin.getline(s,100);
-  p=strtok(s," ");
-  while(p!=NULL){
-     if(strchr(p,'.')==NULL){
-        strcat(aux,p);
-     }
-     else{
-        if(p[0]=='F'){
-           strcat(aux,"fam.");
-        }
-       if(p[0]=='S'){
-           strcat(aux,"spe.");
-        }
-       if(p[0]=='G'){
-           strcat(aux,"gen.");
-        }
-     }
-      p=strtok(NULL," ");
-      if(p!=NULL){
-       strcat(aux," ");
-      }
-  }
-  strcpy(s,aux);
-  cout<<s;
-  return 0;
+ //   ifstream fin("bac.in");
+ char s[101], *p,sol[101]={},cuv[101];
+ cin.getline(s,101);
+ p=strtok(s," ");
+ while(p!=NULL){
+    if(strchr(p,'.')!=NULL){
+        if(p[0]=='F')
+            strcpy(cuv,"fam.");
+
+            if(p[0]=='G')
+            strcpy(cuv,"gen.");
+
+            if(p[0]=='S')
+            strcpy(cuv,"spe.");
+
+    }
+    else strcpy(cuv,p);
+    strcat(sol,cuv);
+    strcat(sol," ");
+    p=strtok(NULL," ");
+
+ }
+ cout<<sol;
+
+
+
+    return 0;
 }
+
+
+
 SIII. 3
 #include <iostream>
 #include <cstring>
