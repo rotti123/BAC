@@ -217,3 +217,35 @@ int main()
     }
     return 0;
 }
+
+
+SIII.3
+	#include <iostream>
+#include <fstream>
+#include <cstring>
+using namespace std;
+int main()
+{
+    int n,p,R[1000]={},c,i,j;
+    long long sol=0;
+    cin>>n>>p;
+    for(i=0;i<n;i++) {
+        cin>>c;
+        R[c%p]++;
+    }
+    n=R[0];
+    sol+=n*(n-1)/2;
+    for(i=1;i<(p+1)/2;i++)
+    {
+        j=p-i;
+        sol+=R[i]*R[j];
+    }
+    if(p%2==0)
+    {
+        n=R[p/2];
+        sol+=n*(n-1)/2;
+    }
+    cout<<sol<<" ";
+    return 0;
+}
+
