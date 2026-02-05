@@ -65,4 +65,49 @@ int main() {
 1300-1=
 7*11=
 */
+III.3
+    #include <iostream>
+#include <cstring>
+#include<fstream>
+using namespace std;
+int main() {
+    ifstream fin("numere.in");
+    int n,x,y,i,ok=0;
+    fin>>n>>x;
+    for(i=1;i<=x-1;i++)
+    {
+        ok=1;
+        cout<<i<<" ";
+    }
+    while(fin>>y)
+    {
+        for(i=x+1;i<=y-1;i++)
+           {
+               ok=1;
+               cout<<i<<" ";
+           }
+           x=y;
+    }
+    for(i=y+1; i<=n; i++)
+    {
+        ok=1;
+        cout<<i<<" ";
+    }
+    if(ok==0)
+        cout<<"nu exista";
+    return 0;
+}
 
+/* Algoritmul este eficient din punct de vedere al memoriei 
+deoarece am utilizat 5 variabile simple. 
+Algoritmul are o complexitate O(n) unde n reprezinta nr din enunt.
+Algoritmul trateza urmatoarele cazuri pentru doua elemente
+consecutive din sir x si y: 
+-daca x e primul element din sir se afiseaza continutul
+intervalului [1,x)
+-daca y e ultimul element din sir se afiseaza continutul
+intervalului (y,n]
+-pentru o pereche oarecare din interior afisam continutul
+intervalului (x,y)
+Am tratat si cazul care nu exista.
+*/
