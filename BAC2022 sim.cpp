@@ -56,7 +56,44 @@ int main(){
   cout<<k;
 }
 
-          
+ ///SIII.2
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int main()
+{
+    char s[251], *p,cuv[250],x[250];
+    int ok=0,exista = 0,primul=1;
+    cin.getline(s,251);
+    cin.getline(x,251);
+    do{
+        ok=0;
+        if(primul==1){
+            p=strtok(s," ;"); //prenumele
+            primul = 0;
+        }
+        else{
+            p=strtok(NULL," ;");
+        }
+        if(p==NULL)
+            break;
+        if(strcmp(p,x)==0)
+            ok=1;
+
+        p=strtok(NULL," ;");
+        if(ok==1){
+            cout<<p<<" ";
+            exista = 1;
+        }
+    }
+    while(p!=NULL);
+    if(exista==0)
+        cout<<"NU";
+
+    return 0;
+}
+
 
   ///  	(づ｡◕‿‿◕｡)づ|l)/
 
