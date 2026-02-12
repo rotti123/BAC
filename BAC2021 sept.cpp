@@ -49,6 +49,55 @@ int main() {
 }
 
 
+SIII.3
+  #include <iostream>
+#include <cstring>
+using namespace std;
+
+int main()
+{
+  int a[100]={},b[100]={},x,n,m,u=0,z=0;
+  long long cnt=0;
+  cin>>n>>m;
+  for(int i=1;i<=n;i++)
+  {
+      cin>>x;
+      x=x%100;
+      u=x%10;
+      z=x/10;
+      if(z>u)
+        x=u*10+z;
+      a[x]++;
+  }
+  for(int i=1;i<=m;i++)
+  {
+      cin>>x;
+      x=x%100;
+      u=x%10;
+      z=x/10;
+      if(z>u)
+        x=u*10+z;
+      b[x]++;
+  }
+  for(int i=0;i<=99;i++)
+    cnt=cnt +1ll*a[i]*b[i];
+  cout<<cnt;
+
+
+}
+
+/***
+    Alg este eficient dpdv al timpului deoacere
+    are o complexitate O(n+m)
+    La fiecare numar am creat o codificare formata
+    din ultimele doua cifre.
+    Daca ultimele doua cifre nu au cifrele
+    in ordine crescatoare le interschimbam in codificare.
+    Am folosit un vector de frecventa pentru 
+    aceste codificari asociat fiecarui sir.
+    Solutia finala se obtine insumand produsele
+    asociate vectorilor de frecventa din cele doua siruri.
+**/
 
 
 S III EX 3
