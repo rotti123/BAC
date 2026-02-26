@@ -1,5 +1,5 @@
 SIII 
-SIII.1
+SIII.1 var 1
   #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
@@ -58,6 +58,50 @@ int main()
 
     return 0;
 }
+SIII.1 var 2
+  #include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+void ecran(int n)
+{
+    ///2023 n
+    ///3210 poz in cif[]
+    ///0123 poz in s[]
+    char s[256]={};
+    int cif[18]={},ind=0,k=0,j;
+    while(n!=0){
+        cif[ind]=n%10;
+        ind++;
+        n/=10;
+    }
+    j=ind-1;
+    for(k=0;k<ind;k++){
+        s[k]=cif[j]+'0';
+        j--;
+    }
+    s[k]='*';
+    k++;
+    for(int i=ind-1;i>=0;i--){
+        s[k]=cif[i]+'0';
+        k++;
+    }
+    int st=ind-1,dr=ind+1;
+    for(int i=0;i<=ind;i++){
+        cout<<s<<endl;
+        s[st]='*';
+        s[dr]='*';
+        st--;
+        dr++;
+    }
+}
+int main()
+{
+   int n;
+   cin>>n;
+   ecran(n);
+    return 0;
+}
+
 SIII.
 #include <bits/stdc++.h>
 #include <cmath>
