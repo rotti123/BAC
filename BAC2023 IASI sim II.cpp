@@ -1,4 +1,64 @@
 SIII 
+SIII.1
+  #include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+int nrc(int x)
+{
+     if(x==0) return 1;
+     int nr=0;
+    while(x)
+    {
+        nr++;
+        x/=10;
+    }
+    return nr;
+}
+void ecran(int n)
+{
+    int copie,p=1,pref=n,suf=n,st=1;
+    copie=n;
+    while(copie>9)
+    {
+        p*=10;
+        copie/=10;
+    }
+    while(pref!=0)
+    {
+        cout<<pref;
+        for(int i=1;i<=st;i++)
+            cout<<"*";
+        if(nrc(pref)!= nrc(suf))
+        {
+            int d;
+            d=nrc(pref)-nrc(suf);
+            for(int i=1;i<=d;i++)
+                cout<<"0";
+        }
+
+        cout<<suf;
+        cout<<endl;
+        pref/=10;
+        st+=2;
+        suf%=p;
+        p/=10;
+
+    }
+    for(int i=1;i<=st;i++)
+        cout<<"*";
+
+
+}
+int main()
+{
+   int n;
+   cin>>n;
+   ecran(n);
+
+
+    return 0;
+}
+SIII.
 #include <bits/stdc++.h>
 #include <cmath>
 #include <fstream>
