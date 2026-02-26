@@ -101,6 +101,64 @@ int main()
    ecran(n);
     return 0;
 }
+SIII. 3
+
+  #include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+   int k,x,a=0,b=1,c;
+   cin >> x >> k;
+   if(k==1)
+   {
+       cout << x-1;
+       return 0;
+   }
+   if(k==2)
+   {
+       if(x==10)
+       {
+           cout << 9;
+           return 0;
+       }
+   }
+   if(x>9){
+    a=2;
+    b=2;
+   }
+   c=a+b;
+   while(c!=k){
+    a=b;
+    b=c;
+    c=(a+b);
+
+   }
+   char ch;
+   for(int i=1;i<=b;i++){
+    cin >> ch;
+    cout << ch;
+   }
+
+    return 0;
+}
+/* Algoritmul este eficient dpdv al timpului 
+de executie deoarece are o complexitate O(k), 
+unde k reprezinta nr de cifre al termenului 
+fibonacci din enunt.
+  Algoritmul este eficient dpdv al memoriei deoarece 
+  am utilizat un nr limitat de varianbile intrgi simple.
+   In rezolvarea acestei probleme observam ca
+   prin concatenarea a doi termeni consecutivi
+   am generat un termen cu nr de cifre egal nr de
+   cifre al celor doi termeni anteriori simuland 
+   astfel generarea unei serii fibonacci.
+   Am simulat termenii fibonacii pana la nr cu k cifre
+   si am afisat nr de cifre anterior nr k din
+   seria fibonacci.*/
+
+
 
 SIII.
 #include <bits/stdc++.h>
