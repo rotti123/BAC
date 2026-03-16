@@ -1,3 +1,31 @@
+SIII. 1 - rez fara functie
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n,d=1,p,k;
+    cin>>n;
+    while (d<n){
+        if (n%d==0){
+            p=1;
+            if (d<2)
+                p=0;
+            for (k=2;k*k<=d;k++){
+                if (d%k==0)
+                    p=0;
+            }
+            if (p==0)
+            cout<<d<<" ";
+        }
+        d=d+2;
+    }
+
+    return 0;
+}
+
+
+
 SII. 3
   #include <iostream>
 #include <string.h>
