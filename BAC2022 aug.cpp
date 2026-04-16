@@ -42,6 +42,32 @@ III.1
   n=(st/10*10+x)*e+dr;
 }
 
+III.2 cu functie
+#include <fstream>
+#include <iostream>
+#include<cstring>
+
+using namespace std;
+char vprietena(char ch)
+{
+    while(strchr("aeiou", ch)== NULL)
+    {
+        ch = ch - 1;
+    }
+    return ch;
+}
+int main()
+{
+ char s[51];
+ cin.getline(s,51);
+ for(int i=0;i<strlen(s);i++)
+ {
+     if(strchr("aeiou",s[i])==NULL)
+        s[i]=vprietena(s[i]);
+ }
+ cout<<s;
+
+}
 
 III.2
    #include <iostream>
