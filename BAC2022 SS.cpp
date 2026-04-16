@@ -1,4 +1,26 @@
 https://www.pbinfo.ro/resurse/9dc152/examene/2022/E_d_informatica_2022_sp_MI_C_var_04_LRO.pdf
+SIII ex 1
+
+void patrate(unsigned int n,unsigned int &x, unsigned int &y)
+{
+    int x2,ok=0;
+    for(x=2;x*x<=n;x++){
+        x2=x*x;
+        if(n%x2==0){
+            y=sqrt(n/x2);
+            if(y*y==n/x2 && y>x){
+                ok=1;
+                break;
+            }
+        }
+    }
+    if(ok==0)
+    {
+        x=0;
+        y=0;
+    }
+}
+
 
 SIII ex 1
   void patrate(int n, int &x, int &y){
