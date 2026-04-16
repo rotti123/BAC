@@ -35,6 +35,30 @@ scrie nr
 ok=0;
 for(j=1;j<14;j++)
   if((a[0][j]==a[2][j] && a[1][j-1]==a[1][j+1] && a[0][j]==a[1][j+1])) ok=1;
+///SIII ex 1
+#include <fstream>
+#include<cmath>
+#include <iostream>
+#include<cstring>
+
+using namespace std;
+void rest(unsigned int x,unsigned int y,
+          unsigned int n, unsigned int &k)
+{
+   k=0;
+   for(int i=n;i>=3;i--)
+        if(i%x==2 && i%y==2)
+        {k=i;
+        break;}
+
+}
+int main()
+{
+    unsigned int n,x,y,k;
+    cin>>n>>x>>y;
+    rest(x,y,n,k);
+    cout<<k;
+}
 
 
 ///SIII ex 1
