@@ -79,6 +79,38 @@ int main(){
   restM(x,y,n,k); ///apelul functiei
   cout<<k;
 }
+///sIII.2
+#include <fstream>
+#include<cmath>
+#include <iostream>
+#include<cstring>
+
+using namespace std;
+
+int main()
+{
+   char s[251],x[251],*p,c[251];
+   int i=0,ok=0;
+   cin.getline(s,251);
+   cin>>x;
+   p=strtok(s," ");
+   while(p)
+   {
+       i++;
+       if(i%2==0)
+        if(strcmp(c,x)==0)
+       {
+           ok=1;
+           cout<<p<<" ";
+       }
+       strcpy(c,p);
+       p=strtok(NULL," ;");
+   }
+   if(ok==0)
+    cout<<"nu exista";
+   return 0;
+
+   }
 
  ///SIII.2
 #include <iostream>
