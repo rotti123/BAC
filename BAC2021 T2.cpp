@@ -108,6 +108,57 @@ din valorile citite,si anume p1 respectiv p2.
 [p1,i],unde i este pozitia ultimului element.
     */
 
+SIII.3
+  #include <iostream>
+#include <fstream>
+using namespace std;
+int factori(int n,int m){
+    int sol,d=2,pn,pm;
+    while(n>1 && m>1){
+        pn=0;
+        while(n%d==0){
+            n=n/d;
+            pn++;
+        }
+        pm=0;
+        while(m%d==0){
+            m=m/d;
+            pm++;
+        }
+        if(pn==pm && pn!=0){
+           // cout<<d<<" "<<pn<<" "<<pm<<endl;
+            sol++;
+        }
+        d++;
+    }
+    return sol;
+}
+int main()
+{
+    ifstream cin("bac.in");
+    ofstream cout("bac.out");
+    int x, cnt=0, st=0, dr=0,l1=0,l2=0;
+    while(cin>>x){
+        cnt++;
+        if(x>0){
+            if(st==0){
+                st=cnt;
+            }
+            dr=cnt;
+        }
+    }
+    l1=dr;
+    l2=cnt-st+1;
+    if(l1>=l2){
+        cout<<l1;
+    }else{
+        cout<<l2;
+    }
+
+   // cout<<factori(n,m);
+}
+
+
 
 
 
