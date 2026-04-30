@@ -60,6 +60,42 @@ int main()
   return 0;
 }
 
+
+///SIII ex 3 2026
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   int a[101]={},t,nr,p,maxi=0,ap=0;
+   while(cin >> t >> nr >> p){
+    a[t]+=nr*p;
+   }
+   for(int i=1;i<=100;i++)
+   if(a[i]>maxi){
+    maxi=a[i];
+    ap=1;
+   }
+   else
+   {
+       if(a[i]==maxi)
+        ap++;
+   }
+   cout << maxi << " " << ap;
+   return 0;
+}
+
+/*  Algoritmul este eficient dpdv al timpului de executie 
+deoarece are o complexitate O(n), unde n reprezinta nr de 
+linii din fisier.
+    Construim un vector in care fiecare pozitie reprezinta 
+    tipul produsului. actualizam valoarea inventarului 
+    asociata unui tip adunand pret*nrbuc. 
+    La sfarsit afisam maximul si de cate ori apare acesta.
+*/
+
+
 ///SIII ex3
 #include <iostream>
 #include <fstream>
