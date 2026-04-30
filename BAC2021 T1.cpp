@@ -37,6 +37,40 @@ for(j=1;j<=n-1;j++){
 
 
 }
+///SIII ex 3 2026 partial fara fisier
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   int v[100]={}, x, i, j, u, z, a=0, b=0;
+   while(cin>>x)
+   {
+       if(x<99)
+       {
+           v[x]++;
+       }
+   }
+   for(i=99; i>=10;i--)
+   {
+       u=i%10;
+       z=i/10;
+       if(u!=z && v[i]==0)
+       {
+           if(a==0)
+            a=i;
+           else
+            if(b==0)
+            b=i;
+       }
+   }
+   if(b==0)
+    cout<<"nu exista";
+   else
+    cout<<a<<" "<<b<<" ";
+   return 0;
+}
 
 
 ///SIII ex 3
