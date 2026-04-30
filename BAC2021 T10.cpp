@@ -1,3 +1,31 @@
+III. 2 2026
+	#include<iostream>
+using namespace std;
+int main()
+{
+    int a[21][21],m,n,fr[21]={},ok=0;
+    cin>>m>>n;
+    for(int i=1;i<=m;i++)
+        for(int j=1;j<=n;j++)
+            cin>>a[i][j];
+    for(int j=1;j<n;j++)
+        fr[a[1][j]]++;
+    for(int i=2;i<=m;i++)
+        fr[a[i][n]]++;
+    for(int i=0;i<=20;i++)
+        if(fr[i]==2)
+    {
+        cout<<i<<" ";
+        ok=1;
+    }
+    if(ok==0)
+        cout<<"nu exista";
+   return 0;
+
+}
+
+
+
 <Ilea Robert>
 SI:
 1.b
