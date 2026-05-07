@@ -74,6 +74,43 @@ int main() {
 
 }
 
+III.2 2026
+	#include <iostream>
+#include<cstring>
+using namespace std;
+
+int main()
+{
+    char s[101], a[101]={}, *p;
+    int n, ogl;
+    cin.getline(s,101);
+    p=strtok(s," ");
+    ogl=0;
+    do{
+            char cuv[101]={};
+    n=strlen(p);
+    if(n%2!=0)
+        for(int i=0;i<=n-1; i++)
+        {
+            if(p[i]!=p[n-i-1])
+                ogl=1;
+            cuv[n-i-1]=p[i];
+        }
+    else
+        strcpy(cuv,p);
+    strcat(a,cuv);
+    strcat(a," ");
+    p=strtok(NULL, " ");
+    }while(p!=NULL);
+    if(ogl==0)
+        cout<<"nu exista";
+    else {
+        strcpy(s,a);
+        cout<<s;
+    }
+
+    return 0;
+}
 
 III.2
 #include <iostream>
