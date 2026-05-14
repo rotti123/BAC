@@ -87,6 +87,39 @@ int main()
 }
 
 
+///SIII.2
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+int sufix(char a[], char s[]){
+    if(strlen(a)<=strlen(s))
+        return 0;
+    int la,ls;
+    la=strlen(a);
+    ls=strlen(s);
+    if(strcmp(a+la-ls,s)==0)
+        return 1;
+    else
+        return 0;
+}
+int main()
+{
+    int n,k,ok=0;
+    char a[101][21],s[21];
+    cin >> n >> k;
+    for(int i=0;i<n;i++)
+        cin >> a[i];
+    for(int i=0;i<n;i++){
+        if(sufix(a[i],a[k-1])==1){
+            cout << a[i] << " ";
+            ok=1;
+        }
+    }
+    if(ok==0)
+        cout << "nu exista";
+    return 0;
+}
 
 
 ///SIII ex3
