@@ -1,3 +1,87 @@
+///SIII 2026
+1.
+  int joc (unsigned int n)
+{
+    int k=0;
+    for(int i=2; i<=n; i++)
+    {
+        if(n%i==0)
+            k++;
+    }
+    return k;
+}
+2.
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+    ifstream fin1("bac1.txt"), fin2("bac2.txt");
+    int n1,n2,x1,x2,i=1,j=1,k=0;
+    fin1>>n1>>x1;
+    fin2>>n2>>x2;
+    while(i<=n1 && j<=n2)
+    {
+        if(x1<x2)
+        {
+            if(x1%5==0)
+            {
+                cout<<x1<<" ";
+                k++;
+            }
+            i++;
+            fin1>>x1;
+
+        }
+        else if(x1==x2)
+        {
+            i++;
+            j++;
+            fin1>>x1;
+            fin2>>x2;
+        }
+        else if(x1>x2)
+        {
+            if(x2%5==0)
+            {
+                cout<<x2<<" ";
+                k++;
+            }
+            j++;
+            fin2>>x2;
+        }
+
+    }
+   // cout<<endl<<i<<" "<<n1;
+   // cout<<endl<<j<<" "<<n2;
+    while(i<=n1)
+    {
+        if(x1%5==0)
+        {
+            cout<<x1<<" ";
+            k++;
+        }
+        fin1>>x1;
+        i++;
+    }
+    while(j<=n2)
+    {
+        if(x2%5==0)
+        {
+            cout<<x2<<" ";
+            j++;
+            k++;
+        }
+        fin2>>x2;
+        j++;
+    }
+    if(k==0)
+        cout<<"nu exista";
+    return 0;
+}
+
 
 ///SIII ex 1
 #include <iostream>
