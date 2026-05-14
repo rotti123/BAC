@@ -27,6 +27,39 @@ int main() {
     cout<<m;
     return 0;
 }
+SIII. 2
+Genereaza
+0	1	2	3
+1	2	3	2
+2	3	2	1
+3	2	1	0
+
+
+    #include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    int n,a[100][100];
+    cin>>n;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+         ///   a[i][j]=n-1-abs(n-1-(i+j));
+           if(i==0)
+            a[i][j]=j;
+           else if(i+j<=n-1)
+           {
+               a[i][j]=(a[i-1][j]+1)%n;
+           }
+           else a[i][j]=(a[i-1][j]-1)%n;
+
+            cout<<a[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
 
 SIII ex 3 [pentru un nr variabil de elem negative]
 /*
