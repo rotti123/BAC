@@ -74,6 +74,25 @@ int main() {
   return 0;
 }
 /*********************************************************/
+SIII ex3 2026
+ ifstream fin("bac.in");
+    int n,fr[10001]={},suma[10001]={},x,y,cnt=0;
+    fin>>n;
+    for(int i=0;i<n;i++)
+    {
+        fin>>x;
+        fr[x]=1;
+    }
+    for(int i=1;i<=x;i++)
+    {
+        suma[i]=suma[i-1]+fr[i];
+    }
+    while(fin>>x>>y)
+    {
+        if(suma[x]==suma[y] && fr[x]==0 && fr[y]==0)
+            cnt++;
+    }
+    cout<<cnt;
 SIII ex 3.
 #include <iostream>
 #include <fstream>
