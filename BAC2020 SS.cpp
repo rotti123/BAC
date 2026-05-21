@@ -77,7 +77,42 @@ int main()
   cout<<s;
   return 0;
 }
-  
+  SIII. 3 [2026]
+    #include<iostream>
+#include<fstream>
+using namespace std;
+
+
+int main(){
+  int a,b,c,dif=0,difmin=20,sol=-1;
+  cin>>a>>b;
+  while(cin>>c)
+  {
+      if(a<b && b>c)
+      {
+          dif=abs(a-c);
+          if(dif<difmin)
+          {
+              difmin=dif;
+              sol=b;
+          }
+          else if(difmin==dif && b>sol)
+            sol=b;
+
+
+      }
+        a=b;
+        b=c;
+
+  }
+  if(sol==-1)
+    cout<<"nu exista";
+  else cout<<sol;
+
+
+    return 0;
+}
+
 SIII.3
   #include <iostream>
 #include <fstream>
@@ -110,7 +145,7 @@ int main()
  /* Folosim tripletul x, y, z de numere consecutive din sir 
  pentru a testa daca y este varf. In caz afirmativ atunci 
  testam diferenta in modul dintre vecinii lui y si retinem 
- diferenta cea maimica si varful asociat ultimei diferente 
+ diferenta cea mai mica si varful asociat ultimei diferente 
  minime. In functie de rezultatul obtinut afisam solutia sau 
  mesajul nu exista.
     Programul este eficient din punct de vedere al memoriei
