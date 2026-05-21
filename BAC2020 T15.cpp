@@ -124,7 +124,22 @@ int main() {
     cout<<sol;
 }
 
-
+///SIII ex 3 2026
+    int c1,c2,c,c6,c7,p1,p2;
+    cin >> p1 >> p2;
+    for(c1=1;c1<=9;c1++){
+        if(p1%c1==0 && p1/c1<=9){
+            c2=p1/c1;
+            for(c=0;c<=9;c++){
+                for(c6=1;c6<=9;c6++){
+                    if(p2%c6==0 && p2/c6<=9){
+                        c7=p2/c6;
+                        cout <<c1<<c2<<c<<c<<c<<c6<<c7<<endl;
+                    }
+                }
+            }
+        }
+    }
 ///SIII ex3
 #include <iostream>
 
