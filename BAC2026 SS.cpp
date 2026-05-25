@@ -69,3 +69,23 @@ int main()
     }
     return 0;
 }
+
+SIII.3
+  #include <bits/stdc++.h>
+
+using namespace std;
+int main() {
+    int a, b, c;
+    cin >> c >> b;
+    cout << c <<" " <<  b << " ";
+    do{
+        a=(b-3)/2;
+        cout << a << " ";
+       // getchar();
+        c=b;
+        b=a;
+       // cout<<"\n"<<c<<" "<<b<<" "<<a<<'\n';
+    }while(a!=0);
+    return 0;
+}
+
