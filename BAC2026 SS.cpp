@@ -1,3 +1,32 @@
+SIII.1
+  #include <iostream>
+#include <fstream>
+using namespace std;
+void moda(int n,int &pc)
+{
+    int nrCif=0,poz=0;
+    if(n==0)
+        pc=1;
+    while(n!=0)
+    {
+        nrCif++;
+        if(n%2==0)
+            poz=nrCif;
+        n=n/10;
+    }
+    pc=nrCif-poz+1;
+}
+int main()
+{
+    int n,pc=0;
+    cin>>n;
+    moda(n,pc);
+    cout<<pc;
+    return 0;
+}
+
+
+
 SIII.2
   #include <iostream>
 #include <fstream>
