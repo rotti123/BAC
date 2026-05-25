@@ -83,6 +83,32 @@ cout<<sol;
 return 0;
 }
 
+SIII ex 3 [2026]
+  #include <iostream>
+#include <fstream>
+
+using namespace std;
+
+
+
+int main()
+{
+ifstream cin("bac.in");
+int v[1001]={},x,ok=1;
+
+while(cin>>x){
+    v[x]++;
+}
+for(int i=1;i<=1000;i++){
+        if(v[i]>0)
+    if(!((i%2==v[i]%2) && i>=v[i] ))
+    ok=0;
+}
+if(ok==1)
+    cout<<"DA";
+else cout<<"NU";
+    return 0;
+}
 
 
 
