@@ -42,6 +42,36 @@ int main() {
     return 0;
 }
 
+SIII. ex 3 [2026]
+    #include <iostream>
+#include <fstream>
+
+using namespace std;
+int main() {
+    int maxx=0, cif,x, v[10]={},poz[10]={},k=0;
+    ifstream cin("bac.in");
+    while(cin>>x){
+        k++; ///pozitia lui x
+        cif=x%10;
+        v[cif]++; ///cresc frecventa cifrei cif
+        poz[cif]=k;
+
+    }
+    for(int i=0;i<=9;i++){
+        if(maxx<v[i]) maxx=v[i];
+    }
+    for(int i=0;i<=9;i++){
+        if(v[i]==maxx) cout<<poz[i]<<" ";
+    }
+
+    return 0;
+}
+/**
+x   112 12 5 25 88 15 2 19 32 179 35 621
+k   1   2  3 ...
+*/
+
+
 #include <fstream>
 #include <iostream>
 
