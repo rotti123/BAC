@@ -79,6 +79,28 @@ int main() {
     }
     return 0;
 }
+
+///SIII ex 3 [2026]
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    int x,s=0,smin=1001;
+    ifstream cin("bac.txt");
+    cin>>x;
+    s=x;
+    smin=x;
+    while(cin>>x){
+        if(s>0) s=x;
+        else s=s+x;
+        if(s<smin) smin=s;
+    }
+    cout<<smin;
+    return 0;
+}
+
 3.
 #include <iostream>
 #include <fstream>
