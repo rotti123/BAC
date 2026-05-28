@@ -38,6 +38,38 @@ stilou
 ou
 rosu
 //Subiectul III:
+SIII.1 [2026]
+	#include <iostream>
+#include <fstream>
+using namespace std;
+using uint=unsigned int;
+int putere(uint n,uint p)
+{
+    int ok=1,cnt=0;
+    if(p==0 || p==1)
+        return -1;
+    for(int d=2;d*d<=p;d++)
+    {
+        if(p%d==0)
+            ok=0;
+    }
+    if(ok==0)
+        return -1;
+    while(n%p==0)
+        {
+          cnt++;
+          n/=p;
+        }
+        return cnt;
+
+}
+int main()
+{
+    uint n,p;
+    cin>>n>>p;
+    cout<<putere(n,p);
+}
+
 1.
 int putere(int n, int p){
     int d=2,k=0;
