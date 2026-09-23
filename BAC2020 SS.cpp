@@ -1,3 +1,36 @@
+09.10.23
+SIII ex1
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+bool patrat(int n){
+    int r = sqrt(n);
+    return r*r == n;
+}
+
+int multiplu(int n){
+    bool gasit = false;
+    int k = 1;
+    while(!gasit){
+        if(patrat(n*k)){
+            return n*k;
+            gasit = true;
+        }
+        k++;
+    }
+}
+
+int main(){
+    int n;
+    cin>>n;
+    cout<<multiplu(n);
+    return 0;
+}
+
+
+
 
 SII ex1 c)
   #include <iostream>
