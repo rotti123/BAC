@@ -27,7 +27,40 @@ int main()
 
     cout<<suma(a,b);
 }
- 
+
+SIII.3 23.06.26
+	#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    ifstream cin("bac.in");
+    int a[1001]={}, x, cnt=0;
+    while(cin>>x){
+        a[x]++;
+    }
+    for(int i=0;i<=1000;i++){
+        if(a[i]%2!=0){
+            cnt++;
+        }
+    }
+    if(cnt<=1) cout <<"DA";
+    else cout <<"NU";
+    return 0;
+}
+/**
+Algoritmul folosit are complexitatea
+O(n), unde n este numarul de elemente
+din fisier.
+
+Calculam frecventa de aparitie pentru fiecare
+numar din fisier.
+Calculam cate elemente au frecventa
+impara in variabila cnt.
+daca cnt este mai mic sau egal decat
+unu atunci afisam DA, altfel NU.
+**/
 
 
 II.2
