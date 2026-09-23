@@ -1,3 +1,35 @@
+SIII.1 23.09.26
+#include <iostream>
+#include <fstream>
+using namespace std;
+int cmmdc(int a,int b){
+        int r;
+        while(b!=0){
+            r=a%b;
+            a=b;
+            b=r;
+        }
+        return a;
+}
+int suma (int a, int b){
+    int nr=cmmdc(a,b),S=0;
+    for (int i=1;i<=nr;i++){
+        if (a%i==0&&b%i==0){
+            S=S+i;
+        }
+    }
+    return S;
+}
+int main()
+{
+    int a, b,k;
+    cin>>a>>b;
+
+    cout<<suma(a,b);
+}
+ 
+
+
 II.2
 struct calculator{
    char monitor;
