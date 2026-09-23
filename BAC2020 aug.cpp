@@ -1,3 +1,28 @@
+23.09.26
+SIII.1
+	int sdiv(int x){
+    int suma=0;
+    for(int d=1;d<=x;d++){
+        if(x%d==0){
+            suma=suma+d;
+        }
+    }
+    return suma;
+}
+int kpn(int a,int b, int k){
+    int nr=0;
+    for(int i=a;i<=b;i++){
+        if(i%2==sdiv(i)%2){
+            nr++;
+            if(nr==k){
+                return i;
+            }
+        }
+    }
+    return -1;
+}
+
+
 1b 2c 3c 4d 5b
 II.2
 struct procesor{
