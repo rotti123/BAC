@@ -1,3 +1,39 @@
+///SIII.1 23.09.26
+#include <iostream>
+#include <fstream>
+using namespace std;
+void putere(int n,int &d, int &p)
+{
+    int f=2,e=0;
+    p=0;
+    while(n!=1)
+    {
+        e=0;
+        while(n%f==0)
+        {
+            n=n/f;
+            e++;
+        }
+        if(e>=p)
+        {
+            p=e;
+            d=f;
+        }
+        f++;
+    }
+
+}
+int main()
+{
+    int n,d=0,p=0;
+    cin>>n;
+    putere(n,d,p);
+    cout<<d<<" "<<p<<endl;
+    cout<<n;
+    return 0;
+}
+
+
 ///SIII ex 1
 #include <iostream>
 #include <fstream>
