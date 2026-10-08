@@ -1,4 +1,47 @@
 ///SII ex 3
+V0 partial
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main()
+{
+    char S[100];
+    int stg=0, drp=0;
+    cin.getline(S,20);
+    for(int i=0;i<strlen(S);i++)
+    {
+        if(S[i]=='A')
+        {
+            if(i==0)
+            {
+                if(S[i+1]=='I'){
+                       strcpy(S,S+1);
+                       drp=1;
+                   }
+            }
+            else{
+                if(S[i+1]=='I'){
+                    if(drp==0)strcpy(S+i,S+i+1);
+                    drp=1;
+                    stg=0;
+                }
+                else if(S[i-1]=='I'){
+                    if(stg==0)strcpy(S+i,S+i+1);
+                    stg=1;
+                    drp=0;
+                }
+            }
+        }
+        else{
+            stg=0;
+            drp=0;
+        }
+
+    }
+    cout<<S;
+    return 0;
+}
+
 V1
 
 #include <iostream>
@@ -58,23 +101,39 @@ int main(){
 
 ///SIII ex 1:
 V1
-int factori( int n, int m){
-    int d=2;
-    
-    int cont=0;
-    while(n>1 && m > 1){
-        if (n%d == 0 && m%d==0 ) {
-            cont++;
+#include <iostream>
+using namespace std;
+int Factori(int n, int m)
+{
+    int d=2,cnt=0;
+    while(n>1&&m>1)
+    {
+        int pn,pm;
+        pn=pm=0;
+        while(n%d==0)
+        {
+            n=n/d;
+            pn++;
         }
-        while ( n % d == 0 ) {
-            n = n / d;
+        while(m%d==0)
+        {
+            m=m/d;
+            pm++;
         }
-        while ( m % d == 0 ) {
-            m = m / d;
-        }
+        if(pm*pn>0)
+            cnt++;
         d++;
     }
-        return cont;
+    return cnt;
+}
+
+int main()
+{
+    int n,m;
+    cin>>n>>m;
+    cout<<Factori(n,m);
+    
+    return 0;
 }
 V2
 
