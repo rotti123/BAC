@@ -82,34 +82,36 @@ int main() {
 #include <fstream>
 using namespace std;
 
-
-int main() {
-    //ifstream cin("bac.in");
-    int x,m1=0,m2=0,m3=0;
-    while(cin>>x){
+int main()
+{   
+    ifstream cin("bac.in");
+   int x, max1=-1, max2=-1, max3=-1;
+   while(cin >> x){
         if(x%100==20){
-            if(x>m3){
-                m1=m2;
-                m2=m3;
-                m3=x;
+            if(x>=max1){
+                max3=max2;
+                max2=max1;
+                max1=x;
             }
-            else if(x>m2){
-                m1=m2;
-                m2=x;
+            else if(x>=max2){
+                max3=max2;
+                max2=x;
             }
-            else if(x>m1){
-                m1=x;
+            else if(x>max3){
+                max3=x;
             }
         }
-    }
-    cout<<m1<<" "<<m2<<" "<<m3;
+   }
+    cout << max3 << " " << max2 << " " << max1;
+
     return 0;
 }
+
 /*
 Programul este eficient dpdv al timpului de executie deoarece are o complexitate O(n),
 unde n reprezinta nr elementelor din sir
 Programul este eficient dpdv al memoriei, deoarece folosim doar 4 variabile intregi simple
 Consideram m1,m2,m3 cele 3 valori cerute,iar x un nr oarecare
-Tratam cele 3 situatii posibile in aceasta ordine: x>m3, x>m2, x>m1 
+Tratam cele 3 situatii posibile in aceasta ordine: x>=m3, x>=m2, x>m1 
 In functie de caz vom face schimbarile necesare
 */
